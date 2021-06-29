@@ -37,7 +37,7 @@ export function Projects() {
     {
       title: `Movie Partners`,
       description: `A Movie Application with authentication, profiles, and shareable watchlists!`,
-      tags: [`React`, `React Context`, `MongoDB`, `NodeJS`],
+      tags: [`React`, `ContextAPI`, `MongoDB`, `NodeJS`],
       bgColor: `#c408bb`,
       github: `https://github.com/GoloisaNinja/movie-partners`,
       live: `https://www.wewatch.pw`,
@@ -46,7 +46,7 @@ export function Projects() {
     {
       title: `Hat Attack`,
       description: `A full feature Shopify/Gatsby e-commerce application.`,
-      tags: [`Shopify`, `GatsbyJS`, `GraphQL`, `Styled Components`],
+      tags: [`Shopify`, `GraphQL`, `Styled Components`],
       bgColor: `#07785a`,
       github: `https://github.com/GoloisaNinja/hatAttack`,
       live: `https://wizardly-banach-d5eea6.netlify.app/`,
@@ -55,7 +55,7 @@ export function Projects() {
     {
       title: `Culchr`,
       description: `A corporate value and culture generator with shareable results!`,
-      tags: [`React`, `React Router`, `QueryParams`, `Animations`],
+      tags: [`React`, `React Router`, `QueryParams`],
       bgColor: `#0030a1`,
       github: `https://github.com/GoloisaNinja/Culchr-app`,
       live: `https://www.culchr.pw`,
@@ -100,7 +100,7 @@ export function Projects() {
     {
       title: `Newbsanity`,
       description: `A complex fitness app with event registration, workouts, and trophies!`,
-      tags: [`React`, `React Router`, `Redux`, `Custom API`],
+      tags: [`React`, `Router`, `Redux`, `Custom API`],
       bgColor: `#a61403`,
       github: `https://github.com/GoloisaNinja/newbsanity-app`,
       live: `https://collins-newbsanity.herokuapp.com/`,

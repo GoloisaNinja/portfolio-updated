@@ -77,6 +77,7 @@ export const ProjectDescWrapper = styled.div`
   padding: 10px;
   font-family: "Questrial", sans-serif;
   margin-bottom: 10px;
+  font-size: 18px;
   color: #fff;
 `;
 export const ProjectTagsWrapper = styled.div`

@@ -36,8 +36,7 @@ export function Projects() {
   const projects = [
     {
       title: `Movie Partners`,
-      description: `Movie Partners is a complex React application that uses The Movie Database API. Movie Parnters
-      was built to allow users to create custom watchlists that could be shared with other users on the platform.`,
+      description: `A Movie Application with authentication, profiles, and shareable watchlists!`,
       tags: [`React`, `React Context`, `MongoDB`, `NodeJS`],
       bgColor: `#c408bb`,
       github: `https://github.com/GoloisaNinja/movie-partners`,
@@ -46,8 +45,7 @@ export function Projects() {
     },
     {
       title: `Hat Attack`,
-      description: `Hat Attack is a Gatsby Shopify e-commerce project. Hat Attack features customizable filters, 
-      a cart with checkout, and dynamic product page creation. It also features SEO and server side rendering.`,
+      description: `A full feature Shopify/Gatsby e-commerce application.`,
       tags: [`Shopify`, `GatsbyJS`, `GraphQL`, `Styled Components`],
       bgColor: `#07785a`,
       github: `https://github.com/GoloisaNinja/hatAttack`,
@@ -56,9 +54,7 @@ export function Projects() {
     },
     {
       title: `Culchr`,
-      description: `Culchr is a simple but beautifully ridiculous React application. Culchr accepts any buzzword
-      of your choosing and returns a hilarious, and likely unusable, corporate value proposition complete with alternative
-      suggestions and indoctrination techniques.`,
+      description: `A corporate value and culture generator with shareable results!`,
       tags: [`React`, `React Router`, `QueryParams`, `Animations`],
       bgColor: `#0030a1`,
       github: `https://github.com/GoloisaNinja/Culchr-app`,
@@ -67,9 +63,7 @@ export function Projects() {
     },
     {
       title: `SocialDevs`,
-      description: `SocialDevs is a complex React application that features a fully customized NodeJS and Express
-      API. SocialDevs allows users to sign up and create profiles, posts comments in a user forum and showcase their
-      work and experience.`,
+      description: `A complex social platform for developers to post in forums and share profiles.`,
       tags: [`React`, `React Router`, `Redux`, `MongoDB`],
       bgColor: `#0a888f`,
       github: `https://github.com/GoloisaNinja/SocialDevs`,
@@ -78,9 +72,7 @@ export function Projects() {
     },
     {
       title: `Useddit`,
-      description: `Useddit is a sophisticated VueJS Reddit Clone that uses Firestore for both Google Authenticated
-      sign in and a real time database. This full featured application has a theme switcher, displays avatars, and
-      can handle text, image, and gif post types.`,
+      description: `A complex Reddit Clone with a theme switcher!`,
       tags: [`VueJS`, `VuexFire`, `Vue Router`, `Firestore`],
       bgColor: `#6e00a1`,
       github: `https://github.com/GoloisaNinja/useddit`,
@@ -89,9 +81,7 @@ export function Projects() {
     },
     {
       title: `Expencils`,
-      description: `Expencils is a fully featured React Budgeting Application. It uses Google Firebase for 
-      authentication and storing user expenses.  I also built in custom loading animations, and demoralizing 
-      messages about how many pencils your frivolous spending has cost you.`,
+      description: `A fully featured budgeting app with a fun twist!`,
       tags: [`React`, `Redux`, `React Router`, `Firebase`],
       bgColor: `#d1920a`,
       github: `https://github.com/GoloisaNinja/expencils`,
@@ -100,9 +90,7 @@ export function Projects() {
     },
     {
       title: `Shortly`,
-      description: `Shortly is a fun little VueJS application that will create a shortened URL for a user 
-      based on either a user defined "slug", or a randomly generated system "slug". Shortly uses MongoDB as
-      a database to store slugs and the target URL. There's also a paginated search feature.`,
+      description: `A Bitly/TinyURL clone that gives you shortened URLs!`,
       tags: [`VueJS`, `NodeJS`, `Express`, `MongoDB`],
       bgColor: `#008f34`,
       github: `https://github.com/GoloisaNinja/shortlyURL`,
@@ -111,9 +99,7 @@ export function Projects() {
     },
     {
       title: `Newbsanity`,
-      description: `Newbsanity is a massive and complex React application that is currently being built for 
-      a fitness business in my area. It features user authentication, member forums, in-app trophies,
-      workout tracking, and custom CMS for adding content to the application!`,
+      description: `A complex fitness app with event registration, workouts, and trophies!`,
       tags: [`React`, `React Router`, `Redux`, `Custom API`],
       bgColor: `#a61403`,
       github: `https://github.com/GoloisaNinja/newbsanity-app`,

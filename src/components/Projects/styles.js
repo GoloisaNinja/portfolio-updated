@@ -23,7 +23,8 @@ export const ProjectsCardWrapper = styled.div`
   justify-content: center;
   align-items: stretch;
   grid-gap: 25px;
-
+  padding: 20px 20px 0 20px;
+  margin-bottom: 20px;
   @media (min-width: 700px) {
     grid-template-columns: repeat(2, 300px);
   }

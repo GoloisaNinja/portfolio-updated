@@ -29,7 +29,7 @@ export const BlogInfoWrapper = styled.div`
   padding: 20px 20px 0 20px;
   margin-bottom: 20px;
   > a:first-child {
-    border: 3px solid #fff;
+    border: 1.5px solid #fff;
     border-radius: 5px;
     @media (min-width: 600px) {
       margin-right: 20px;

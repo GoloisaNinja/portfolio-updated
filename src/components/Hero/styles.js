@@ -18,8 +18,8 @@ export const HeroTextSection = styled.section`
     padding-bottom: 25px;
   }
   img {
-    border: 3px solid #fff;
     border-radius: 5px;
+    border: 1.5px solid #fff;
   }
 `;
 export const HeroInfoWrapper = styled.div`

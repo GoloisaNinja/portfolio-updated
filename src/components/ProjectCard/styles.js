@@ -21,7 +21,7 @@ const bounce = keyframes`
 export const ProjectCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  border: 3px solid #fff;
+  border: 1.5px solid #fff;
   border-radius: 5px;
   > div:first-child {
     overflow: hidden;

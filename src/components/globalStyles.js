@@ -11,15 +11,15 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 16px;
   }
   html {
-    background: linear-gradient(to left bottom,#3d3d3d, #00de53);
+    background: #225d35;
   }
   body{
     font-family: 'Inter', sans-serif;
     line-height: 1.2;
     background: linear-gradient(to left bottom,#3d3d3d, #00de53);
-    background-size: cover;
+    /* background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    min-height: 100vh; */
     color: #dbdbdb;
   }
   strong{

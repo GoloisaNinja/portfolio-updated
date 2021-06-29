@@ -10,6 +10,9 @@ export const GlobalStyle = createGlobalStyle`
     height: 40px;
     font-size: 16px;
   }
+  html {
+    background: linear-gradient(to left bottom,#3d3d3d, #00de53);
+  }
   body{
     font-family: 'Inter', sans-serif;
     line-height: 1.2;

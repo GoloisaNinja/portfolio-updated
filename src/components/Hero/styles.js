@@ -41,6 +41,7 @@ export const HeroInfoWrapper = styled.div`
     margin-top: 35px;
     span:first-child {
       color: #00ff5f;
+      font-weight: bold;
     }
     @media (min-width: 600px) {
       margin-top: 0;

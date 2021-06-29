@@ -3,8 +3,8 @@ import smoothscroll from "smoothscroll-polyfill";
 import { MenuWrapper, FactWrapper, NavWrapper } from "./styles";
 
 export function Menu({ fact, factNumber, handleClick }) {
-  smoothscroll.polyfill();
   const handleMenu = e => {
+    smoothscroll.polyfill();
     const yOffset = -80;
     const navTo = document.getElementById(e.target.innerHTML);
     const y = navTo.getBoundingClientRect().top + window.pageYOffset + yOffset;

@@ -21,12 +21,20 @@ const bounce = keyframes`
 export const ProjectCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  border: 1.5px solid #fff;
+  border: 1px solid #fff;
   border-radius: 5px;
   > div:first-child {
     overflow: hidden;
     > div:first-child {
       transition: 0.5s all ease-in-out;
+      img {
+        border-radius: 5px;
+      }
+      > picture {
+        img {
+          border-radius: 5px;
+        }
+      }
       &:hover {
         transform: scale(1.2);
       }

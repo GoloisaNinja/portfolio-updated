@@ -29,8 +29,18 @@ export const ResumeInfoWrapper = styled.div`
   padding: 20px;
   margin-bottom: 20px;
   > a:first-child {
+    > div:first-child {
+      img {
+        border-radius: 5px;
+      }
+      > picture {
+        img {
+          border-radius: 5px;
+        }
+      }
+    }
     border-radius: 5px;
-    border: 1.5px solid #fff;
+    border: 1px solid #fff;
   }
   @media (min-width: 600px) {
     flex-direction: row;

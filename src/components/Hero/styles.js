@@ -19,7 +19,7 @@ export const HeroTextSection = styled.section`
   }
   img {
     border-radius: 5px;
-    border: 1.5px solid #fff;
+    border: 1px solid #fff;
   }
 `;
 export const HeroInfoWrapper = styled.div`

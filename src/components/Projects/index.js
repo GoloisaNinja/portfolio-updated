@@ -27,6 +27,7 @@ export function Projects() {
                 formats: [AUTO, WEBP]
               )
             }
+            name
           }
         }
       }
@@ -41,6 +42,7 @@ export function Projects() {
       bgColor: `#c408bb`,
       github: `https://github.com/GoloisaNinja/movie-partners`,
       live: `https://www.wewatch.pw`,
+      name: "mp",
     },
     {
       title: `Hat Attack`,
@@ -50,6 +52,7 @@ export function Projects() {
       bgColor: `#07785a`,
       github: `https://github.com/GoloisaNinja/hatAttack`,
       live: `https://wizardly-banach-d5eea6.netlify.app/`,
+      name: "hatAttack",
     },
     {
       title: `Culchr`,
@@ -60,6 +63,7 @@ export function Projects() {
       bgColor: `#0030a1`,
       github: `https://github.com/GoloisaNinja/Culchr-app`,
       live: `https://www.culchr.pw`,
+      name: "culchr",
     },
     {
       title: `SocialDevs`,
@@ -70,6 +74,7 @@ export function Projects() {
       bgColor: `#0a888f`,
       github: `https://github.com/GoloisaNinja/SocialDevs`,
       live: `http://collins-socialdevs.herokuapp.com/`,
+      name: "socialDevs",
     },
     {
       title: `Useddit`,
@@ -80,6 +85,7 @@ export function Projects() {
       bgColor: `#6e00a1`,
       github: `https://github.com/GoloisaNinja/useddit`,
       live: `https://useddit.netlify.app/`,
+      name: "useddit",
     },
     {
       title: `Expencils`,
@@ -90,6 +96,7 @@ export function Projects() {
       bgColor: `#d1920a`,
       github: `https://github.com/GoloisaNinja/expencils`,
       live: `https://collins-expencils.herokuapp.com/`,
+      name: "expencils",
     },
     {
       title: `Shortly`,
@@ -100,6 +107,7 @@ export function Projects() {
       bgColor: `#008f34`,
       github: `https://github.com/GoloisaNinja/shortlyURL`,
       live: `https://www.fpd.pw`,
+      name: "shortly1",
     },
     {
       title: `Newbsanity`,
@@ -110,6 +118,7 @@ export function Projects() {
       bgColor: `#a61403`,
       github: `https://github.com/GoloisaNinja/newbsanity-app`,
       live: `https://collins-newbsanity.herokuapp.com/`,
+      name: "newbsanity",
     },
   ];
   return (
@@ -119,18 +128,23 @@ export function Projects() {
           My Projects
         </GradientH1>
         <ProjectsCardWrapper>
-          {data.allFile.edges.map(({ node }, index) => (
-            <ProjectCard
-              key={Math.random()}
-              image={node.childImageSharp.gatsbyImageData}
-              title={projects[index].title}
-              description={projects[index].description}
-              tags={projects[index].tags}
-              bgColor={projects[index].bgColor}
-              github={projects[index].github}
-              live={projects[index].live}
-            />
-          ))}
+          {data.allFile.edges.map(({ node }) => {
+            let index = projects.findIndex(
+              project => project.name === node.name
+            );
+            return (
+              <ProjectCard
+                key={Math.random()}
+                image={node.childImageSharp.gatsbyImageData}
+                title={projects[index].title}
+                description={projects[index].description}
+                tags={projects[index].tags}
+                bgColor={projects[index].bgColor}
+                github={projects[index].github}
+                live={projects[index].live}
+              />
+            );
+          })}
         </ProjectsCardWrapper>
         <Overlay></Overlay>
       </ProjectsTextWrapper>

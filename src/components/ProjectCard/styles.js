@@ -28,13 +28,7 @@ export const ProjectCardWrapper = styled.div`
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     > div:first-child {
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
       transition: 0.5s all ease-in-out;
-      img {
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-      }
       > picture {
         img {
           border-top-left-radius: 5px;

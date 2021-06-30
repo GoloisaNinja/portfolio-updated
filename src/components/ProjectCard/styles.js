@@ -28,11 +28,13 @@ export const ProjectCardWrapper = styled.div`
     > div:first-child {
       transition: 0.5s all ease-in-out;
       img {
-        border-radius: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
       }
       > picture {
         img {
-          border-radius: 5px;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
         }
       }
       &:hover {
@@ -44,6 +46,8 @@ export const ProjectCardWrapper = styled.div`
 export const ProjectInfoWrapper = styled.div`
   background: ${props => props.bgColor};
   flex: 1;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 `;
 export const ProjectTitleWrapper = styled.div`
   padding: 10px;

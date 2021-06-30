@@ -52,7 +52,7 @@ export function Contact() {
       .join("&");
   };
   const onChange = e => {
-    setFormData({ ...formData, [e.target.name]: e.target.value.trim() });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const handleDismiss = () => {
     setShow(false);
@@ -65,9 +65,7 @@ export function Contact() {
       headers: {
         "Content-type": "application/x-www-form-urlencoded",
       },
-      body: encode({
-        formData,
-      }),
+      body: encode({ "form-name": "new-portfolio-contact", ...formData }),
     })
       .then(() => {
         setShow(true);
@@ -75,7 +73,7 @@ export function Contact() {
         return console.log("Success!");
       })
       .catch(error => {
-        console.log(error);
+        console.log("error tripped");
         return alert(
           `Whoops - something unexpected happened...please try again later`
         );
@@ -108,6 +106,11 @@ export function Contact() {
               data-netlify="true"
               onSubmit={e => handleSubmit(e)}
             >
+              <input
+                type="hidden"
+                name="new-portfolio-contact"
+                value="contact"
+              />
               <FormGroup>
                 <NameInput
                   type="text"

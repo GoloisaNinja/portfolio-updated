@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 const inputStyle = css`
   font-size: 20px;
-  padding: 8px 0 8px 8px;
+  padding: 10px 0 10px 8px;
   margin-bottom: 16px;
   font-family: "Questrial", sans-serif;
   border: none;
@@ -12,14 +12,14 @@ const inputStyle = css`
   &:focus {
     + label {
       font-size: 75%;
-      transform: translate3d(-10%, -140%, 0);
+      transform: translate3d(0, -150%, 0);
       opacity: 1;
     }
   }
   &:valid {
     + label {
       font-size: 75%;
-      transform: translate3d(-10%, -140%, 0);
+      transform: translate3d(0, -150%, 0);
       opacity: 1;
     }
   }
@@ -127,7 +127,7 @@ export const FormGroup = styled.div`
 export const FormLabelFloating = styled.label`
   position: absolute;
   top: 0%;
-  margin-top: 5px;
+  margin-top: 8px;
   padding-left: 10px;
   transition: all 250ms;
   opacity: 0.75;

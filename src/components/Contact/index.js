@@ -46,8 +46,13 @@ export function Contact() {
     message: "",
   });
   const { name, email, message } = formData;
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
   const onChange = e => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value.trim() });
   };
   const handleDismiss = () => {
     setShow(false);
@@ -60,14 +65,18 @@ export function Contact() {
       headers: {
         "Content-type": "application/x-www-form-urlencoded",
       },
-      body: new URLSearchParams(formData).toString(),
+      body: encode({
+        formData,
+      }),
     })
       .then(() => {
         setShow(true);
         setFormData({ name: "", email: "", message: "" });
+        return console.log("Success!");
       })
       .catch(error => {
-        alert(
+        console.log(error);
+        return alert(
           `Whoops - something unexpected happened...please try again later`
         );
       });

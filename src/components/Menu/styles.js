@@ -68,6 +68,7 @@ export const NavButton = styled.button`
   font-size: 30px;
   padding: 16px 0;
   color: #fff;
+  outline: none;
   &:hover {
     color: #00de53;
   }

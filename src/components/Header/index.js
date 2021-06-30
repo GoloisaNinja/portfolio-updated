@@ -5,7 +5,7 @@ import { Menu } from "../Menu";
 import { HeaderWrapper, HamburgerWrapper, MenuLine } from "./styles";
 
 export function Header() {
-  const [showMenu, setShowMenu] = useState("false");
+  const [showMenu, setShowMenu] = useState(true);
   const [factNumber, setFactNumber] = useState(1);
   const [fact, setFact] = useState("");
   const data = useStaticQuery(graphql`
@@ -60,6 +60,9 @@ export function Header() {
     setFactNumber(Math.floor(Math.random() * (500 - 2)));
     setFact(arr[randomNumber]);
   };
+  const menuFromKeyboardStateChange = () => {
+    setShowMenu(true);
+  };
   const handleClick = () => {
     setShowMenu(!showMenu);
     const menuBtn = document.getElementById("menuBtn");
@@ -106,7 +109,7 @@ export function Header() {
       <Menu
         factNumber={factNumber}
         fact={fact}
-        handleClick={handleClick}
+        stateChange={menuFromKeyboardStateChange}
       ></Menu>
     </>
   );

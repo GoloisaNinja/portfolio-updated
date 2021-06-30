@@ -36,6 +36,7 @@ export const HamburgerWrapper = styled.div`
   cursor: pointer;
   animation: ${fadeDownBounce} 1s ease-in 0.5s backwards;
   transition: all 0.5s ease-out;
+  outline: none;
   &.close {
     transform: rotate(180deg);
     > #btnLine {

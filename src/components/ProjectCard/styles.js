@@ -25,6 +25,8 @@ export const ProjectCardWrapper = styled.div`
   border-radius: 5px;
   > div:first-child {
     overflow: hidden;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     > div:first-child {
       transition: 0.5s all ease-in-out;
       img {

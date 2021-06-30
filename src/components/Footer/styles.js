@@ -12,6 +12,9 @@ export const FooterWrapper = styled.footer`
   font-family: "Questrial", sans-serif;
   height: 70px;
   margin-top: 25px;
+  > p:nth-child(2) {
+    font-size: 14px;
+  }
   svg {
     color: #00de53;
   }

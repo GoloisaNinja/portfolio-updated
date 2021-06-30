@@ -19,19 +19,49 @@ export function Menu({ fact, factNumber, handleClick }) {
       </FactWrapper>
       <NavWrapper id="navs">
         <ul>
-          <li id="navItem" role="presentation" onClick={e => handleMenu(e)}>
+          <li
+            id="navItem"
+            role="presentation"
+            tabIndex="0"
+            onKeyDown={e => e.code === "Enter" && handleMenu(e)}
+            onClick={e => handleMenu(e)}
+          >
             home
           </li>
-          <li id="navItem" role="presentation" onClick={e => handleMenu(e)}>
+          <li
+            id="navItem"
+            role="presentation"
+            tabIndex="0"
+            onKeyDown={e => e.code === "Enter" && handleMenu(e)}
+            onClick={e => handleMenu(e)}
+          >
             resume
           </li>
-          <li id="navItem" role="presentation" onClick={e => handleMenu(e)}>
+          <li
+            id="navItem"
+            role="presentation"
+            tabIndex="0"
+            onKeyDown={e => e.code === "Enter" && handleMenu(e)}
+            onClick={e => handleMenu(e)}
+          >
             blog
           </li>
-          <li id="navItem" role="presentation" onClick={e => handleMenu(e)}>
+          <li
+            id="navItem"
+            role="presentation"
+            tabIndex="0"
+            onKeyDown={e => e.code === "Enter" && handleMenu(e)}
+            onClick={e => handleMenu(e)}
+          >
             projects
           </li>
-          <li id="navItem" role="presentation" onClick={e => handleMenu(e)}>
+          <li
+            id="navItem"
+            role="presentation"
+            tabIndex="0"
+            onKeyDown={e => e.code === "Enter" && handleMenu(e)}
+            onClick={e => handleMenu(e)}
+          >
             contact
           </li>
         </ul>

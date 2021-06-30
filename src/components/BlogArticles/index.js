@@ -51,7 +51,7 @@ export function BlogArticles() {
           Blog and Articles
         </GradientH1>
         <BlogInfoWrapper>
-          <a href="https://jcodes.me">
+          <a href="https://jcodes.blog">
             <GatsbyImage
               image={data.file.childImageSharp.gatsbyImageData}
               alt="resume game image"

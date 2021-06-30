@@ -91,7 +91,12 @@ export function Header() {
           id="logo"
         />
         <div>
-          <HamburgerWrapper id="menuBtn" onClick={() => handleClick()}>
+          <HamburgerWrapper
+            id="menuBtn"
+            tabIndex="0"
+            onKeyDown={e => e.code === "Enter" && handleClick()}
+            onClick={() => handleClick()}
+          >
             <MenuLine id="btnLine"></MenuLine>
             <MenuLine id="btnLine"></MenuLine>
             <MenuLine id="btnLine"></MenuLine>

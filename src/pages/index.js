@@ -5,6 +5,7 @@ import {
   ResumeTech,
   BlogArticles,
   Projects,
+  Contact,
 } from "../components";
 
 export default function IndexPage() {
@@ -14,6 +15,7 @@ export default function IndexPage() {
       <ResumeTech />
       <BlogArticles />
       <Projects />
+      <Contact />
     </Layout>
   );
 }

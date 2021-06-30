@@ -17,6 +17,9 @@ export const ResumeTextWrapper = styled.div`
     padding-bottom: 25px;
     border-bottom: 1px solid #fff;
   }
+  @media (max-width: 320px) {
+    font-size: 1.05em;
+  }
 `;
 export const ResumeInfoWrapper = styled.div`
   display: flex;
@@ -53,6 +56,9 @@ export const ResumeInfoWrapper = styled.div`
     margin-top: 45px;
     justify-content: center;
     align-items: center;
+    @media (max-width: 320px) {
+      grid-template-columns: repeat(4, 50px);
+    }
     @media (min-width: 600px) {
       grid-template-columns: repeat(4, 40px);
       margin-top: 0;

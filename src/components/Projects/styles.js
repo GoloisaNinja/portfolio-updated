@@ -17,6 +17,9 @@ export const ProjectsTextWrapper = styled.div`
     border-bottom: 1px solid #fff;
     padding-bottom: 25px;
   }
+  @media (max-width: 320px) {
+    font-size: 1.05em;
+  }
 `;
 export const ProjectsCardWrapper = styled.div`
   display: grid;

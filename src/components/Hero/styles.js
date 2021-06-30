@@ -21,6 +21,9 @@ export const HeroTextSection = styled.section`
     border-radius: 5px;
     border: 1px solid #fff;
   }
+  @media (max-width: 320px) {
+    font-size: 1.05em;
+  }
 `;
 export const HeroInfoWrapper = styled.div`
   display: flex;

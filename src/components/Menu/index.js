@@ -31,7 +31,9 @@ export function Menu({ fact, factNumber, handleClick }) {
           <li id="navItem" role="presentation" onClick={e => handleMenu(e)}>
             projects
           </li>
-          <li id="navItem">contact</li>
+          <li id="navItem" role="presentation" onClick={e => handleMenu(e)}>
+            contact
+          </li>
         </ul>
       </NavWrapper>
     </MenuWrapper>

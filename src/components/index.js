@@ -9,3 +9,6 @@ export * from "./BlogArticles";
 export * from "./ArticleLink";
 export * from "./ProjectCard";
 export * from "./Projects";
+export * from "./Contact";
+export * from "./Modal";
+export * from "./Footer";

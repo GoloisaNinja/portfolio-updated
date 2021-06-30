@@ -22,19 +22,12 @@ export const ProjectCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px solid #fff;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   > div:first-child {
     overflow: hidden;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
     > div:first-child {
       transition: 0.5s all ease-in-out;
-      > picture {
-        img {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-      }
       &:hover {
         transform: scale(1.2);
       }

@@ -52,18 +52,23 @@ export const NavWrapper = styled.div`
   background: #292929;
   transform: translate3d(0, -100%, 0);
   transition: all 0.3s ease-out;
-  #navItem {
-    cursor: pointer;
-    font-family: "Questrial", sans-serif;
-    font-size: 30px;
-    padding: 16px 0;
-    font-weight: bold;
-  }
   &.show {
     transform: translate3d(0, 0, 0);
   }
   @media (min-width: 600px) {
     width: 50%;
     transform: translate3d(0, 100%, 0);
+  }
+`;
+export const NavButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Questrial", sans-serif;
+  font-size: 30px;
+  padding: 16px 0;
+  color: #fff;
+  &:hover {
+    color: #00de53;
   }
 `;

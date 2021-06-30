@@ -1,6 +1,6 @@
 import React from "react";
 import smoothscroll from "smoothscroll-polyfill";
-import { MenuWrapper, FactWrapper, NavWrapper } from "./styles";
+import { MenuWrapper, FactWrapper, NavWrapper, NavButton } from "./styles";
 
 export function Menu({ fact, factNumber, handleClick }) {
   const handleMenu = e => {
@@ -18,53 +18,41 @@ export function Menu({ fact, factNumber, handleClick }) {
         <p>{fact}</p>
       </FactWrapper>
       <NavWrapper id="navs">
-        <ul>
-          <li
-            id="navItem"
-            role="presentation"
-            tabIndex="0"
-            onKeyDown={e => e.code === "Enter" && handleMenu(e)}
-            onClick={e => handleMenu(e)}
-          >
-            home
-          </li>
-          <li
-            id="navItem"
-            role="presentation"
-            tabIndex="0"
-            onKeyDown={e => e.code === "Enter" && handleMenu(e)}
-            onClick={e => handleMenu(e)}
-          >
-            resume
-          </li>
-          <li
-            id="navItem"
-            role="presentation"
-            tabIndex="0"
-            onKeyDown={e => e.code === "Enter" && handleMenu(e)}
-            onClick={e => handleMenu(e)}
-          >
-            blog
-          </li>
-          <li
-            id="navItem"
-            role="presentation"
-            tabIndex="0"
-            onKeyDown={e => e.code === "Enter" && handleMenu(e)}
-            onClick={e => handleMenu(e)}
-          >
-            projects
-          </li>
-          <li
-            id="navItem"
-            role="presentation"
-            tabIndex="0"
-            onKeyDown={e => e.code === "Enter" && handleMenu(e)}
-            onClick={e => handleMenu(e)}
-          >
-            contact
-          </li>
-        </ul>
+        <NavButton
+          id="navItem"
+          onKeyDown={e => e.code === "Enter" && handleMenu(e)}
+          onClick={e => handleMenu(e)}
+        >
+          home
+        </NavButton>
+        <NavButton
+          id="navItem"
+          onKeyDown={e => e.code === "Enter" && handleMenu(e)}
+          onClick={e => handleMenu(e)}
+        >
+          resume
+        </NavButton>
+        <NavButton
+          id="navItem"
+          onKeyDown={e => e.code === "Enter" && handleMenu(e)}
+          onClick={e => handleMenu(e)}
+        >
+          blog
+        </NavButton>
+        <NavButton
+          id="navItem"
+          onKeyDown={e => e.code === "Enter" && handleMenu(e)}
+          onClick={e => handleMenu(e)}
+        >
+          projects
+        </NavButton>
+        <NavButton
+          id="navItem"
+          onKeyDown={e => e.code === "Enter" && handleMenu(e)}
+          onClick={e => handleMenu(e)}
+        >
+          contact
+        </NavButton>
       </NavWrapper>
     </MenuWrapper>
   );

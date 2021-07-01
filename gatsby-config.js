@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Jon Collins Developer Site`,
-    description: `A developer portfolio site featuring the work of Jonathan Collins.`,
+    description: `Jon Collins Developer Portfolio site featuring selected works, resume game, and blog.`,
     author: `@goloisaninja`,
   },
   plugins: [

@@ -6,11 +6,16 @@ import {
   BlogArticles,
   Projects,
   Contact,
+  Seo,
 } from "../components";
 
 export default function IndexPage() {
   return (
     <Layout>
+      <Seo
+        title={"Jon Collins Developer Portfolio"}
+        description={"Jon Collins Dev Homepage"}
+      />
       <Hero />
       <ResumeTech />
       <BlogArticles />

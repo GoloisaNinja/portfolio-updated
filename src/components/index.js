@@ -12,3 +12,4 @@ export * from "./Projects";
 export * from "./Contact";
 export * from "./Modal";
 export * from "./Footer";
+export * from "./Seo";

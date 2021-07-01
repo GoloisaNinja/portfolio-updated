@@ -22,7 +22,7 @@ export function Seo({ description, lang, meta = [], title }) {
     }
   `);
   const metaDescription = description || data.site.siteMetadata.description;
-  const ogImage = data.file.childImageSharp.fixed;
+  const ogImage = data.file.childImageSharp.fixed.srcWebp;
 
   return (
     <Helmet

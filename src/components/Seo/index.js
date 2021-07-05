@@ -14,7 +14,7 @@ export function Seo({ description, lang, meta = [], title }) {
       }
       file(relativePath: { eq: "smallLogo.png" }) {
         childImageSharp {
-          fixed(width: 80) {
+          fixed(width: 280) {
             ...GatsbyImageSharpFixed_withWebp
           }
         }

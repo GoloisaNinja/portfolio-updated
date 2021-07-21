@@ -44,6 +44,8 @@ export const ProjectTitleWrapper = styled.div`
   padding: 10px;
   font-family: "Questrial", sans-serif;
   color: #fff;
+  text-shadow: 2px 2px 2px #030303;
+  letter-spacing: 1px;
   > h3 {
     font-weight: bold;
     margin-bottom: 0;
@@ -56,6 +58,7 @@ export const ProjectLinkWrapper = styled.div`
   margin-top: 15px;
   a {
     text-decoration: none;
+    text-shadow: none;
   }
   > a:first-child {
     margin-right: 20px;
@@ -72,6 +75,8 @@ export const ProjectButton = styled.a`
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
+  box-shadow: rgba(227, 227, 227, 0.4) 5px 5px,
+    rgba(240, 46, 170, 0.1) 15px 15px;
   &:hover {
     animation: ${bounce} 1s ease;
   }
@@ -82,6 +87,8 @@ export const ProjectDescWrapper = styled.div`
   margin-bottom: 10px;
   font-size: 18px;
   color: #fff;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #030303;
 `;
 export const ProjectTagsWrapper = styled.div`
   display: flex;
@@ -99,4 +106,5 @@ export const TagBadge = styled.div`
   padding: 5px;
   border: 1px solid #fff;
   border-radius: 15px;
+  color: #fff;
 `;

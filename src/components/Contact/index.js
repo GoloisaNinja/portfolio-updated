@@ -88,13 +88,22 @@ export function Contact() {
         <ContactMainSection>
           <div>
             <h3>Find me on social</h3>
-            <a href="https://twitter.com/goloisaninja">
+            <a
+              href="https://twitter.com/goloisaninja"
+              alt="A link to Jon's Twitter Page"
+            >
               <FaTwitter />
             </a>
-            <a href="https://github.com/goloisaninja">
+            <a
+              href="https://github.com/goloisaninja"
+              alt="A link to Jon's Github Profile"
+            >
               <FaGithub />
             </a>
-            <a href="https://www.linkedin.com/in/jonmcollins/">
+            <a
+              href="https://www.linkedin.com/in/jonmcollins/"
+              alt="A Link to Jon's LinkedIn Profile"
+            >
               <FaLinkedinIn />
             </a>
           </div>

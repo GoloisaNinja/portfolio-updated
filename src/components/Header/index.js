@@ -90,7 +90,7 @@ export function Header() {
       <HeaderWrapper>
         <GatsbyImage
           image={data.file.childImageSharp.gatsbyImageData}
-          alt="jcodes logo"
+          alt="The Jcodes Logo"
           id="logo"
         />
         <div>

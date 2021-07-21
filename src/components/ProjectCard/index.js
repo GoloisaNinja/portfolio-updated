@@ -30,10 +30,18 @@ export function ProjectCard({
         <ProjectTitleWrapper>
           <h3>{title}</h3>
           <ProjectLinkWrapper>
-            <ProjectButton type="button" href={github}>
+            <ProjectButton
+              type="button"
+              href={github}
+              alt={`A github link to ${title}`}
+            >
               <FaGithub /> Repo
             </ProjectButton>
-            <ProjectButton type="button" href={live}>
+            <ProjectButton
+              type="button"
+              href={live}
+              alt={`Click here to visit a live site for ${title}`}
+            >
               <FaLink /> Link
             </ProjectButton>
           </ProjectLinkWrapper>

@@ -55,6 +55,7 @@ export const ContactMainSection = styled.section`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  color: #fff;
   > div:first-child {
     font-family: "Questrial", sans-serif;
     > a:not(:last-child) {
@@ -107,11 +108,12 @@ export const TextArea = styled.textarea`
 export const ContactSubmitButton = styled.button`
   padding: 8px;
   font-size: 20px;
+  font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   background: #d1920a;
-  color: #fff;
+  color: #030303;
   border-bottom: 2px solid #bf870d;
   transition: all 0.5s ease-out;
   &:hover {
@@ -130,6 +132,8 @@ export const FormLabelFloating = styled.label`
   margin-top: 8px;
   padding-left: 10px;
   transition: all 250ms;
-  opacity: 0.75;
+  opacity: 0.9;
   font-size: 18px;
+  color: #fff;
+  font-weight: bold;
 `;

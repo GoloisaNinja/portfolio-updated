@@ -89,18 +89,21 @@ export function Contact() {
           <div>
             <h3>Find me on social</h3>
             <a
+              aria-label="Find Jon on Twitter"
               href="https://twitter.com/goloisaninja"
               alt="A link to Jon's Twitter Page"
             >
               <FaTwitter />
             </a>
             <a
+              aria-label="Browse Jon's Profile on Github and see Project Repositories"
               href="https://github.com/goloisaninja"
               alt="A link to Jon's Github Profile"
             >
               <FaGithub />
             </a>
             <a
+              aria-label="Visit Jon's LinkedIn Profile"
               href="https://www.linkedin.com/in/jonmcollins/"
               alt="A Link to Jon's LinkedIn Profile"
             >

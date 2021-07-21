@@ -15,6 +15,7 @@ export default function IndexPage() {
       <Seo
         title={"Jon Collins Developer Portfolio"}
         description={"Jon Collins Dev Homepage"}
+        lang={"en"}
       />
       <Hero />
       <ResumeTech />

@@ -26,21 +26,24 @@ export function BlogArticles() {
       bgColor: "#07785a",
       textColor: "#fff",
       title: `How many stacks is too many stacks?`,
-      link: `https://jcodes.blog/articles/Article_2`,
+      link: `https://jcodes.blog/articles/How_many_stacks_is_too_many_stacks`,
+      altText: `A link to my blog post about learning too many stacks`,
       tags: [`learning`, `frameworks`, `libraries`],
     },
     {
       bgColor: "#0030a1",
       textColor: "#fff",
       title: `We need to talk about remote work.`,
-      link: `https://jcodes.blog/articles/Article_4`,
+      link: `https://jcodes.blog/articles/We_need_to_talk_about_remote_work`,
+      altText: `A link to my blog post about the benefits of remote work`,
       tags: [`careers`, `health`, `remote`],
     },
     {
       bgColor: "#6e00a1",
       textColor: "#fff",
       title: `Changing careers is scary.`,
-      link: `https://jcodes.blog/articles/Article_5`,
+      link: `https://jcodes.blog/articles/Changing_careers_is_scary`,
+      altText: `A link to my blog post about changing to a career in tech in my 30's`,
       tags: [`tech`, `programming`, `javascript`],
     },
   ];
@@ -66,6 +69,7 @@ export function BlogArticles() {
                 title={article.title}
                 link={article.link}
                 tags={article.tags}
+                altText={article.altText}
               />
             ))}
           </div>

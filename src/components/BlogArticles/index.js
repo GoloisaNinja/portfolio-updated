@@ -33,10 +33,10 @@ export function BlogArticles() {
     {
       bgColor: "#0030a1",
       textColor: "#fff",
-      title: `We need to talk about remote work.`,
-      link: `https://jcodes.blog/articles/We_need_to_talk_about_remote_work`,
-      altText: `A link to my blog post about the benefits of remote work`,
-      tags: [`careers`, `health`, `remote`],
+      title: `Avoiding the dreaded React flicker.`,
+      link: `https://jcodes.blog/articles/Avoiding_the_dreaded_React_Flicker`,
+      altText: `A link to my blog post about the use layout effect`,
+      tags: [`react`, `hooks`, `javascript`],
     },
     {
       bgColor: "#6e00a1",

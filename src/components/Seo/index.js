@@ -12,18 +12,17 @@ export function Seo({ description, lang, meta = [], title }) {
           title
         }
       }
-      file(relativePath: { eq: "smallLogo.png" }) {
+      file(relativePath: { eq: "portfolio.png" }) {
         childImageSharp {
-          fixed(width: 280) {
-            ...GatsbyImageSharpFixed_withWebp
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
     }
   `);
   const metaDescription = description || data.site.siteMetadata.description;
-  const ogImage =
-    `https://jcodes.page` + data.file.childImageSharp.fixed.srcWebp;
+  const ogImage = `https://jcodes.page` + data.file.childImageSharp.fluid.src;
 
   return (
     <Helmet

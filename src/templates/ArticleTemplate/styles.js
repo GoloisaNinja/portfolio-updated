@@ -30,7 +30,11 @@ export const ArticleByLineWrapper = styled.div`
   > div:nth-child(2) {
     margin-left: 8px;
     max-width: 40px;
-    border-radius: 50%;
+    > picture {
+      > img {
+        border-radius: 50%;
+      }
+    }
   }
   > a {
     text-decoration: none;

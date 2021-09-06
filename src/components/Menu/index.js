@@ -1,25 +1,20 @@
 import React from "react";
-import smoothscroll from "smoothscroll-polyfill";
+import { useLocation, navigate } from "@reach/router";
 import { MenuWrapper, FactWrapper, NavWrapper, NavButton } from "./styles";
 
-export function Menu({ fact, factNumber, stateChange }) {
+export function Menu({ fact, factNumber, handleNav }) {
+  const { pathname } = useLocation();
+  const checkLocation = target => {
+    if (pathname !== "/") {
+      navigate(`/`);
+      handleNav(target, true);
+    } else {
+      handleNav(target, false);
+    }
+  };
+
   const handleMenu = e => {
-    smoothscroll.polyfill();
-    stateChange();
-    const menuBtn = document.getElementById("menuBtn");
-    const menu = document.getElementById("menu");
-    const facts = document.getElementById("facts");
-    const navs = document.getElementById("navs");
-    const siteLogo = document.getElementById("logo");
-    menuBtn.classList.remove("close");
-    menu.classList.remove("show");
-    facts.classList.remove("show");
-    navs.classList.remove("show");
-    siteLogo.classList.remove("hide");
-    const yOffset = -80;
-    const navTo = document.getElementById(e.target.innerHTML);
-    const y = navTo.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    window.scrollTo({ top: y, behavior: "smooth" });
+    checkLocation(e.target.innerHTML);
   };
   return (
     <MenuWrapper id="menu">

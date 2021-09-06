@@ -1,3 +1,5 @@
+require("dotenv").config({ path: ".env" });
+
 module.exports = {
   siteMetadata: {
     title: `Jon Collins Developer Site`,
@@ -9,6 +11,7 @@ module.exports = {
     `gatsby-optional-chaining`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
+    "gatsby-background-image",
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -36,7 +39,20 @@ module.exports = {
         path: `${__dirname}/src/images/techs`,
       },
     },
+    {
+      resolve: "gatsby-source-strapi",
+      options: {
+        apiURL: process.env.GATSBY_STRAPI_HEROKU || "http://localhost:1337",
+        collectionTypes: [
+          // List of the Content Types you want to be able to request from Gatsby.
+          "article",
+          "user",
+        ],
+        queryLimit: 1000,
+      },
+    },
     `gatsby-transformer-sharp`,
+    "gatsby-transformer-remark",
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

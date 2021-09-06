@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 import { ArticleLinkWrapper, ArticleTagWrapper, TagBadge } from "./styles";
 
 export function ArticleLink({
@@ -11,16 +12,17 @@ export function ArticleLink({
 }) {
   return (
     <ArticleLinkWrapper bgColor={bgColor} textColor={textColor}>
-      <a href={link} alt={altText}>
+      <Link to={link} alt={altText}>
         <h5>{title}</h5>
-      </a>
-      <ArticleTagWrapper>
-        {tags.map(tag => (
-          <TagBadge bgColor={bgColor} key={Math.random()}>
-            {tag}
-          </TagBadge>
-        ))}
-      </ArticleTagWrapper>
+
+        <ArticleTagWrapper>
+          {tags.map(tag => (
+            <TagBadge bgColor={bgColor} key={Math.random()}>
+              {tag}
+            </TagBadge>
+          ))}
+        </ArticleTagWrapper>
+      </Link>
     </ArticleLinkWrapper>
   );
 }

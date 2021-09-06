@@ -106,6 +106,15 @@ export function Projects() {
       live: `https://collins-newbsanity.herokuapp.com/`,
       name: "newbsanity",
     },
+    {
+      title: `Neon Unicorn`,
+      description: `An advanced Shopify Shop with a custom Gatsby frontend.`,
+      tags: [`Gatsby`, `e-commerce`, `Jamstack`],
+      bgColor: `#6a006e`,
+      github: `https://github.com/GoloisaNinja/wifeyTestShop`,
+      live: `https://neonunicorntest.netlify.app/`,
+      name: "unicorn",
+    },
   ];
   return (
     <ProjectsWrapper id="projects">

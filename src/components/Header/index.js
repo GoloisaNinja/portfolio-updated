@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
+import smoothscroll from "smoothscroll-polyfill";
 import { Menu } from "../Menu";
 import { HeaderWrapper, HamburgerWrapper, MenuLine } from "./styles";
 
@@ -8,6 +9,7 @@ export function Header() {
   const [showMenu, setShowMenu] = useState(true);
   const [factNumber, setFactNumber] = useState(1);
   const [fact, setFact] = useState("");
+
   const data = useStaticQuery(graphql`
     {
       file(relativePath: { eq: "smallLogo.png" }) {
@@ -60,9 +62,7 @@ export function Header() {
     setFactNumber(Math.floor(Math.random() * (500 - 2)));
     setFact(arr[randomNumber]);
   };
-  const menuFromKeyboardStateChange = () => {
-    setShowMenu(true);
-  };
+
   const handleClick = () => {
     setShowMenu(!showMenu);
     const menuBtn = document.getElementById("menuBtn");
@@ -85,6 +85,43 @@ export function Header() {
       siteLogo.classList.remove("hide");
     }
   };
+
+  const shortDelay = () => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve();
+      }, 300);
+    });
+  };
+
+  const handleNav = async (target, cameFromArticle) => {
+    if (cameFromArticle) {
+      try {
+        await shortDelay();
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      setShowMenu(true);
+    }
+
+    smoothscroll.polyfill();
+    const navTo = document.getElementById(target);
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+    const facts = document.getElementById("facts");
+    const navs = document.getElementById("navs");
+    const siteLogo = document.getElementById("logo");
+    menuBtn.classList.remove("close");
+    menu.classList.remove("show");
+    facts.classList.remove("show");
+    navs.classList.remove("show");
+    siteLogo.classList.remove("hide");
+    const yOffset = -80;
+    const y = navTo?.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
   return (
     <>
       <HeaderWrapper>
@@ -106,11 +143,7 @@ export function Header() {
           </HamburgerWrapper>
         </div>
       </HeaderWrapper>
-      <Menu
-        factNumber={factNumber}
-        fact={fact}
-        stateChange={menuFromKeyboardStateChange}
-      ></Menu>
+      <Menu factNumber={factNumber} fact={fact} handleNav={handleNav}></Menu>
     </>
   );
 }

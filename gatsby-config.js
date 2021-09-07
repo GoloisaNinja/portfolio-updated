@@ -2,8 +2,8 @@ require("dotenv").config({ path: ".env" });
 
 module.exports = {
   siteMetadata: {
-    title: `Jon Collins Developer Site`,
-    description: `Jon Collins Developer Portfolio site featuring selected works, resume game, and blog.`,
+    title: `Jon Collins Developer Portfolio`,
+    description: `Jon Collins Developer Portfolio site featuring selected works, resume, and blog. This developer site features selected portfolio projects by Jon Collins and also contains sections for resume, dedicated blog links, and featured blog articles. If you are looking for a full-stack developer, please use the contact section to reach out to Jon Collins.`,
     author: `@goloisaninja`,
   },
   plugins: [

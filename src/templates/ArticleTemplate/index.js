@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import ReactMarkdown from "react-markdown";
 import { FaTwitter } from "react-icons/fa";
-import { Layout, GradientH2, Overlay } from "../../components";
+import { Layout, GradientH2, Overlay, Seo } from "../../components";
 import {
   ArticleWrapper,
   ArticleContentSection,
@@ -50,6 +50,14 @@ export const query = graphql`
 export default function ArticleTemplate({ data }) {
   return (
     <Layout>
+      <Seo
+        title={data.strapiArticle.title}
+        description={"Jon Collins Developer Selected Blog Articles"}
+        lang={"en"}
+        articleImage={
+          data.strapiArticle.image.localFile.childImageSharp.gatsbyImageData.src
+        }
+      />
       <ArticleWrapper>
         <ArticleContentSection>
           <GradientH2 font="'Monoton', cursive" color="#fff, #00de53">

@@ -13,8 +13,8 @@ export default function IndexPage() {
   return (
     <Layout>
       <Seo
-        title={"Jon Collins Developer Portfolio"}
-        description={"Jon Collins Dev Homepage"}
+        title={"Homepage"}
+        description={"Jon Collins Developer Portfolio Homepage"}
         lang={"en"}
       />
       <Hero />

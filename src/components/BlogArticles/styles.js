@@ -31,20 +31,30 @@ export const BlogInfoWrapper = styled.div`
   line-height: 1.3;
   padding: 20px 20px 0 20px;
   margin-bottom: 20px;
-  > a:first-child {
-    > div:first-child {
-      img {
+  > div:first-child {
+    display: flex;
+    flex-direction: column;
+    > aside {
+      margin-top: 15px;
+      text-align: left;
+      font-size: 14px;
+    }
+    > a:first-child {
+      > div:first-child {
+        border: 1px solid #fff;
         border-radius: 5px;
-      }
-      > picture {
         img {
           border-radius: 5px;
         }
+        > picture {
+          img {
+            border-radius: 5px;
+          }
+        }
       }
     }
-    border: 1px solid #fff;
-    border-radius: 5px;
     @media (min-width: 600px) {
+      max-width: 50%;
       margin-right: 20px;
     }
   }

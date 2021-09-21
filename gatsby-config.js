@@ -18,9 +18,10 @@ module.exports = {
         fonts: [
           "inter:200, 200i, 400, 400i, 700, 700i, 800, 800i, 900, 900i",
           "questrial: 400",
-          "alfa slab one: 400",
           "monoton: 400",
           "indie flower: 400",
+          "manrope: 400, 600, 800",
+          "roboto: 200, 400, 600, 800",
         ],
         display: "swap",
       },

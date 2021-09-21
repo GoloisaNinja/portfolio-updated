@@ -1,4 +1,28 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const wave = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(16deg);
+  }
+  7.5% {
+    transform: rotate(-8deg);
+  }
+  10% {
+    transform: rotate(16deg);
+  }
+  12.5% {
+    transform: rotate(-4deg);
+  }
+  15% {
+    transform: rotate(16deg);
+  }
+  20%, 100% {
+    transform: rotate(0deg);
+  }
+`;
 
 export const HeroWrapper = styled.header`
   width: 100%;
@@ -10,12 +34,26 @@ export const HeroTextSection = styled.section`
   padding: 10px;
   max-width: 95%;
   margin: 0 auto;
-  font-family: "Monoton", cursive;
   font-size: 1.25em;
   text-align: center;
-  > h1 {
+  > div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-bottom: 1px solid #fff;
-    padding-bottom: 25px;
+    margin-bottom: 20px;
+    //padding-bottom: 25px;
+    > span {
+      margin-left: 10px;
+      font-size: 3em;
+      animation: ${wave} 5s infinite;
+      transform-origin: 75% 75%;
+    }
+  }
+  > h1 {
+    font-weight: 800;
+    /* border-bottom: 1px solid #fff;
+    padding-bottom: 25px; */
   }
   img {
     border-radius: 5px;

@@ -119,7 +119,7 @@ export function Projects() {
   return (
     <ProjectsWrapper id="projects">
       <ProjectsTextWrapper>
-        <GradientH1 font="'Monoton', cursive" color="#fff, #00de53">
+        <GradientH1 font="'Monoton', cursive" color="#aaa, #00de53">
           My Projects
         </GradientH1>
         <ProjectsCardWrapper>

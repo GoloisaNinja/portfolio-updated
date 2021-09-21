@@ -50,16 +50,22 @@ export function BlogArticles() {
   return (
     <BlogWrapper id="blog">
       <BlogTextWrapper>
-        <GradientH1 font="'Monoton', cursive" color="#fff, #00de53">
+        <GradientH1 font="'Monoton', cursive" color="#aaa, #00de53">
           Blog and Articles
         </GradientH1>
         <BlogInfoWrapper>
-          <a href="https://jcodes.blog">
-            <GatsbyImage
-              image={data.file.childImageSharp.gatsbyImageData}
-              alt="resume game image"
-            />
-          </a>
+          <div>
+            <a href="https://jcodes.blog">
+              <GatsbyImage
+                image={data.file.childImageSharp.gatsbyImageData}
+                alt="resume game image"
+              />
+            </a>
+            <aside>
+              Click above to visit my full blog site. Or select a featured
+              article to read right here!
+            </aside>
+          </div>
           <div>
             {articles.map(article => (
               <ArticleLink

@@ -14,6 +14,7 @@ const inputStyle = css`
       font-size: 75%;
       transform: translate3d(0, -150%, 0);
       opacity: 1;
+      color: #aaa;
     }
   }
   &:valid {
@@ -21,6 +22,7 @@ const inputStyle = css`
       font-size: 75%;
       transform: translate3d(0, -150%, 0);
       opacity: 1;
+      color: #aaa;
     }
   }
 `;

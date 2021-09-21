@@ -31,19 +31,29 @@ export const ResumeInfoWrapper = styled.div`
   line-height: 1.3;
   padding: 20px;
   margin-bottom: 20px;
-  > a:first-child {
-    > div:first-child {
-      img {
+  > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > aside {
+      margin-top: 15px;
+      text-align: left;
+      font-size: 14px;
+    }
+    > a:first-child {
+      > div:first-child {
         border-radius: 5px;
-      }
-      > picture {
+        border: 1px solid #fff;
         img {
           border-radius: 5px;
         }
+        > picture {
+          img {
+            border-radius: 5px;
+          }
+        }
       }
     }
-    border-radius: 5px;
-    border: 1px solid #fff;
   }
   @media (min-width: 600px) {
     flex-direction: row;
@@ -60,7 +70,7 @@ export const ResumeInfoWrapper = styled.div`
       grid-template-columns: repeat(4, 50px);
     }
     @media (min-width: 600px) {
-      grid-template-columns: repeat(4, 40px);
+      grid-template-columns: repeat(4, 60px);
       margin-top: 0;
       margin-left: 25px;
     }
@@ -74,5 +84,15 @@ export const ResumeInfoWrapper = styled.div`
       margin-top: 0;
       margin-left: 25px;
     }
+  }
+`;
+export const IconWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  > aside {
+    margin-top: 5px;
+    font-size: 8px;
   }
 `;

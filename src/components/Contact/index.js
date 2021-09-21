@@ -82,7 +82,7 @@ export function Contact() {
   return (
     <ContactWrapper id="contact">
       <ContactTextSection>
-        <GradientH1 font="'Monoton', cursive" color="#fff, #00de53">
+        <GradientH1 font="'Monoton', cursive" color="#aaa, #aaa">
           Contact Me <FaEnvelope />
         </GradientH1>
         <ContactMainSection>

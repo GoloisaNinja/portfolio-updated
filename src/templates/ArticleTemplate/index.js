@@ -60,7 +60,7 @@ export default function ArticleTemplate({ data }) {
       />
       <ArticleWrapper>
         <ArticleContentSection>
-          <GradientH2 font="'Monoton', cursive" color="#fff, #00de53">
+          <GradientH2 font="'Monoton', cursive" color="#aaa, #aaa">
             {data.strapiArticle.title}
           </GradientH2>
           <ArticleByLineWrapper>

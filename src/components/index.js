@@ -1,4 +1,6 @@
 export * from "./Layout";
+export * from "./Button";
+export * from "./StyledLink";
 export * from "./Hero";
 export * from "./GradientText";
 export * from "./Header";

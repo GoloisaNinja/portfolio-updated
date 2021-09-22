@@ -1,9 +1,10 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, navigate } from "gatsby";
+//import { navigate } from "@reach/router";
 import { GatsbyImage } from "gatsby-plugin-image";
 import ReactMarkdown from "react-markdown";
 import { FaTwitter } from "react-icons/fa";
-import { Layout, GradientH2, Overlay, Seo } from "../../components";
+import { Layout, Button, GradientH2, Overlay, Seo } from "../../components";
 import {
   ArticleWrapper,
   ArticleContentSection,
@@ -59,6 +60,9 @@ export default function ArticleTemplate({ data }) {
         }
       />
       <ArticleWrapper>
+        <div>
+          <Button onClick={e => navigate(-1)}>BACK TO PORTFOLIO</Button>
+        </div>
         <ArticleContentSection>
           <GradientH2 font="'Monoton', cursive" color="#aaa, #aaa">
             {data.strapiArticle.title}

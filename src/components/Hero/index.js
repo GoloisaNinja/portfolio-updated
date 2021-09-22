@@ -24,8 +24,12 @@ export function Hero() {
     <HeroWrapper id="home">
       <HeroTextSection>
         <div>
-          <GradientH1 font="'Monoton', cursive" weight="800" color="#aaa, #aaa">
-            Hello
+          <GradientH1
+            font="'Monoton', cursive"
+            weight="800"
+            color="#aaa, #00de53"
+          >
+            Hello!
           </GradientH1>
           <span role="img" aria-label="wave emoji">
             👋🏻
@@ -39,9 +43,9 @@ export function Hero() {
           <div>
             <p>
               Welcome! My name is Jon and I'm a full stack (MERN) developer. I
-              love to solve problems and build cool things. I am a self-taught
-              developer and I believe that a desire to never stop learning is
-              one of my strongest assets. I have experience with the following:{" "}
+              love to solve problems and build cool things. I am self-taught and
+              I believe that a desire to never stop learning is one of my
+              strongest assets. I have experience with the following:{" "}
               <span>
                 JavaScript, React, NodeJS, VueJS, Gatsby, MongoDB, Firebase,
                 Express, HTML, CSS, SCSS, GraphQL, Strapi, Shopify, Git,

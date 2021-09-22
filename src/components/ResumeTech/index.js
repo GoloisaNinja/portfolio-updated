@@ -1,12 +1,14 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { GradientH1 } from "../GradientText";
+import { GradientH1 } from "../../components";
 import { Overlay } from "../MainOverlay";
+import resumePDF from "../../utils/collinsResume2021.pdf";
 import {
   ResumeWrapper,
   ResumeTextWrapper,
   ResumeInfoWrapper,
+  TechWrapper,
   IconWrapper,
 } from "./styles";
 
@@ -28,6 +30,7 @@ export function ResumeTech() {
           extension: { regex: "/(jpg)|(jpeg)|(png)/" }
           relativeDirectory: { eq: "techs" }
         }
+        sort: { fields: name }
       ) {
         edges {
           node {
@@ -44,8 +47,8 @@ export function ResumeTech() {
     }
   `);
   const iconCaptionArray = [
-    "CDN's",
-    "LINUX",
+    "APIS",
+    "CMDLINE",
     "CSS",
     "FIREBASE",
     "GASTBY",
@@ -60,6 +63,7 @@ export function ResumeTech() {
     "NODEJS",
     "NPM",
     "REACT",
+    "REDUX",
     "SASS",
     "SHOPIFY",
     "STRAPI",
@@ -81,20 +85,30 @@ export function ResumeTech() {
             </a>
             <aside>
               I developed this choose your own adventure text based resume game
-              as fun alternative to a traditional resume. Check it out!
+              as fun alternative to a traditional resume. Check it out! You can
+              also download a PDF of my resume by clicking below.
             </aside>
+            <a href={resumePDF} download="collins_devresume.pdf">
+              DOWNLOAD PDF RESUME
+            </a>
           </div>
-          <div>
-            {data.allFile.edges.map(({ node }, index) => (
-              <IconWrapper key={Math.random()}>
-                <GatsbyImage
-                  image={node.childImageSharp.gatsbyImageData}
-                  alt="tech logo"
-                />
-                <aside>{iconCaptionArray[index]}</aside>
-              </IconWrapper>
-            ))}
-          </div>
+          <TechWrapper>
+            <div>
+              {data.allFile.edges.map(({ node }, index) => (
+                <IconWrapper key={Math.random()}>
+                  <GatsbyImage
+                    image={node.childImageSharp.gatsbyImageData}
+                    alt="tech logo"
+                  />
+                  <aside>{iconCaptionArray[index]}</aside>
+                </IconWrapper>
+              ))}
+            </div>
+            <aside>
+              I've used the all these various technologies to build applications
+              and projects. I'm currently studying Java, NextJS, and Wordpress.
+            </aside>
+          </TechWrapper>
         </ResumeInfoWrapper>
         <Overlay></Overlay>
       </ResumeTextWrapper>

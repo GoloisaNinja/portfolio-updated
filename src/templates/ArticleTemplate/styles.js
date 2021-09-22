@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 export const ArticleWrapper = styled.header`
   width: 100%;
-  margin-top: 150px;
+  margin-top: 120px;
+  > div:first-child {
+    max-width: 95%;
+    margin: 0 auto;
+  }
 `;
 export const ArticleContentSection = styled.section`
   position: relative;

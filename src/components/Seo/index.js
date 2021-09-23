@@ -12,7 +12,7 @@ export function Seo({ description, lang, meta = [], title, articleImage }) {
           title
         }
       }
-      file(relativePath: { eq: "portfolio.png" }) {
+      file(relativePath: { eq: "darkPortfolio.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp

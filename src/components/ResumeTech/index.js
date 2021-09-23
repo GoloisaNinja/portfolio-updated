@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { GradientH1 } from "../../components";
 import { Overlay } from "../MainOverlay";
-import resumePDF from "../../utils/collinsResume2021.pdf";
+import resumePDF from "../../utils/collins_dev_resume.pdf";
 import {
   ResumeWrapper,
   ResumeTextWrapper,

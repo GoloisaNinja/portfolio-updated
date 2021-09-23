@@ -44,15 +44,16 @@ export function Hero() {
             <p>
               Welcome! My name is Jon and I'm a full stack (MERN) developer. I
               love to solve problems and build cool things. I am self-taught and
-              I believe that a desire to never stop learning is one of my
-              strongest assets. I have experience with the following:{" "}
+              I believe both, my desire to code daily, and my constant pursuit
+              of new things to learn, are among my strongest assets. I have
+              experience with the following technologies:{" "}
               <span>
                 JavaScript, React, NodeJS, VueJS, Gatsby, MongoDB, Firebase,
                 Express, HTML, CSS, SCSS, GraphQL, Strapi, Shopify, Git,
                 Webpack, and Jest
               </span>
-              . I am PS1 Scrum certified and am working to finish my PSD
-              certification.
+              . I am also a Professional Scrum Master with my PSM1 certification
+              and am working to finish my PSD certification as well.
             </p>
           </div>
         </HeroInfoWrapper>

@@ -43,6 +43,10 @@ export const BlogInfoWrapper = styled.div`
       > div:first-child {
         border: 1px solid #fff;
         border-radius: 5px;
+        transition: transform 0.3s ease;
+        &:hover {
+          transform: scale(1.05);
+        }
         img {
           border-radius: 5px;
         }

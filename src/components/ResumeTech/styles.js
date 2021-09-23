@@ -62,6 +62,10 @@ export const ResumeInfoWrapper = styled.div`
       > div:first-child {
         border-radius: 5px;
         border: 1px solid #fff;
+        transition: transform 0.3s ease;
+        &:hover {
+          transform: scale(1.05);
+        }
         img {
           border-radius: 5px;
         }

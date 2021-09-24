@@ -51,7 +51,7 @@ export function ResumeTech() {
     "CMDLINE",
     "CSS",
     "FIREBASE",
-    "GASTBY",
+    "GATSBY",
     "GIT",
     "GITHUB",
     "GRAPHQL",

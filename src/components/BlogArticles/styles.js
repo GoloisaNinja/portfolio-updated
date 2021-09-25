@@ -16,6 +16,7 @@ export const BlogTextWrapper = styled.div`
   > div:first-child {
     border-bottom: 1px solid #00de53;
     text-align: left;
+    padding-left: 10px;
   }
   @media (max-width: 320px) {
     font-size: 1.05em;

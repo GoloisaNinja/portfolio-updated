@@ -12,6 +12,8 @@ export const ResumeTextWrapper = styled.div`
   margin: 0 auto;
   font-size: 1.25em;
   > div:first-child {
+    padding-left: 10px;
+    text-align: left;
     border-bottom: 1px solid #00de53;
   }
 `;

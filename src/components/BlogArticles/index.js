@@ -82,7 +82,8 @@ export function BlogArticles() {
             ))}
           </div>
         </BlogInfoWrapper>
-        <Overlay opacity=".2" bgColor="#36868f"></Overlay>
+        {/* #36868f */}
+        <Overlay opacity=".2" bgColor="#0e6699"></Overlay>
       </BlogTextWrapper>
     </BlogWrapper>
   );

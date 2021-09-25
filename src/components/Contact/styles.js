@@ -43,6 +43,7 @@ export const ContactTextSection = styled.section`
   > div:first-child {
     text-align: left;
     border-bottom: 1px solid #00de53;
+    padding-left: 10px;
     > h2 {
       > svg {
         margin-left: 5px;

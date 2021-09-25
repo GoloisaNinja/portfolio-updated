@@ -16,6 +16,7 @@ export const ProjectsTextWrapper = styled.div`
   > div:first-child {
     text-align: left;
     border-bottom: 1px solid #00de53;
+    padding-left: 10px;
   }
   > h1 {
     border-bottom: 1px solid #fff;

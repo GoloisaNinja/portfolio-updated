@@ -1,7 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { GradientH1 } from "../GradientText";
+import { GradientH2 } from "../GradientText";
 import { Overlay } from "../MainOverlay";
 import { ArticleLink } from "../ArticleLink";
 import { BlogWrapper, BlogTextWrapper, BlogInfoWrapper } from "./styles";
@@ -13,7 +13,7 @@ export function BlogArticles() {
         childImageSharp {
           gatsbyImageData(
             placeholder: BLURRED
-            width: 400
+            width: 600
             quality: 100
             formats: [AUTO, WEBP]
           )
@@ -50,9 +50,11 @@ export function BlogArticles() {
   return (
     <BlogWrapper id="blog">
       <BlogTextWrapper>
-        <GradientH1 font="'Monoton', cursive" color="#aaa, #00de53">
-          Blog and Articles
-        </GradientH1>
+        <div>
+          <GradientH2 font="'Fredoka One', cursive" color="#aaa, #00de53">
+            BLOG AND ARTICLES
+          </GradientH2>
+        </div>
         <BlogInfoWrapper>
           <div>
             <a href="https://jcodes.blog">
@@ -80,7 +82,7 @@ export function BlogArticles() {
             ))}
           </div>
         </BlogInfoWrapper>
-        <Overlay></Overlay>
+        <Overlay opacity=".15"></Overlay>
       </BlogTextWrapper>
     </BlogWrapper>
   );

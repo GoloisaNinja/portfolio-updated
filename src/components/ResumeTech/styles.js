@@ -2,23 +2,17 @@ import styled from "styled-components";
 
 export const ResumeWrapper = styled.section`
   width: 100%;
-  margin-top: 50px;
+  margin-top: 15px;
 `;
 export const ResumeTextWrapper = styled.div`
   position: relative;
   z-index: 1;
   padding: 10px;
-  max-width: 95%;
+  //max-width: 95%;
   margin: 0 auto;
-  font-family: "Monoton", cursive;
   font-size: 1.25em;
-  text-align: center;
-  > h1 {
-    padding-bottom: 25px;
-    border-bottom: 1px solid #fff;
-  }
-  @media (max-width: 320px) {
-    font-size: 1.05em;
+  > div:first-child {
+    border-bottom: 1px solid #00de53;
   }
 `;
 export const ResumeInfoWrapper = styled.div`
@@ -29,12 +23,13 @@ export const ResumeInfoWrapper = styled.div`
   font-family: "Questrial", sans-serif;
   letter-spacing: 2px;
   line-height: 1.3;
-  padding: 20px;
+  padding: 10px;
+  margin-top: 20px;
   margin-bottom: 20px;
   > div:first-child {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     > a:last-child {
       display: inline-block;
       width: 100%;
@@ -43,9 +38,10 @@ export const ResumeInfoWrapper = styled.div`
       font-size: 14px;
       color: #fff;
       background-color: #6e00a1;
-      padding: 8px 10px;
+      padding: 12px 10px;
       border: 1px solid #6e00a1;
       transition: all 0.4s ease-in-out;
+      text-align: center;
       &:hover {
         background: none;
         color: #00de53;
@@ -81,32 +77,6 @@ export const ResumeInfoWrapper = styled.div`
     flex-direction: row;
     align-items: flex-start;
   }
-  /* > div:last-child {
-    display: grid;
-    grid-template-columns: repeat(4, 60px);
-    grid-gap: 20px;
-    margin-top: 45px;
-    justify-content: center;
-    align-items: center;
-    @media (max-width: 320px) {
-      grid-template-columns: repeat(4, 50px);
-    }
-    @media (min-width: 600px) {
-      grid-template-columns: repeat(4, 60px);
-      margin-top: 0;
-      margin-left: 25px;
-    }
-    @media (min-width: 700px) {
-      grid-template-columns: repeat(5, 50px);
-      margin-top: 0;
-      margin-left: 25px;
-    }
-    @media (min-width: 800px) {
-      grid-template-columns: repeat(6, 50px);
-      margin-top: 0;
-      margin-left: 25px;
-    }
-  } */
 `;
 export const IconWrapper = styled.div`
   display: flex;
@@ -138,12 +108,16 @@ export const TechWrapper = styled.div`
   > div:first-child {
     display: grid;
     grid-template-columns: repeat(4, 60px);
-    grid-gap: 20px;
+    grid-gap: 25px;
     margin-top: 45px;
     justify-content: center;
     align-items: center;
     @media (max-width: 320px) {
       grid-template-columns: repeat(4, 50px);
+    }
+    @media (min-width: 500px) {
+      grid-template-columns: repeat(5, 60px);
+      grid-gap: 30px;
     }
     @media (min-width: 600px) {
       grid-template-columns: repeat(4, 60px);
@@ -157,6 +131,11 @@ export const TechWrapper = styled.div`
     }
     @media (min-width: 800px) {
       grid-template-columns: repeat(6, 50px);
+      margin-top: 0;
+      margin-left: 25px;
+    }
+    @media (min-width: 900px) {
+      grid-template-columns: repeat(6, 60px);
       margin-top: 0;
       margin-left: 25px;
     }

@@ -64,8 +64,8 @@ export default function ArticleTemplate({ data }) {
           <Button onClick={e => navigate(-1)}>BACK TO PORTFOLIO</Button>
         </div>
         <ArticleContentSection>
-          <GradientH2 font="'Monoton', cursive" color="#aaa, #aaa">
-            {data.strapiArticle.title}
+          <GradientH2 font="'Fredoka One', cursive" color="#aaa, #00de53">
+            {data.strapiArticle.title.toUpperCase()}
           </GradientH2>
           <ArticleByLineWrapper>
             <p>By {data.strapiArticle.author.username}</p>
@@ -92,7 +92,7 @@ export default function ArticleTemplate({ data }) {
           <ArticleStrapiContentWrapper>
             <ReactMarkdown children={data.strapiArticle.content} />
           </ArticleStrapiContentWrapper>
-          <Overlay></Overlay>
+          <Overlay opacity=".15"></Overlay>
         </ArticleContentSection>
       </ArticleWrapper>
     </Layout>

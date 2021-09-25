@@ -8,11 +8,15 @@ export const ProjectsTextWrapper = styled.div`
   position: relative;
   z-index: 1;
   padding: 10px;
-  max-width: 95%;
+  //max-width: 95%;
   margin: 0 auto;
   font-family: "Monoton", cursive;
   font-size: 1.25em;
   text-align: center;
+  > div:first-child {
+    text-align: left;
+    border-bottom: 1px solid #00de53;
+  }
   > h1 {
     border-bottom: 1px solid #fff;
     padding-bottom: 25px;
@@ -26,8 +30,9 @@ export const ProjectsCardWrapper = styled.div`
   justify-content: center;
   align-items: stretch;
   grid-gap: 25px;
-  padding: 20px 15px 0 15px;
+  padding: 10px;
   margin-bottom: 20px;
+  margin-top: 20px;
   @media (min-width: 700px) {
     grid-template-columns: repeat(2, 300px);
   }
@@ -35,6 +40,6 @@ export const ProjectsCardWrapper = styled.div`
     grid-template-columns: repeat(2, 350px);
   }
   @media (min-width: 900px) {
-    grid-template-columns: repeat(2, 400px);
+    grid-template-columns: repeat(3, 300px);
   }
 `;

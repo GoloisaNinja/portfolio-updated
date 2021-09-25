@@ -4,7 +4,7 @@ export const ArticleWrapper = styled.header`
   width: 100%;
   margin-top: 120px;
   > div:first-child {
-    max-width: 95%;
+    //max-width: 95%;
     margin: 0 auto;
   }
 `;
@@ -12,7 +12,7 @@ export const ArticleContentSection = styled.section`
   position: relative;
   z-index: 1;
   padding: 25px;
-  max-width: 95%;
+  //max-width: 95%;
   margin: 0 auto;
   font-family: "Monoton", cursive;
   font-size: 1.25em;
@@ -28,12 +28,13 @@ export const ArticleByLineWrapper = styled.div`
   font-family: "Questrial", sans-serif;
   font-size: 14px;
   padding-right: 15px;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #00de53;
   padding-bottom: 25px;
   margin-bottom: 25px;
   > div:nth-child(2) {
     margin-left: 8px;
     max-width: 40px;
+    border-radius: 50%;
     > picture {
       > img {
         border-radius: 50%;

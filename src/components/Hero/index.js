@@ -1,7 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { GradientH1 } from "../GradientText";
+import { GradientH2 } from "../GradientText";
 import { Overlay } from "../MainOverlay";
 import { HeroWrapper, HeroTextSection, HeroInfoWrapper } from "./styles";
 
@@ -12,7 +12,7 @@ export function Hero() {
         childImageSharp {
           gatsbyImageData(
             placeholder: BLURRED
-            width: 300
+            width: 350
             quality: 100
             formats: [AUTO, WEBP]
           )
@@ -24,13 +24,13 @@ export function Hero() {
     <HeroWrapper id="home">
       <HeroTextSection>
         <div>
-          <GradientH1
-            font="'Monoton', cursive"
-            weight="800"
+          <GradientH2
+            font="'Fredoka One', cursive"
+            weight="900"
             color="#aaa, #00de53"
           >
-            Hello!
-          </GradientH1>
+            HELLO!
+          </GradientH2>
           <span role="img" aria-label="wave emoji">
             👋🏻
           </span>
@@ -42,10 +42,10 @@ export function Hero() {
           />
           <div>
             <p>
-              Welcome! My name is Jon and I'm a full stack (MERN) developer. I
-              love to solve problems and build cool things. I am self-taught and
-              I believe both, my desire to code daily, and my constant pursuit
-              of new things to learn, are among my strongest assets. I have
+              Welcome! I'm Jon, and I'm a full stack (MERN) developer. I love to
+              solve problems and build cool things. I am self-taught and I
+              believe both, my desire to code daily, and my constant pursuit of
+              new things to learn, are among my strongest assets. I have
               experience with the following technologies:{" "}
               <span>
                 JavaScript, React, NodeJS, VueJS, Gatsby, MongoDB, Firebase,
@@ -57,7 +57,7 @@ export function Hero() {
             </p>
           </div>
         </HeroInfoWrapper>
-        <Overlay></Overlay>
+        <Overlay opacity="0"></Overlay>
       </HeroTextSection>
     </HeroWrapper>
   );

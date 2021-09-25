@@ -26,22 +26,23 @@ const wave = keyframes`
 
 export const HeroWrapper = styled.header`
   width: 100%;
-  margin-top: 150px;
+  margin-top: 100px;
 `;
 export const HeroTextSection = styled.section`
   position: relative;
   z-index: 1;
   padding: 10px;
-  max-width: 95%;
+  //max-width: 95%;
   margin: 0 auto;
   font-size: 1.25em;
   text-align: center;
   > div:first-child {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    border-bottom: 1px solid #fff;
-    margin-bottom: 20px;
+    padding-left: 10px;
+    border-bottom: 1px solid #00de53;
+    /* margin-bottom: 20px; */
     //padding-bottom: 25px;
     > span {
       margin-left: 10px;
@@ -49,11 +50,6 @@ export const HeroTextSection = styled.section`
       animation: ${wave} 5s infinite;
       transform-origin: 75% 75%;
     }
-  }
-  > h1 {
-    font-weight: 800;
-    /* border-bottom: 1px solid #fff;
-    padding-bottom: 25px; */
   }
   img {
     border-radius: 5px;
@@ -70,7 +66,8 @@ export const HeroInfoWrapper = styled.div`
   align-items: center;
   font-family: "Questrial", sans-serif;
   letter-spacing: 1px;
-  padding: 20px;
+  padding: 10px;
+  margin-top: 20px;
   margin-bottom: 20px;
   @media (min-width: 600px) {
     flex-direction: row;
@@ -87,7 +84,7 @@ export const HeroInfoWrapper = styled.div`
     @media (min-width: 600px) {
       margin-top: 0;
       margin-left: 25px;
-      max-width: 50%;
+      max-width: 60%;
     }
   }
 `;

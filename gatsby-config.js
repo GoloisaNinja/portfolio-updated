@@ -22,6 +22,8 @@ module.exports = {
           "indie flower: 400",
           "manrope: 400, 600, 800",
           "roboto: 200, 400, 600, 800",
+          "Red Hat Display: 300, 400, 600, 800, 900",
+          "Fredoka One: 400",
         ],
         display: "swap",
       },

@@ -24,6 +24,7 @@ export const ProjectCardWrapper = styled.div`
   border: 1px solid #fff;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   > div:first-child {
     overflow: hidden;
     > div:first-child {

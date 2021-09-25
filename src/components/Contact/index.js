@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { GradientH1 } from "../GradientText";
+import { GradientH2 } from "../GradientText";
 import { Modal } from "../Modal";
 import { Overlay } from "../MainOverlay";
 import { FaTwitter, FaLinkedinIn, FaGithub, FaEnvelope } from "react-icons/fa";
@@ -82,9 +82,11 @@ export function Contact() {
   return (
     <ContactWrapper id="contact">
       <ContactTextSection>
-        <GradientH1 font="'Monoton', cursive" color="#aaa, #00de53">
-          Contact Me <FaEnvelope />
-        </GradientH1>
+        <div>
+          <GradientH2 font="'Fredoka One', cursive" color="#aaa, #00de53">
+            CONTACT ME <FaEnvelope />
+          </GradientH2>
+        </div>
         <ContactMainSection>
           <div>
             <h3>Find me on social</h3>
@@ -165,7 +167,7 @@ export function Contact() {
             </ContactForm>
           </ContactFormWrapper>
         </ContactMainSection>
-        <Overlay></Overlay>
+        <Overlay opacity=".15"></Overlay>
       </ContactTextSection>
       <Modal show={show} handleDismiss={handleDismiss} content={content} />
     </ContactWrapper>

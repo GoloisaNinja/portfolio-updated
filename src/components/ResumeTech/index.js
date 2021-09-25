@@ -1,7 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { GradientH1 } from "../../components";
+import { GradientH2 } from "../../components";
 import { Overlay } from "../MainOverlay";
 import resumePDF from "../../utils/collins_dev_resume.pdf";
 import {
@@ -19,7 +19,7 @@ export function ResumeTech() {
         childImageSharp {
           gatsbyImageData(
             placeholder: BLURRED
-            width: 400
+            width: 600
             quality: 100
             formats: [AUTO, WEBP]
           )
@@ -72,9 +72,11 @@ export function ResumeTech() {
   return (
     <ResumeWrapper id="resume">
       <ResumeTextWrapper>
-        <GradientH1 font="'Monoton', cursive" color="#aaa, #00de53">
-          Resume and Techs
-        </GradientH1>
+        <div>
+          <GradientH2 font="'Fredoka One', cursive" color="#aaa, #00de53">
+            RESUME AND TECH
+          </GradientH2>
+        </div>
         <ResumeInfoWrapper>
           <div>
             <a href="https://jcodes.me">
@@ -110,7 +112,7 @@ export function ResumeTech() {
             </aside>
           </TechWrapper>
         </ResumeInfoWrapper>
-        <Overlay></Overlay>
+        <Overlay opacity="0"></Overlay>
       </ResumeTextWrapper>
     </ResumeWrapper>
   );

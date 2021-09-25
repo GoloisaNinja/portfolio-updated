@@ -1,6 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { GradientH1 } from "../GradientText";
+import { GradientH2 } from "../GradientText";
 import { Overlay } from "../MainOverlay";
 import { ProjectCard } from "../ProjectCard";
 import {
@@ -119,9 +119,11 @@ export function Projects() {
   return (
     <ProjectsWrapper id="projects">
       <ProjectsTextWrapper>
-        <GradientH1 font="'Monoton', cursive" color="#aaa, #00de53">
-          My Projects
-        </GradientH1>
+        <div>
+          <GradientH2 font="'Fredoka One', cursive" color="#aaa, #00de53">
+            MY PROJECTS
+          </GradientH2>
+        </div>
         <ProjectsCardWrapper>
           {data.allFile.edges.map(({ node }) => {
             let index = projects.findIndex(
@@ -141,7 +143,7 @@ export function Projects() {
             );
           })}
         </ProjectsCardWrapper>
-        <Overlay></Overlay>
+        <Overlay opacity="0"></Overlay>
       </ProjectsTextWrapper>
     </ProjectsWrapper>
   );

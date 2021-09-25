@@ -6,4 +6,5 @@ export const LayoutWrapper = styled.div`
   justify-content: center;
   max-width: 1000px;
   margin: 0 auto;
+  overflow-x: hidden;
 `;

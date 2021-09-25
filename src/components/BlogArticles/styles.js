@@ -8,14 +8,14 @@ export const BlogTextWrapper = styled.div`
   position: relative;
   z-index: 1;
   padding: 10px;
-  max-width: 95%;
+  //max-width: 95%;
   margin: 0 auto;
   font-family: "Monoton", cursive;
   font-size: 1.25em;
   text-align: center;
-  > h1 {
-    border-bottom: 1px solid #fff;
-    padding-bottom: 25px;
+  > div:first-child {
+    border-bottom: 1px solid #00de53;
+    text-align: left;
   }
   @media (max-width: 320px) {
     font-size: 1.05em;
@@ -29,8 +29,9 @@ export const BlogInfoWrapper = styled.div`
   font-family: "Questrial", sans-serif;
   letter-spacing: 2px;
   line-height: 1.3;
-  padding: 20px 20px 0 20px;
+  padding: 10px;
   margin-bottom: 20px;
+  margin-top: 20px;
   > div:first-child {
     display: flex;
     flex-direction: column;
@@ -72,8 +73,10 @@ export const BlogInfoWrapper = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 35px;
+    width: 100%;
     @media (min-width: 600px) {
       margin-top: 0;
+      width: 85%;
     }
   }
 `;

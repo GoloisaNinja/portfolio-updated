@@ -35,19 +35,22 @@ export const ContactTextSection = styled.section`
   position: relative;
   z-index: 1;
   padding: 10px;
-  max-width: 95%;
+  //max-width: 95%;
   margin: 0 auto;
   font-family: "Monoton", cursive;
   font-size: 1.25em;
   text-align: center;
-  > h1 {
-    border-bottom: 1px solid #fff;
-    padding-bottom: 25px;
-    > svg {
-      margin-left: 5px;
-      vertical-align: middle;
+  > div:first-child {
+    text-align: left;
+    border-bottom: 1px solid #00de53;
+    > h2 {
+      > svg {
+        margin-left: 5px;
+        vertical-align: middle;
+      }
     }
   }
+
   @media (max-width: 320px) {
     font-size: 1.05em;
   }

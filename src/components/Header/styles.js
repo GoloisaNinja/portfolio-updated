@@ -31,7 +31,7 @@ export const HeaderWrapper = styled.header`
 `;
 export const HamburgerWrapper = styled.div`
   position: absolute;
-  right: 35px;
+  right: 20px;
   top: 50px;
   cursor: pointer;
   animation: ${fadeDownBounce} 1s ease-in 0.5s backwards;
@@ -56,7 +56,6 @@ export const MenuLine = styled.div`
   width: 30px;
   height: 3px;
   margin: 0 0 5px 0;
-  background: #fff;
+  background: #ccc;
   transition: all 0.5s ease-out;
-  box-shadow: 0.5px 0.5px 1px #fff;
 `;

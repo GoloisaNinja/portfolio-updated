@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const MainOverlay = css`
   background: #030303;
-  opacity: 0.75;
+  opacity: ${props => props.opacity};
   border-radius: 5px;
   top: 0;
   left: 0;

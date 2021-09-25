@@ -4,7 +4,7 @@ export const LayoutWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 1000px;
+  max-width: 1024px;
   margin: 0 auto;
   overflow-x: hidden;
 `;

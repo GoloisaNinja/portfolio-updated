@@ -11,7 +11,7 @@ export const FooterWrapper = styled.footer`
   color: #fff;
   font-family: "Questrial", sans-serif;
   height: 70px;
-  margin-top: 25px;
+  //margin-top: 25px;
   > p:nth-child(2) {
     font-size: 14px;
   }

@@ -6,6 +6,7 @@ export const ArticleWrapper = styled.header`
   > div:first-child {
     //max-width: 95%;
     margin: 0 auto;
+    margin-left: 10px;
   }
 `;
 export const ArticleContentSection = styled.section`

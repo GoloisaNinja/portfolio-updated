@@ -167,7 +167,7 @@ export function Contact() {
             </ContactForm>
           </ContactFormWrapper>
         </ContactMainSection>
-        <Overlay opacity=".15"></Overlay>
+        <Overlay opacity=".2" bgColor="#030303"></Overlay>
       </ContactTextSection>
       <Modal show={show} handleDismiss={handleDismiss} content={content} />
     </ContactWrapper>

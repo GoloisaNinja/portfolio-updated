@@ -1,4 +1,18 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+function articleAnimation() {
+  let styles = "";
+  for (let i = 1; i < 4; i++) {
+    let interval = 0.8;
+    interval *= i;
+    styles += `&.fade:nth-child(${i}) {
+      transition-delay: ${interval}s;
+    }`;
+  }
+  return css`
+    ${styles}
+  `;
+}
 
 export const BlogWrapper = styled.section`
   width: 100%;
@@ -75,6 +89,14 @@ export const BlogInfoWrapper = styled.div`
     align-items: center;
     margin-top: 35px;
     width: 100%;
+    > button {
+      opacity: 0;
+      transition: opacity 0.5s ease-out;
+      ${articleAnimation};
+      &.fade {
+        opacity: 1;
+      }
+    }
     @media (min-width: 600px) {
       margin-top: 0;
       width: 85%;

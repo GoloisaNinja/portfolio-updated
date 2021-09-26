@@ -68,7 +68,7 @@ export function BlogArticles() {
               article to read right here!
             </aside>
           </div>
-          <div>
+          <div id="blogScrollTarget">
             {articles.map(article => (
               <ArticleLink
                 key={Math.random()}

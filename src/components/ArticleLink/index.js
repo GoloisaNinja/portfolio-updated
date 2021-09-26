@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import { navigate } from "gatsby";
 import { ArticleLinkWrapper, ArticleTagWrapper, TagBadge } from "./styles";
 
 export function ArticleLink({
@@ -11,18 +11,20 @@ export function ArticleLink({
   altText,
 }) {
   return (
-    <ArticleLinkWrapper bgColor={bgColor} textColor={textColor}>
-      <Link to={link} alt={altText}>
-        <h5>{title}</h5>
-
-        <ArticleTagWrapper>
-          {tags.map(tag => (
-            <TagBadge bgColor={bgColor} key={Math.random()}>
-              {tag}
-            </TagBadge>
-          ))}
-        </ArticleTagWrapper>
-      </Link>
+    <ArticleLinkWrapper
+      bgColor={bgColor}
+      textColor={textColor}
+      id="fade-articles"
+      onClick={e => navigate(link)}
+    >
+      <h5>{title}</h5>
+      <ArticleTagWrapper>
+        {tags.map(tag => (
+          <TagBadge bgColor={bgColor} key={Math.random()}>
+            {tag}
+          </TagBadge>
+        ))}
+      </ArticleTagWrapper>
     </ArticleLinkWrapper>
   );
 }

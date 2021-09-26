@@ -18,7 +18,9 @@ const bounce = keyframes`
   }
 `;
 
-export const ArticleLinkWrapper = styled.section`
+export const ArticleLinkWrapper = styled.button`
+  border: none;
+  background: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,23 +30,25 @@ export const ArticleLinkWrapper = styled.section`
   margin-bottom: 25px;
   width: 100%;
   min-height: 180px;
+  font-family: "Questrial", sans-serif;
+  font-size: 1.2em;
+  cursor: pointer;
+  > h5 {
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    padding: 0 20px 20px 20px;
+    margin-top: 0;
+  }
   &:hover {
     animation: ${bounce} 1.5s ease;
-  }
-  > a {
-    text-decoration: none;
-    color: #fff;
-    > h5 {
-      border-bottom: 1px solid #fff;
-      padding: 0 20px 20px 20px;
-      margin-top: 0;
-    }
   }
 `;
 export const ArticleTagWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   > div:not(:last-child) {
     margin-right: 10px;
   }

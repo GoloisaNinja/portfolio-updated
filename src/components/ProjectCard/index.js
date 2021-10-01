@@ -38,7 +38,7 @@ export function ProjectCard({
   const handleVisibilityChange = () => {
     if (document.hidden) {
       if (btnClicked !== null) {
-        document.getElementById(btnClicked).classList.remove("loading");
+        document?.getElementById(btnClicked).classList.remove("loading");
       }
     }
   };

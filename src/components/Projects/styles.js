@@ -28,19 +28,16 @@ export const ProjectsTextWrapper = styled.div`
 `;
 export const ProjectsCardWrapper = styled.div`
   display: grid;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: stretch;
   grid-gap: 25px;
-  padding: 10px;
+  //padding: 10px;
   margin-bottom: 20px;
   margin-top: 20px;
   @media (min-width: 700px) {
-    grid-template-columns: repeat(2, 300px);
+    grid-template-columns: 1fr 1fr;
   }
-  @media (min-width: 800px) {
-    grid-template-columns: repeat(2, 350px);
-  }
-  @media (min-width: 900px) {
-    grid-template-columns: repeat(3, 300px);
-  }
+  /* @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  } */
 `;

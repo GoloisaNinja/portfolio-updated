@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { navigate } from "@reach/router";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { GradientH4 } from "..";
@@ -31,9 +31,14 @@ export function ProjectCard({
   github,
   live,
 }) {
-  const handleVisiblityChange = btnToTarget => {
-    btnToTarget.classList.remove("loading");
+  const btnRef = useRef({});
+  const handleVisibilityChange = () => {
+    if (document.hidden && !!btnRef.current) {
+      btnRef.current.classList?.remove("loading");
+    }
   };
+
+  document.addEventListener("visibilitychange", handleVisibilityChange, false);
   const followLink = (e, link) => {
     let targetToApplyClassTo;
     if (e.target.parentElement.nodeName === "DIV") {
@@ -41,18 +46,9 @@ export function ProjectCard({
     } else if (e.target.parentElement.nodeName === "BUTTON") {
       targetToApplyClassTo = e.target.parentElement;
     }
-    document.addEventListener(
-      "visibilitychange",
-      handleVisiblityChange(targetToApplyClassTo),
-      false
-    );
+    btnRef.current = targetToApplyClassTo;
     targetToApplyClassTo.classList.add("loading");
-    const checkIfNavigationComplete = async () => {
-      await new Promise(() => {
-        navigate(link);
-      });
-    };
-    checkIfNavigationComplete();
+    navigate(link);
   };
   return (
     <WorkProjectWrapper>

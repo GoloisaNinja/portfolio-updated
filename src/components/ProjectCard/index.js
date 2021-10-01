@@ -1,5 +1,5 @@
 import React from "react";
-import { navigate } from "@reach/router";
+import { navigate, useLocation } from "@reach/router";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { GradientH4 } from "..";
 import { FaGithub, FaLink } from "react-icons/fa";
@@ -31,6 +31,7 @@ export function ProjectCard({
   github,
   live,
 }) {
+  const { href } = useLocation();
   const followLink = (e, link) => {
     let targetToApplyClassTo;
     if (e.target.parentElement.nodeName === "DIV") {
@@ -39,7 +40,22 @@ export function ProjectCard({
       targetToApplyClassTo = e.target.parentElement;
     }
     targetToApplyClassTo.classList.add("loading");
-    navigate(link);
+    const checkIfNavigationComplete = async () => {
+      const navigated = await new Promise(resolve => {
+        navigate(link);
+        if (href === link) {
+          resolve(true);
+        }
+      });
+      if (navigated) {
+        targetToApplyClassTo.classList.remove("loading");
+      } else {
+        setTimeout(() => {
+          targetToApplyClassTo.classList.remove("loading");
+        }, 20000);
+      }
+    };
+    checkIfNavigationComplete();
   };
   return (
     <WorkProjectWrapper>

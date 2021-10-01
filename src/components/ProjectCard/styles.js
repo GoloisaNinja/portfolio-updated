@@ -44,7 +44,7 @@ export const Title = styled.h3`
 `;
 export const Description = styled.p`
   color: #aaa;
-  font-size: 12px;
+  font-size: 13px;
   text-align: left;
   font-weight: 400;
   margin-bottom: 20px;
@@ -73,11 +73,22 @@ export const LinkButton = styled.button`
   background: none;
   border: none;
   background-color: #6e00a1;
-  padding: 8px 12px;
+  //padding: 8px 10px;
+  height: 44px;
   color: #ccc;
   border: 1px solid #6e00a1;
+  font-family: "Questrial", sans-serif;
+  font-size: 14px;
   transition: all 0.9s ease-in-out;
   cursor: pointer;
+  > span {
+    > svg {
+      vertical-align: bottom;
+      margin-right: 5px;
+      font-size: 18px;
+    }
+  }
+
   &:hover {
     border: 1px solid #00de53;
     background: none;

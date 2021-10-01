@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { navigate } from "@reach/router";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { GradientH4 } from "..";
@@ -35,6 +35,16 @@ export function ProjectCard({
   const [btnIdOne, setBtnIdOne] = useState(nanoid(6));
   const [btnIdTwo, setBtnIdTwo] = useState(nanoid(6));
   const [btnClicked, setBtnClicked] = useState(null);
+
+  const handleVisibilityChange = useCallback(() => {
+    if (document.hidden) {
+      if (btnClicked !== null) {
+        const clickedBtn = document.getElementById(btnClicked);
+        clickedBtn.classList.remove("loading");
+      }
+    }
+  }, [btnClicked]);
+
   useEffect(() => {
     if (typeof document !== undefined) {
       document.addEventListener(
@@ -43,15 +53,7 @@ export function ProjectCard({
         false
       );
     }
-  }, []);
-  const handleVisibilityChange = () => {
-    if (document.hidden) {
-      if (btnClicked !== null) {
-        const clickedBtn = document.getElementById(btnClicked);
-        clickedBtn.classList.remove("loading");
-      }
-    }
-  };
+  }, [handleVisibilityChange]);
 
   const followLink = (id, link) => {
     setBtnClicked(id);

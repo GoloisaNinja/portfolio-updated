@@ -75,22 +75,12 @@ export function ProjectCard({
         </TagsWrapper>
         <Description>{description}</Description>
         <LinkWrapper>
-          <LinkButton
-            id={btnIdOne}
-            onClick={e => {
-              followLink(btnIdOne, github);
-            }}
-          >
+          <LinkButton id={btnIdOne} onClick={e => followLink(btnIdOne, github)}>
             <span className="btnText">
               <FaGithub /> CODE
             </span>
           </LinkButton>
-          <LinkButton
-            id={btnIdTwo}
-            onClick={e => {
-              followLink(btnIdTwo, live);
-            }}
-          >
+          <LinkButton id={btnIdTwo} onClick={e => followLink(btnIdTwo, live)}>
             <span className="btnText">
               <FaLink /> LIVE SITE
             </span>

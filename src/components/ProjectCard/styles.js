@@ -1,4 +1,13 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const btnLoadingSpinner = keyframes`
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+`;
 
 export const WorkProjectWrapper = styled.div`
   display: flex;
@@ -59,6 +68,7 @@ export const LinkWrapper = styled.div`
 `;
 export const LinkButton = styled.button`
   display: inline-block;
+  position: relative;
   width: 100%;
   background: none;
   border: none;
@@ -72,6 +82,25 @@ export const LinkButton = styled.button`
     border: 1px solid #00de53;
     background: none;
     color: #00de53;
+  }
+  &.loading .btnText {
+    visibility: hidden;
+    opacity: 0;
+  }
+  &.loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #00de53;
+    border-radius: 50%;
+    animation: ${btnLoadingSpinner} 1s ease infinite;
   }
 `;
 export const TagsWrapper = styled.div`

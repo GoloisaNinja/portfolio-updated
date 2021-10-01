@@ -1,5 +1,5 @@
 import React from "react";
-import { navigate } from "gatsby";
+import { navigate } from "@reach/router";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { GradientH4 } from "..";
 import { FaGithub, FaLink } from "react-icons/fa";
@@ -31,7 +31,14 @@ export function ProjectCard({
   github,
   live,
 }) {
-  const followLink = link => {
+  const followLink = (e, link) => {
+    let targetToApplyClassTo;
+    if (e.target.parentElement.nodeName === "DIV") {
+      targetToApplyClassTo = e.target;
+    } else if (e.target.parentElement.nodeName === "BUTTON") {
+      targetToApplyClassTo = e.target.parentElement;
+    }
+    targetToApplyClassTo.classList.add("loading");
     navigate(link);
   };
   return (
@@ -48,11 +55,15 @@ export function ProjectCard({
         </TagsWrapper>
         <Description>{description}</Description>
         <LinkWrapper>
-          <LinkButton onClick={e => followLink(github)}>
-            <FaGithub /> CODE
+          <LinkButton onClick={e => followLink(e, github)}>
+            <span className="btnText">
+              <FaGithub /> CODE
+            </span>
           </LinkButton>
-          <LinkButton onClick={e => followLink(live)}>
-            <FaLink /> LIVE SITE
+          <LinkButton onClick={e => followLink(e, live)}>
+            <span className="btnText">
+              <FaLink /> LIVE SITE
+            </span>
           </LinkButton>
         </LinkWrapper>
       </WorkProjectContentSection>

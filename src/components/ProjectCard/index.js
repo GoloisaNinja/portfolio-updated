@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { navigate } from "@reach/router";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { GradientH4 } from "..";
 import { FaGithub, FaLink } from "react-icons/fa";
+import { nanoid } from "nanoid";
 import {
   // ProjectCardWrapper,
   // ProjectInfoWrapper,
@@ -31,23 +32,22 @@ export function ProjectCard({
   github,
   live,
 }) {
-  const btnRef = useRef({});
+  const [btnIdOne, setBtnIdOne] = useState(nanoid(6));
+  const [btnIdTwo, setBtnIdTwo] = useState(nanoid(6));
+  const [btnClicked, setBtnClicked] = useState(null);
   const handleVisibilityChange = () => {
-    if (document.hidden && !!btnRef.current) {
-      btnRef.current.classList?.remove("loading");
+    if (document.hidden) {
+      if (btnClicked !== null) {
+        document.getElementById(btnClicked).classList.remove("loading");
+      }
     }
   };
 
   document.addEventListener("visibilitychange", handleVisibilityChange, false);
-  const followLink = (e, link) => {
-    let targetToApplyClassTo;
-    if (e.target.parentElement.nodeName === "DIV") {
-      targetToApplyClassTo = e.target;
-    } else if (e.target.parentElement.nodeName === "BUTTON") {
-      targetToApplyClassTo = e.target.parentElement;
-    }
-    btnRef.current = targetToApplyClassTo;
-    targetToApplyClassTo.classList.add("loading");
+  const followLink = (id, link) => {
+    setBtnClicked(id);
+    const clickedBtn = document.getElementById(id);
+    clickedBtn.classList.add("loading");
     navigate(link);
   };
   return (
@@ -64,12 +64,12 @@ export function ProjectCard({
         </TagsWrapper>
         <Description>{description}</Description>
         <LinkWrapper>
-          <LinkButton onClick={e => followLink(e, github)}>
+          <LinkButton id={btnIdOne} onClick={e => followLink(btnIdOne, github)}>
             <span className="btnText">
               <FaGithub /> CODE
             </span>
           </LinkButton>
-          <LinkButton onClick={e => followLink(e, live)}>
+          <LinkButton id={btnIdTwo} onClick={e => followLink(btnIdTwo, live)}>
             <span className="btnText">
               <FaLink /> LIVE SITE
             </span>

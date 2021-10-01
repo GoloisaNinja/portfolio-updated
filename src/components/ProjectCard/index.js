@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { navigate } from "@reach/router";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { GradientH4 } from "..";
@@ -35,15 +35,24 @@ export function ProjectCard({
   const [btnIdOne, setBtnIdOne] = useState(nanoid(6));
   const [btnIdTwo, setBtnIdTwo] = useState(nanoid(6));
   const [btnClicked, setBtnClicked] = useState(null);
+  useEffect(() => {
+    if (typeof document !== undefined) {
+      document.addEventListener(
+        "visibilitychange",
+        handleVisibilityChange,
+        false
+      );
+    }
+  }, []);
   const handleVisibilityChange = () => {
     if (document.hidden) {
       if (btnClicked !== null) {
-        document?.getElementById(btnClicked).classList.remove("loading");
+        const clickedBtn = document.getElementById(btnClicked);
+        clickedBtn.classList.remove("loading");
       }
     }
   };
 
-  document.addEventListener("visibilitychange", handleVisibilityChange, false);
   const followLink = (id, link) => {
     setBtnClicked(id);
     const clickedBtn = document.getElementById(id);
@@ -64,12 +73,22 @@ export function ProjectCard({
         </TagsWrapper>
         <Description>{description}</Description>
         <LinkWrapper>
-          <LinkButton id={btnIdOne} onClick={e => followLink(btnIdOne, github)}>
+          <LinkButton
+            id={btnIdOne}
+            onClick={e => {
+              followLink(btnIdOne, github);
+            }}
+          >
             <span className="btnText">
               <FaGithub /> CODE
             </span>
           </LinkButton>
-          <LinkButton id={btnIdTwo} onClick={e => followLink(btnIdTwo, live)}>
+          <LinkButton
+            id={btnIdTwo}
+            onClick={e => {
+              followLink(btnIdTwo, live);
+            }}
+          >
             <span className="btnText">
               <FaLink /> LIVE SITE
             </span>

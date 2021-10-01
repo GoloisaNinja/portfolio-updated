@@ -55,9 +55,9 @@ export function ProjectCard({
     }
   }, [handleVisibilityChange]);
 
-  const followLink = (id, link) => {
-    setBtnClicked(id);
-    const clickedBtn = document.getElementById(id);
+  const followLink = (e, link) => {
+    setBtnClicked(e.target.id);
+    const clickedBtn = document.getElementById(e.target.id);
     clickedBtn.classList.add("loading");
     navigate(link);
   };
@@ -75,12 +75,12 @@ export function ProjectCard({
         </TagsWrapper>
         <Description>{description}</Description>
         <LinkWrapper>
-          <LinkButton id={btnIdOne} onClick={e => followLink(btnIdOne, github)}>
+          <LinkButton id={btnIdOne} onClick={e => followLink(e, github)}>
             <span className="btnText">
               <FaGithub /> CODE
             </span>
           </LinkButton>
-          <LinkButton id={btnIdTwo} onClick={e => followLink(btnIdTwo, live)}>
+          <LinkButton id={btnIdTwo} onClick={e => followLink(e, live)}>
             <span className="btnText">
               <FaLink /> LIVE SITE
             </span>

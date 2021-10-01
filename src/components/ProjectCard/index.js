@@ -1,4 +1,5 @@
 import React from "react";
+import { navigate } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { GradientH4 } from "..";
 import { FaGithub, FaLink } from "react-icons/fa";
@@ -13,7 +14,7 @@ import {
   // TagBadge,
   WorkProjectWrapper,
   WorkProjectContentSection,
-  Title,
+  //Title,
   Description,
   LinkWrapper,
   LinkButton,
@@ -30,6 +31,9 @@ export function ProjectCard({
   github,
   live,
 }) {
+  const followLink = link => {
+    navigate(link);
+  };
   return (
     <WorkProjectWrapper>
       <GatsbyImage image={image} alt={`project image of ${title}`} />
@@ -44,10 +48,10 @@ export function ProjectCard({
         </TagsWrapper>
         <Description>{description}</Description>
         <LinkWrapper>
-          <LinkButton>
+          <LinkButton onClick={e => followLink(github)}>
             <FaGithub /> CODE
           </LinkButton>
-          <LinkButton>
+          <LinkButton onClick={e => followLink(live)}>
             <FaLink /> LIVE SITE
           </LinkButton>
         </LinkWrapper>

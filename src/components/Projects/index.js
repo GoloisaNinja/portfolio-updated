@@ -1,5 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import { nanoid } from "nanoid";
 import { GradientH2 } from "../GradientText";
 import { Overlay } from "../MainOverlay";
 import { ProjectCard } from "../ProjectCard";
@@ -293,7 +294,7 @@ export function Projects() {
             );
             return (
               <ProjectCard
-                key={Math.random()}
+                key={nanoid(8)}
                 image={node.childImageSharp.gatsbyImageData}
                 title={testProject[index].title}
                 description={testProject[index].description}

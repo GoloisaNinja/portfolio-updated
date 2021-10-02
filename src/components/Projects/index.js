@@ -189,7 +189,7 @@ export function Projects() {
       tags: [`React`, `React Router`, `Redux`, `MongoDB`],
       bgColor: `#006d91`,
       github: `https://github.com/GoloisaNinja/SocialDevs`,
-      live: `http://collins-socialdevs.herokuapp.com/`,
+      live: `https://collins-socialdevs.herokuapp.com/`,
       name: "socialDevs",
     },
   ];

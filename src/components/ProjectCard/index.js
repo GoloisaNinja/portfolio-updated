@@ -55,9 +55,15 @@ export function ProjectCard({
     }
   }, [handleVisibilityChange]);
 
-  const followLink = (id, link) => {
-    setBtnClicked(id);
-    const clickedBtn = document.getElementById(id);
+  const followLink = (e, link) => {
+    let clickTarget;
+    if (e.target.parentElement.nodeName === "BUTTON") {
+      clickTarget = e.target.parentElement.id;
+    } else {
+      clickTarget = e.target.id;
+    }
+    setBtnClicked(clickTarget);
+    const clickedBtn = document.getElementById(clickTarget);
     clickedBtn.classList.add("loading");
     navigate(link);
   };
@@ -75,25 +81,13 @@ export function ProjectCard({
         </TagsWrapper>
         <Description>{description}</Description>
         <LinkWrapper>
-          <LinkButton id={btnIdOne} onClick={e => followLink(btnIdOne, github)}>
-            <span
-              tabIndex="0"
-              role="button"
-              className="btnText"
-              onKeyDown={e => followLink(btnIdOne, github)}
-              onClick={e => followLink(btnIdOne, github)}
-            >
+          <LinkButton id={btnIdOne} onClick={e => followLink(e, github)}>
+            <span className="btnText">
               <FaGithub /> CODE
             </span>
           </LinkButton>
-          <LinkButton id={btnIdTwo} onClick={e => followLink(btnIdTwo, live)}>
-            <span
-              tabIndex="0"
-              role="button"
-              className="btnText"
-              onKeyDown={e => followLink(btnIdTwo, live)}
-              onClick={e => followLink(btnIdTwo, live)}
-            >
+          <LinkButton id={btnIdTwo} onClick={e => followLink(e, live)}>
+            <span className="btnText">
               <FaLink /> LIVE SITE
             </span>
           </LinkButton>

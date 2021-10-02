@@ -64,8 +64,12 @@ export function BlogArticles() {
               />
             </a>
             <aside>
-              Click above to visit my full blog site. Or select a featured
-              article to read right here!
+              Click above to visit my full blog site, containing all the
+              articles I've written. I also wired up my Strapi Content
+              Management System directly to this portfolio site, which means you
+              can read a few of my featured articles right here, without even
+              having to leave! Just select one of the featured articles to start
+              reading!
             </aside>
           </div>
           <div id="blogScrollTarget">
@@ -82,7 +86,6 @@ export function BlogArticles() {
             ))}
           </div>
         </BlogInfoWrapper>
-        {/* #36868f */}
         <Overlay opacity=".2" bgColor="#0e6699"></Overlay>
       </BlogTextWrapper>
     </BlogWrapper>

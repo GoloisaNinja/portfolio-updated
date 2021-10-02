@@ -86,9 +86,12 @@ export function ResumeTech() {
               />
             </a>
             <aside>
-              I developed this choose your own adventure text based resume game
-              as fun alternative to a traditional resume. Check it out! You can
-              also download a PDF of my resume by clicking below.
+              I developed this noir mystery "choose your own adventure" text
+              based resume game as a fun alternative to the traditional resume.
+              Check it out and see how far you can progress! You can also
+              download a PDF of my resume by clicking just below. On a mobile
+              device clicking below will simply open the PDF in the browser
+              window where you can then save it to your phone's storage.
             </aside>
             <a href={resumePDF} download="collins_devresume.pdf">
               DOWNLOAD PDF RESUME
@@ -107,8 +110,8 @@ export function ResumeTech() {
               ))}
             </div>
             <aside>
-              I've used the all these various technologies to build applications
-              and projects. I'm currently studying Java, NextJS, and Wordpress.
+              I've used all these various technologies to build applications and
+              projects. I'm currently studying Java, NextJS, and Wordpress.
             </aside>
           </TechWrapper>
         </ResumeInfoWrapper>

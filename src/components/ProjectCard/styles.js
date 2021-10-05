@@ -80,6 +80,7 @@ export const LinkButton = styled.button`
   color: ${props => (props.inverse ? "#ccc" : "#2e2e2e")};
   border: 1px solid #ccc;
   font-family: "Questrial", sans-serif;
+  font-weight: ${props => (props.inverse ? "normal" : "bold")};
   font-size: 16px;
   border-radius: 30px;
   padding: 18px 18px;

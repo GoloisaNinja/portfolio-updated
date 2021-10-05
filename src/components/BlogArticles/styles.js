@@ -71,6 +71,9 @@ export const BlogInfoWrapper = styled.div`
     > a {
       ${BlogSectionButtonStyles};
     }
+    > a:first-child {
+      font-weight: bold;
+    }
     > a:not(:first-child) {
       background: none;
       color: #ccc;

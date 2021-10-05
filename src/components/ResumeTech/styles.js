@@ -65,6 +65,7 @@ export const ResumeInfoWrapper = styled.div`
     }
     > a:first-child {
       ${ResumeSectionButtonStyles};
+      font-weight: bold;
     }
   }
   @media (min-width: 600px) {

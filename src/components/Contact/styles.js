@@ -7,7 +7,7 @@ const inputStyle = css`
   font-family: "Questrial", sans-serif;
   border: none;
   border-radius: 5px;
-  background: #07785a;
+  background: #3d3d3d;
   color: #fff;
   &:focus {
     + label {
@@ -35,9 +35,7 @@ export const ContactTextSection = styled.section`
   position: relative;
   z-index: 1;
   padding: 10px;
-  //max-width: 95%;
   margin: 0 auto;
-  font-family: "Monoton", cursive;
   font-size: 1.25em;
   text-align: center;
   > div:first-child {
@@ -116,14 +114,13 @@ export const ContactSubmitButton = styled.button`
   font-size: 20px;
   font-weight: bold;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  background: #d1920a;
-  color: #030303;
-  border-bottom: 2px solid #bf870d;
+  background: #0e6699;
+  border: 1px solid #0e6699;
+  color: #fff;
   transition: all 0.5s ease-out;
   &:hover {
-    background: #db990b;
+    background: none;
   }
 `;
 export const FormGroup = styled.div`

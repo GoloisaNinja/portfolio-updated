@@ -42,19 +42,26 @@ export function Hero() {
           />
           <div>
             <p>
-              Welcome! I'm Jon, and I'm a full stack (MERN) developer. I love to
-              solve problems and build cool things. I am self-taught and I
-              believe both, my desire to code daily, and my constant pursuit of
-              new things to learn, are among my strongest assets. I have
-              experience with the following technologies:{" "}
-              <span>
-                JavaScript, React, NodeJS, VueJS, Gatsby, MongoDB, Firebase,
-                Express, HTML, CSS, SCSS, GraphQL, Strapi, Shopify, Git,
-                Webpack, and Jest
-              </span>
-              . I am also a Professional Scrum Master with my PSM1 certification
-              and am working to finish my PSD certification as well.
+              Welcome! I'm Jon, and I'm a full stack (MERN) developer. Here's a
+              quick rundown of why we should work together!
             </p>
+            <ul>
+              <li>4+ Years Experience with Javascript</li>
+              <li>3+ Years Experience with React, NodeJS, & MongoDB</li>
+              <li>
+                Strong Backend Experience - See Movie Partners & Newbsanity
+                projects
+              </li>
+              <li>Self-Taught Developer</li>
+              <li>Highly Motivated, Perpetual Learner</li>
+              <li>I love solving puzzles and problems everyday</li>
+              <li>Professional Scrum Master with PSM1 certification</li>
+              <li>
+                Experience with VueJS, Gatsby, Firebase, Express, HTML, CSS,
+                SCSS, GraphQL, Redux, Strapi, Shopify, Git, Webpack, and Jest
+              </li>
+              <li>Learning Java, Next.js, and Wordpress</li>
+            </ul>
           </div>
         </HeroInfoWrapper>
         <Overlay opacity="0"></Overlay>

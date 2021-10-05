@@ -14,6 +14,25 @@ function articleAnimation() {
   `;
 }
 
+const BlogSectionButtonStyles = css`
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  font-family: "Questrial", sans-serif;
+  font-size: 16px;
+  color: #fff;
+  background-color: #6e00a1;
+  padding: 12px 10px;
+  border: 1px solid #6e00a1;
+  transition: all 0.4s ease-in-out;
+  text-align: center;
+  &:hover {
+    background: none;
+    color: #00de53;
+    border: 1px solid #fff;
+  }
+`;
+
 export const BlogWrapper = styled.section`
   width: 100%;
   margin-top: 50px;
@@ -22,11 +41,8 @@ export const BlogTextWrapper = styled.div`
   position: relative;
   z-index: 1;
   padding: 10px;
-  //max-width: 95%;
   margin: 0 auto;
-  font-family: "Monoton", cursive;
   font-size: 1.25em;
-  text-align: center;
   > div:first-child {
     border-bottom: 1px solid #00de53;
     text-align: left;
@@ -40,38 +56,18 @@ export const BlogInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
   font-family: "Questrial", sans-serif;
   letter-spacing: 2px;
   line-height: 1.3;
   padding: 10px;
-  margin-bottom: 20px;
   margin-top: 20px;
+  margin-bottom: 20px;
   > div:first-child {
     display: flex;
     flex-direction: column;
-    > aside {
-      margin-top: 15px;
-      text-align: left;
-      font-size: 14px;
-    }
-    > a:first-child {
-      > div:first-child {
-        border: 1px solid #fff;
-        border-radius: 5px;
-        transition: transform 0.3s ease;
-        &:hover {
-          transform: scale(1.05);
-        }
-        img {
-          border-radius: 5px;
-        }
-        > picture {
-          img {
-            border-radius: 5px;
-          }
-        }
-      }
+    width: 100%;
+    > a:last-child {
+      ${BlogSectionButtonStyles};
     }
     @media (min-width: 600px) {
       max-width: 50%;
@@ -80,6 +76,7 @@ export const BlogInfoWrapper = styled.div`
   }
   @media (min-width: 600px) {
     flex-direction: row;
+    justify-content: space-between;
     align-items: flex-start;
   }
   > div:last-child {

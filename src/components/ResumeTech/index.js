@@ -79,20 +79,7 @@ export function ResumeTech() {
         </div>
         <ResumeInfoWrapper>
           <div>
-            <a href="https://jcodes.me">
-              <GatsbyImage
-                image={data.file.childImageSharp.gatsbyImageData}
-                alt="resume game image"
-              />
-            </a>
-            <aside>
-              I developed this noir mystery "choose your own adventure" text
-              based resume game as a fun alternative to the traditional resume.
-              Check it out and see how far you can progress! You can also
-              download a PDF of my resume by clicking just below. On a mobile
-              device clicking below will simply open the PDF in the browser
-              window where you can then save it to your phone's storage.
-            </aside>
+            <a href="https://jcodes.me">PLAY MY RESUME GAME</a>
             <a href={resumePDF} download="collins_devresume.pdf">
               DOWNLOAD PDF RESUME
             </a>
@@ -109,10 +96,6 @@ export function ResumeTech() {
                 </IconWrapper>
               ))}
             </div>
-            <aside>
-              I've used all these various technologies to build applications and
-              projects. I'm currently studying Java, NextJS, and Wordpress.
-            </aside>
           </TechWrapper>
         </ResumeInfoWrapper>
         <Overlay opacity="0"></Overlay>

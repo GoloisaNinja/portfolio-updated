@@ -77,9 +77,13 @@ export const HeroInfoWrapper = styled.div`
     text-align: left;
     color: #cecece;
     margin-top: 35px;
-    span:first-child {
-      color: #00ff5f;
-      font-weight: bold;
+    > ul {
+      margin-top: 10px;
+      list-style: square;
+      margin-left: 25px;
+      > li {
+        list-style: square;
+      }
     }
     @media (min-width: 600px) {
       margin-top: 0;

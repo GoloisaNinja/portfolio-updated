@@ -4,7 +4,6 @@ export const ArticleWrapper = styled.header`
   width: 100%;
   margin-top: 120px;
   > div:first-child {
-    //max-width: 95%;
     margin: 0 auto;
     margin-left: 10px;
   }
@@ -13,9 +12,7 @@ export const ArticleContentSection = styled.section`
   position: relative;
   z-index: 1;
   padding: 25px;
-  //max-width: 95%;
   margin: 0 auto;
-  font-family: "Monoton", cursive;
   font-size: 1.25em;
   text-align: center;
   @media (max-width: 320px) {
@@ -32,6 +29,7 @@ export const ArticleByLineWrapper = styled.div`
   border-bottom: 1px solid #00de53;
   padding-bottom: 25px;
   margin-bottom: 25px;
+  text-transform: uppercase;
   > div:nth-child(2) {
     margin-left: 8px;
     max-width: 40px;
@@ -58,7 +56,7 @@ export const ArticleMainImageWrapper = styled.div`
   }
 `;
 export const ArticleStrapiContentWrapper = styled.div`
-  font-family: "Inter", sans-serif;
+  font-family: "Questrial", sans-serif;
   font-size: 18px;
   margin: 5px;
   border-radius: 10px;
@@ -92,11 +90,12 @@ export const ArticleStrapiContentWrapper = styled.div`
     text-align: left;
     padding: 10px 5px;
     font-style: italic;
-    font-size: 25px;
-    color: #00de51;
+    font-size: 16px;
+    color: #ccc;
     margin: 15px;
     display: flex;
     justify-content: center;
+    border-left: 3px solid #00de53;
   }
   > h3 {
     text-align: left;

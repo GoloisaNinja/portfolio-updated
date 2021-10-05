@@ -26,12 +26,8 @@ export const ArticleLinkWrapper = styled.button`
   justify-content: flex-start;
   align-items: flex-start;
   border-radius: 5px;
-  //border: 1px solid #fff;
-  //background-color: #6e00a1;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin-bottom: 25px;
-  //max-width: 60%;
-  //min-height: 180px;
   font-family: "Questrial", sans-serif;
   color: #ccc;
   font-size: 20px;
@@ -44,7 +40,6 @@ export const ArticleLinkWrapper = styled.button`
 export const ArticleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  //align-items: flex-start;
   justify-content: flex-start;
   max-width: 500px;
   padding: 15px 15px 0 15px;
@@ -57,7 +52,7 @@ export const ArticleContainer = styled.div`
   }
   > p {
     text-align: left;
-    font-size: 14px;
+    font-size: 16px;
   }
 `;
 export const ArticleTagWrapper = styled.div`

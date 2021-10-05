@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { FaPlay, FaDownload } from "react-icons/fa";
 import { GradientH2 } from "../../components";
 import { Overlay } from "../MainOverlay";
 import resumePDF from "../../utils/collins_dev_resume.pdf";
@@ -79,9 +80,14 @@ export function ResumeTech() {
         </div>
         <ResumeInfoWrapper>
           <div>
-            <a href="https://jcodes.me">PLAY MY RESUME GAME</a>
+            <a href="https://jcodes.me">
+              <FaPlay /> MY RESUME GAME
+            </a>
             <a href={resumePDF} download="collins_devresume.pdf">
-              DOWNLOAD PDF RESUME
+              <FaDownload /> PDF RESUME
+            </a>
+            <a href="https://www.credly.com/badges/517ccf0d-c666-4f77-a20e-5581b8d8bec5/public_url">
+              PSM CERTIFICATE
             </a>
           </div>
           <TechWrapper>

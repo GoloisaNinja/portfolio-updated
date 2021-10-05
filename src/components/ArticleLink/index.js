@@ -23,7 +23,11 @@ export function ArticleLink({ title, link, preview }) {
         <GradientH5 font="'Fredoka One', cursive" color="#ccc, #ccc">
           {title.toUpperCase()}
         </GradientH5>
-        <p>{preview.slice(0, 150)}... Click to read more.</p>
+        <p>
+          {preview.slice(0, 150)}... <br />
+          <br />
+          Click to read more.
+        </p>
       </ArticleContainer>
       <ArticleTagWrapper>
         {badges.map(badge => (

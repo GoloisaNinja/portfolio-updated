@@ -7,18 +7,19 @@ const ResumeSectionButtonStyles = css`
   font-family: "Questrial", sans-serif;
   font-size: 16px;
   color: #fff;
-  background-color: #6e00a1;
-  padding: 12px 10px;
-  border: 1px solid #6e00a1;
+  background-color: #ccc;
+  padding: 20px 50px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
   transition: all 0.4s ease-in-out;
   text-align: center;
+  color: #2e2e2e;
   &:hover {
     background: none;
     color: #00de53;
-    border: 1px solid #fff;
+    border: 1px solid #00de53;
   }
 `;
-
 export const ResumeWrapper = styled.section`
   width: 100%;
   margin-top: 15px;
@@ -50,20 +51,17 @@ export const ResumeInfoWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    z-index: 1;
     width: 100%;
-    > div:first-child {
-      border: 1px solid #fff;
-      border-radius: 5px;
-      > img {
-        z-index: -1;
-        border-radius: 5px;
-      }
-    }
-    > a:last-child {
+    > a:not(:first-child) {
       ${ResumeSectionButtonStyles};
+      background: none;
+      color: #ccc;
       margin-top: 20px;
+      &:hover {
+        background-color: #6e00a1;
+        color: #fff;
+        border: 1px solid #6e00a1;
+      }
     }
     > a:first-child {
       ${ResumeSectionButtonStyles};

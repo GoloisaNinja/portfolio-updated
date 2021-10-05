@@ -18,6 +18,10 @@ export function BlogArticles() {
         <BlogInfoWrapper>
           <div>
             <a href="https://jcodes.blog">VISIT MY BLOG</a>
+            <a href="https://github.com/GoloisaNinja/gatsbyDevBlog">
+              SEE THE CODE
+            </a>
+            <a href="https://jcodes.blog/about">MORE ABOUT ME</a>
           </div>
           <div id="blogScrollTarget">
             {articles.map(article => (

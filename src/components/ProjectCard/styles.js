@@ -56,6 +56,7 @@ export const Description = styled.p`
 `;
 export const LinkWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 20px;
@@ -67,22 +68,22 @@ export const LinkWrapper = styled.div`
     }
   }
   > button:first-child {
-    margin-right: 15px;
+    margin-bottom: 20px;
   }
 `;
 export const LinkButton = styled.button`
   display: inline-block;
   position: relative;
   width: 100%;
-  background: none;
+  background: ${props => (props.inverse ? "none" : "ccc")};
   border: none;
-  background-color: #6e00a1;
-  height: 34px;
-  color: #ccc;
-  border: 1px solid #6e00a1;
+  color: ${props => (props.inverse ? "#ccc" : "#2e2e2e")};
+  border: 1px solid #ccc;
   font-family: "Questrial", sans-serif;
   font-size: 16px;
-  transition: all 0.9s ease-in-out;
+  border-radius: 30px;
+  padding: 18px 18px;
+  transition: all 0.4s ease-in-out;
   cursor: pointer;
   > span {
     > svg {
@@ -93,9 +94,10 @@ export const LinkButton = styled.button`
   }
 
   &:hover {
-    border: 1px solid #00de53;
-    background: none;
-    color: #00de53;
+    border: ${props =>
+      props.inverse ? "1px solid #6e00a1" : "1px solid #00de53"};
+    background: ${props => (props.inverse ? "#6e00a1" : "none")};
+    color: ${props => (props.inverse ? "#fff" : "#00de53")};
   }
   &.loading .btnText {
     visibility: hidden;
@@ -144,10 +146,11 @@ export const ExpandButton = styled.button`
   border: none;
   //border: 1px solid #ccc;
   height: 30px;
-  color: #00de53;
+  color: #aaa;
   padding: 0 8px;
   cursor: pointer;
+  font-family: "Questrial", sans-serif;
   > svg {
-    margin-left: 2px;
+    font-size: 16px;
   }
 `;

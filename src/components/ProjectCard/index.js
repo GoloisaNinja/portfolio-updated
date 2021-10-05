@@ -20,15 +20,7 @@ import {
   ExpandButton,
 } from "./styles";
 
-export function ProjectCard({
-  image,
-  title,
-  description,
-  tags,
-  bgColor,
-  github,
-  live,
-}) {
+export function ProjectCard({ image, title, description, tags, github, live }) {
   const [btnIdOne, setBtnIdOne] = useState(nanoid(6));
   const [btnIdTwo, setBtnIdTwo] = useState(nanoid(6));
   const [btnClicked, setBtnClicked] = useState(null);
@@ -84,10 +76,10 @@ export function ProjectCard({
           <ExpandButton onClick={handleSectionExpand}>
             {!shouldProjectSectionExpand ? (
               <>
-                info <FaChevronRight />
+                <FaChevronDown />
               </>
             ) : (
-              <FaChevronDown />
+              <FaChevronRight />
             )}
           </ExpandButton>
         </div>
@@ -95,7 +87,7 @@ export function ProjectCard({
           <>
             <TagsWrapper>
               {tags.map(tag => (
-                <TagBadge key={Math.random()}>{tag}</TagBadge>
+                <TagBadge key={nanoid(4)}>{tag}</TagBadge>
               ))}
             </TagsWrapper>
             <Description>{description}</Description>
@@ -105,9 +97,13 @@ export function ProjectCard({
                   <FaGithub /> CODE
                 </span>
               </LinkButton>
-              <LinkButton id={btnIdTwo} onClick={e => followLink(e, live)}>
+              <LinkButton
+                inverse
+                id={btnIdTwo}
+                onClick={e => followLink(e, live)}
+              >
                 <span className="btnText">
-                  <FaGlobe /> LIVE SITE
+                  <FaGlobe /> SITE
                 </span>
               </LinkButton>
             </LinkWrapper>

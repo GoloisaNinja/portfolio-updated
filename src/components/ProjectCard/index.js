@@ -24,6 +24,7 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
   );
   const chevronBtnId = nanoid(3);
   const [chevronElement, setChevronElement] = useState();
+  const [divElement, setDivElement] = useState();
 
   const handleVisibilityChange = useCallback(() => {
     if (document.hidden) {
@@ -43,6 +44,8 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
       );
       const btn = document.getElementById(`btn-expand${chevronBtnId}`);
       setChevronElement(btn);
+      const divToAnimate = document.getElementById(`div-expand${chevronBtnId}`);
+      setDivElement(divToAnimate);
     }
   }, [handleVisibilityChange, chevronBtnId]);
 
@@ -50,8 +53,10 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
     setShouldProjectSectionExpand(!shouldProjectSectionExpand);
     if (!shouldProjectSectionExpand) {
       chevronElement.classList.add("rotate");
+      divElement.classList.add("expand");
     } else {
       chevronElement.classList.remove("rotate");
+      divElement.classList.remove("expand");
     }
   };
 
@@ -80,32 +85,30 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
             <FaChevronRight id={`btn-expand${chevronBtnId}`} />
           </ExpandButton>
         </div>
-        {shouldProjectSectionExpand && (
-          <>
-            <TagsWrapper>
-              {tags.map(tag => (
-                <TagBadge key={nanoid(4)}>{tag}</TagBadge>
-              ))}
-            </TagsWrapper>
-            <Description>{description}</Description>
-            <LinkWrapper>
-              <LinkButton id={btnIdOne} onClick={e => followLink(e, github)}>
-                <span className="btnText">
-                  <FaGithub /> CODE
-                </span>
-              </LinkButton>
-              <LinkButton
-                inverse
-                id={btnIdTwo}
-                onClick={e => followLink(e, live)}
-              >
-                <span className="btnText">
-                  <FaGlobe /> SITE
-                </span>
-              </LinkButton>
-            </LinkWrapper>
-          </>
-        )}
+        <div id={`div-expand${chevronBtnId}`}>
+          <TagsWrapper>
+            {tags.map(tag => (
+              <TagBadge key={nanoid(4)}>{tag}</TagBadge>
+            ))}
+          </TagsWrapper>
+          <Description>{description}</Description>
+          <LinkWrapper>
+            <LinkButton id={btnIdOne} onClick={e => followLink(e, github)}>
+              <span className="btnText">
+                <FaGithub /> CODE
+              </span>
+            </LinkButton>
+            <LinkButton
+              inverse
+              id={btnIdTwo}
+              onClick={e => followLink(e, live)}
+            >
+              <span className="btnText">
+                <FaGlobe /> SITE
+              </span>
+            </LinkButton>
+          </LinkWrapper>
+        </div>
       </WorkProjectContentSection>
     </WorkProjectWrapper>
   );

@@ -44,6 +44,14 @@ export const WorkProjectContentSection = styled.section`
       text-align: left;
     }
   }
+  > div:last-child {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    &.expand {
+      max-height: 100%;
+    }
+  }
 `;
 
 export const Description = styled.p`

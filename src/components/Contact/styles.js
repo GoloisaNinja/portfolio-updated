@@ -154,8 +154,8 @@ export const ContactSubmitButton = styled.button`
   &:hover {
     background-color: #0e6699;
     color: #fff;
-    border: 1px solid #0e6699;
-    outline: 3px solid #fff;
+    border: 3px solid #ccc;
+    padding: 17px 18px;
     animation: ${bounce} 1.2s ease;
     > svg {
       transition: transform 0.3s ease-in-out;

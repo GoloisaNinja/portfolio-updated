@@ -43,7 +43,6 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
   }, [handleVisibilityChange]);
 
   const handleSectionExpand = () => {
-    setShouldProjectSectionExpand(!shouldProjectSectionExpand);
     const chevronBtnToRotate = document.getElementById(
       `btn-expand${chevronBtnId}`
     );
@@ -52,6 +51,7 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
     } else {
       chevronBtnToRotate.classList.remove("rotate");
     }
+    setShouldProjectSectionExpand(!shouldProjectSectionExpand);
   };
 
   const followLink = (e, link) => {

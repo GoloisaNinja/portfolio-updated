@@ -22,6 +22,7 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
   const [shouldProjectSectionExpand, setShouldProjectSectionExpand] = useState(
     false
   );
+  const chevronBtnId = nanoid(3);
 
   const handleVisibilityChange = useCallback(() => {
     if (document.hidden) {
@@ -66,7 +67,7 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
     clickedBtn.classList.add("loading");
     navigate(link);
   };
-  const chevronBtnId = nanoid(3);
+
   return (
     <WorkProjectWrapper>
       <GatsbyImage image={image} alt={`project image of ${title}`} />
@@ -75,7 +76,7 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
           <GradientH4 font="'Fredoka One', cursive" color="#aaa, #00de53">
             {title.toUpperCase()}
           </GradientH4>
-          <ExpandButton onClick={handleSectionExpand}>
+          <ExpandButton onClick={e => handleSectionExpand}>
             <FaChevronDown id={`btn-expand${chevronBtnId}`} />
           </ExpandButton>
         </div>

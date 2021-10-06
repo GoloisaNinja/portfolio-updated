@@ -23,25 +23,36 @@ export const ArticleLinkWrapper = styled.button`
   background: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  color: ${props => props.textColor};
-  background: ${props => props.bgColor};
+  justify-content: flex-start;
+  align-items: flex-start;
   border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin-bottom: 25px;
-  width: 100%;
-  min-height: 180px;
   font-family: "Questrial", sans-serif;
-  font-size: 1.2em;
+  color: #ccc;
+  font-size: 20px;
   cursor: pointer;
-  > h5 {
-    display: inline-block;
-    width: 100%;
-    border-bottom: 1px solid #fff;
-    padding: 0 20px 20px 20px;
-    margin-top: 0;
-  }
+  padding: 0;
   &:hover {
     animation: ${bounce} 1.5s ease;
+  }
+`;
+export const ArticleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 500px;
+  padding: 15px 15px 0 15px;
+  > div:first-child {
+    z-index: -2;
+  }
+  > h5 {
+    margin: 0;
+    margin-bottom: 15px;
+  }
+  > p {
+    text-align: left;
+    font-size: 16px;
   }
 `;
 export const ArticleTagWrapper = styled.div`
@@ -49,6 +60,8 @@ export const ArticleTagWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-top: 10px;
+  padding: 15px;
   > div:not(:last-child) {
     margin-right: 10px;
   }
@@ -57,7 +70,9 @@ export const TagBadge = styled.div`
   font-size: 10px;
   font-weight: bold;
   text-align: center;
-  border: 1px solid #fff;
+  color: #fff;
+  border: 1px solid #0e6699;
   border-radius: 20px;
   padding: 5px;
+  background-color: #0e6699;
 `;

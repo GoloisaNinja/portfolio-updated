@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import { FaArrowRight } from "react-icons/fa";
 import { GradientH2 } from "../GradientText";
 import { Modal } from "../Modal";
 import { Overlay } from "../MainOverlay";
@@ -163,7 +164,12 @@ export function Contact() {
                   message body
                 </FormLabelFloating>
               </FormGroup>
-              <ContactSubmitButton type="submit">submit</ContactSubmitButton>
+              <div>
+                <ContactSubmitButton type="submit">
+                  <FaArrowRight />
+                </ContactSubmitButton>
+                <p>send your message!</p>
+              </div>
             </ContactForm>
           </ContactFormWrapper>
         </ContactMainSection>

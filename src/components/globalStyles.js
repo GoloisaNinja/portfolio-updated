@@ -11,17 +11,12 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 16px;
   }
   html {
-    //background: #225d35;
     background: #333333;
   }
   body{
-    font-family: 'Inter', sans-serif;
+    font-family: "Questrial", sans-serif;
     line-height: 1.2;
-    //background: linear-gradient(to left bottom,#3d3d3d, #00de53);
     background: linear-gradient(to left bottom,#2e2e2e, #3d3d3d);
-    /* background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh; */
     color: #dbdbdb;
   }
   strong{

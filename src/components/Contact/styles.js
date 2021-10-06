@@ -1,13 +1,31 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+
+const bounce = keyframes`
+  70% {
+    transform: translateY(0%);
+  }
+  80% {
+    transform: translateY(-15%);
+  }
+  90% {
+    transform: translateY(0%);
+  }
+  99% { 
+    transform:translateY(-3%); 
+  }
+    100% { 
+      transform:translateY(0); 
+  }
+`;
 
 const inputStyle = css`
-  font-size: 20px;
+  font-size: 16px;
   padding: 10px 0 10px 8px;
   margin-bottom: 16px;
   font-family: "Questrial", sans-serif;
   border: none;
   border-radius: 5px;
-  background: #07785a;
+  background: #3d3d3d;
   color: #fff;
   &:focus {
     + label {
@@ -35,9 +53,7 @@ export const ContactTextSection = styled.section`
   position: relative;
   z-index: 1;
   padding: 10px;
-  //max-width: 95%;
   margin: 0 auto;
-  font-family: "Monoton", cursive;
   font-size: 1.25em;
   text-align: center;
   > div:first-child {
@@ -94,13 +110,24 @@ export const ContactFormWrapper = styled.div`
   letter-spacing: 1px;
   padding: 30px 10px 0px 10px;
   margin-bottom: 20px;
-  max-width: 95%;
+  width: 100%;
+  @media (min-width: 600px) {
+    max-width: 50%;
+  }
 `;
 export const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 100%;
+  width: 100%;
+  > div:last-child {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    > p {
+      font-size: 16px;
+    }
+  }
 `;
 export const NameInput = styled.input`
   ${inputStyle};
@@ -112,18 +139,23 @@ export const TextArea = styled.textarea`
   ${inputStyle};
 `;
 export const ContactSubmitButton = styled.button`
-  padding: 8px;
-  font-size: 20px;
-  font-weight: bold;
   border: none;
-  border-radius: 5px;
+  background: none;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 50%;
+  color: #ccc;
+  margin-right: 15px;
   cursor: pointer;
-  background: #d1920a;
-  color: #030303;
-  border-bottom: 2px solid #bf870d;
-  transition: all 0.5s ease-out;
+  transition: all 0.4s ease-in-out;
   &:hover {
-    background: #db990b;
+    background-color: #0e6699;
+    color: #fff;
+    border: 1px solid #0e6699;
+    animation: ${bounce} 1s ease;
+  }
+  > svg {
+    font-size: 20px;
   }
 `;
 export const FormGroup = styled.div`
@@ -139,7 +171,7 @@ export const FormLabelFloating = styled.label`
   padding-left: 10px;
   transition: all 250ms;
   opacity: 0.9;
-  font-size: 18px;
+  font-size: 16px;
   color: #fff;
   font-weight: bold;
 `;

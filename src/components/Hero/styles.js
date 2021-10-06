@@ -32,7 +32,6 @@ export const HeroTextSection = styled.section`
   position: relative;
   z-index: 1;
   padding: 10px;
-  //max-width: 95%;
   margin: 0 auto;
   font-size: 1.25em;
   text-align: center;
@@ -42,8 +41,6 @@ export const HeroTextSection = styled.section`
     align-items: center;
     padding-left: 10px;
     border-bottom: 1px solid #00de53;
-    /* margin-bottom: 20px; */
-    //padding-bottom: 25px;
     > span {
       margin-left: 10px;
       font-size: 3em;
@@ -77,9 +74,14 @@ export const HeroInfoWrapper = styled.div`
     text-align: left;
     color: #cecece;
     margin-top: 35px;
-    span:first-child {
-      color: #00ff5f;
-      font-weight: bold;
+    font-size: 16px;
+    > ul {
+      margin-top: 10px;
+      list-style: square;
+      margin-left: 25px;
+      > li {
+        list-style: square;
+      }
     }
     @media (min-width: 600px) {
       margin-top: 0;

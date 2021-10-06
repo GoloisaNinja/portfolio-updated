@@ -92,7 +92,7 @@ export default function ArticleTemplate({ data }) {
           <ArticleStrapiContentWrapper>
             <ReactMarkdown children={data.strapiArticle.content} />
           </ArticleStrapiContentWrapper>
-          <Overlay opacity=".2" bgColor="#030303"></Overlay>
+          <Overlay opacity="0" bgColor="#030303"></Overlay>
         </ArticleContentSection>
       </ArticleWrapper>
     </Layout>

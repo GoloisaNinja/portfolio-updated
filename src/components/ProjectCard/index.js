@@ -23,6 +23,7 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
     false
   );
   const chevronBtnId = nanoid(3);
+  const [chevronElement, setChevronElement] = useState();
 
   const handleVisibilityChange = useCallback(() => {
     if (document.hidden) {
@@ -40,18 +41,18 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
         handleVisibilityChange,
         false
       );
+      const btn = document.getElementById(`btn-expand${chevronBtnId}`);
+      console.log(btn);
+      setChevronElement(btn);
     }
-  }, [handleVisibilityChange]);
+  }, [handleVisibilityChange, chevronBtnId]);
 
   const handleSectionExpand = () => {
     setShouldProjectSectionExpand(!shouldProjectSectionExpand);
-    const chevronBtnToRotate = document.getElementById(
-      `btn-expand${chevronBtnId}`
-    );
     if (!shouldProjectSectionExpand) {
-      chevronBtnToRotate.classList.add("rotate");
+      chevronElement.classList.add("rotate");
     } else {
-      chevronBtnToRotate.classList.remove("rotate");
+      chevronElement.classList.remove("rotate");
     }
   };
 

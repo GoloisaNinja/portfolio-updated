@@ -7,6 +7,7 @@ import { BlogWrapper, BlogTextWrapper, BlogInfoWrapper } from "./styles";
 
 export function BlogArticles() {
   const { articles } = useContext(ArticleContext);
+  const regex = /\s/g;
   return (
     <BlogWrapper id="blog">
       <BlogTextWrapper>
@@ -29,7 +30,7 @@ export function BlogArticles() {
                 key={article.strapiId}
                 title={article.title}
                 preview={article.preview}
-                link={article.title.replaceAll(" ", "_")}
+                link={article.title.replace(regex, "_")}
                 image={article.image}
               />
             ))}

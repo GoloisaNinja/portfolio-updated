@@ -34,7 +34,7 @@ export function Projects() {
       }
     }
   `);
-  const testProject = [
+  const projects = [
     {
       title: `Culchr`,
       description: `Hilarious Corporate Culture and Values Generator`,
@@ -95,7 +95,6 @@ export function Projects() {
       title: `Newbsanity`,
       description: `Full Feature Fitness and Social Platform Application`,
       tags: [`React`, `Router`, `Redux`, `Custom CMS`],
-      bgColor: `#a61403`,
       github: `https://github.com/GoloisaNinja/newbsanity-app`,
       live: `https://collins-newbsanity.herokuapp.com/`,
       name: "newbsanity",
@@ -120,19 +119,18 @@ export function Projects() {
         </div>
         <ProjectsCardWrapper>
           {data.allFile.edges.map(({ node }) => {
-            let index = testProject.findIndex(
+            let index = projects.findIndex(
               project => project.name === node.name
             );
             return (
               <ProjectCard
                 key={nanoid(8)}
                 image={node.childImageSharp.gatsbyImageData}
-                title={testProject[index].title}
-                description={testProject[index].description}
-                tags={testProject[index].tags}
-                bgColor={testProject[index].bgColor}
-                github={testProject[index].github}
-                live={testProject[index].live}
+                title={projects[index].title}
+                description={projects[index].description}
+                tags={projects[index].tags}
+                github={projects[index].github}
+                live={projects[index].live}
               />
             );
           })}

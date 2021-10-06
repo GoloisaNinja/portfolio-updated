@@ -145,7 +145,6 @@ export const ExpandButton = styled.button`
   align-items: center;
   background: none;
   border: none;
-  //border: 1px solid #ccc;
   height: 30px;
   color: #aaa;
   padding: 0 8px;

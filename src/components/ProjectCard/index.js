@@ -42,7 +42,6 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
         false
       );
       const btn = document.getElementById(`btn-expand${chevronBtnId}`);
-      console.log(btn);
       setChevronElement(btn);
     }
   }, [handleVisibilityChange, chevronBtnId]);

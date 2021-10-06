@@ -2,12 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { navigate } from "@reach/router";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { GradientH4 } from "..";
-import {
-  FaGithub,
-  FaGlobe,
-  FaChevronRight,
-  FaChevronDown,
-} from "react-icons/fa";
+import { FaGithub, FaGlobe, FaChevronDown } from "react-icons/fa";
 import { nanoid } from "nanoid";
 import {
   WorkProjectWrapper,
@@ -48,9 +43,15 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
   }, [handleVisibilityChange]);
 
   const handleSectionExpand = () => {
-    setShouldProjectSectionExpand(() => {
-      return !shouldProjectSectionExpand;
-    });
+    setShouldProjectSectionExpand(!shouldProjectSectionExpand);
+    const chevronBtnToRotate = document.getElementById(
+      `btn-expand${chevronBtnId}`
+    );
+    if (!shouldProjectSectionExpand) {
+      chevronBtnToRotate.classList.add("rotate");
+    } else {
+      chevronBtnToRotate.classList.remove("rotate");
+    }
   };
 
   const followLink = (e, link) => {
@@ -65,6 +66,7 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
     clickedBtn.classList.add("loading");
     navigate(link);
   };
+  const chevronBtnId = nanoid(3);
   return (
     <WorkProjectWrapper>
       <GatsbyImage image={image} alt={`project image of ${title}`} />
@@ -74,13 +76,7 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
             {title.toUpperCase()}
           </GradientH4>
           <ExpandButton onClick={handleSectionExpand}>
-            {!shouldProjectSectionExpand ? (
-              <>
-                <FaChevronDown />
-              </>
-            ) : (
-              <FaChevronRight />
-            )}
+            <FaChevronDown id={`btn-expand${chevronBtnId}`} />
           </ExpandButton>
         </div>
         {shouldProjectSectionExpand && (

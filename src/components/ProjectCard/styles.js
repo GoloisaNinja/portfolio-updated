@@ -153,5 +153,9 @@ export const ExpandButton = styled.button`
   font-family: "Questrial", sans-serif;
   > svg {
     font-size: 16px;
+    transition: transform 0.1s ease-in-out;
+    &.rotate {
+      transform: rotate(-90deg);
+    }
   }
 `;

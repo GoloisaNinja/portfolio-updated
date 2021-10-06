@@ -139,10 +139,13 @@ export const TextArea = styled.textarea`
   ${inputStyle};
 `;
 export const ContactSubmitButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   background: none;
   border: 1px solid #ccc;
-  padding: 20px;
+  padding: 19px 20px;
   border-radius: 50%;
   color: #ccc;
   margin-right: 15px;
@@ -152,7 +155,11 @@ export const ContactSubmitButton = styled.button`
     background-color: #0e6699;
     color: #fff;
     border: 1px solid #0e6699;
-    animation: ${bounce} 1s ease;
+    animation: ${bounce} 1.2s ease;
+    > svg {
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(12px);
+    }
   }
   > svg {
     font-size: 20px;

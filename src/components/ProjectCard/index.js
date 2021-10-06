@@ -44,6 +44,7 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
   }, [handleVisibilityChange]);
 
   const handleSectionExpand = () => {
+    setShouldProjectSectionExpand(!shouldProjectSectionExpand);
     const chevronBtnToRotate = document.getElementById(
       `btn-expand${chevronBtnId}`
     );
@@ -52,7 +53,6 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
     } else {
       chevronBtnToRotate.classList.remove("rotate");
     }
-    setShouldProjectSectionExpand(!shouldProjectSectionExpand);
   };
 
   const followLink = (e, link) => {
@@ -76,7 +76,7 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
           <GradientH4 font="'Fredoka One', cursive" color="#aaa, #00de53">
             {title.toUpperCase()}
           </GradientH4>
-          <ExpandButton onClick={e => handleSectionExpand}>
+          <ExpandButton onClick={e => handleSectionExpand()}>
             <FaChevronDown id={`btn-expand${chevronBtnId}`} />
           </ExpandButton>
         </div>

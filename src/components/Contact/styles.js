@@ -155,6 +155,7 @@ export const ContactSubmitButton = styled.button`
     background-color: #0e6699;
     color: #fff;
     border: 1px solid #0e6699;
+    outline: 3px solid #fff;
     animation: ${bounce} 1.2s ease;
     > svg {
       transition: transform 0.3s ease-in-out;

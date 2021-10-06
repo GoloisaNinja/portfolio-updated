@@ -155,7 +155,7 @@ export const ExpandButton = styled.button`
     font-size: 16px;
     transition: transform 0.1s ease-in-out;
     &.rotate {
-      transform: rotate(-90deg);
+      transform: rotate(90deg);
     }
   }
 `;

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { navigate } from "@reach/router";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { GradientH4 } from "..";
-import { FaGithub, FaGlobe, FaChevronDown } from "react-icons/fa";
+import { FaGithub, FaGlobe, FaChevronRight } from "react-icons/fa";
 import { nanoid } from "nanoid";
 import {
   WorkProjectWrapper,
@@ -77,7 +77,7 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
             {title.toUpperCase()}
           </GradientH4>
           <ExpandButton onClick={e => handleSectionExpand()}>
-            <FaChevronDown id={`btn-expand${chevronBtnId}`} />
+            <FaChevronRight id={`btn-expand${chevronBtnId}`} />
           </ExpandButton>
         </div>
         {shouldProjectSectionExpand && (

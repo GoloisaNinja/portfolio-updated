@@ -1,9 +1,16 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import { FaArrowCircleDown, FaArrowRight } from "react-icons/fa";
+import smoothscroll from "smoothscroll-polyfill";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { GradientH2 } from "../GradientText";
 import { Overlay } from "../MainOverlay";
-import { HeroWrapper, HeroTextSection, HeroInfoWrapper } from "./styles";
+import {
+  HeroWrapper,
+  HeroTextSection,
+  HeroInfoWrapper,
+  HeroButton,
+} from "./styles";
 
 export function Hero() {
   const data = useStaticQuery(graphql`
@@ -20,6 +27,16 @@ export function Hero() {
       }
     }
   `);
+  const handleProjectNavigate = () => {
+    const projectSection = document.getElementById("projects");
+    smoothscroll.polyfill();
+    const yOffset = -80;
+    const y =
+      projectSection?.getBoundingClientRect().top +
+      window.pageYOffset +
+      yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
   return (
     <HeroWrapper id="home">
       <HeroTextSection>
@@ -35,6 +52,15 @@ export function Hero() {
             👋🏻
           </span>
         </div>
+        <div>
+          <GradientH2
+            font="'Fredoka One', cursive"
+            weight="900"
+            color="#aaa, #00de53"
+          >
+            WHY WORK WITH ME? <FaArrowCircleDown />
+          </GradientH2>
+        </div>
         <HeroInfoWrapper>
           <GatsbyImage
             image={data.file.childImageSharp.gatsbyImageData}
@@ -47,7 +73,7 @@ export function Hero() {
             </p>
             <ul>
               <li>4+ Years Experience with Javascript</li>
-              <li>3+ Years Experience with React, NodeJS, & MongoDB</li>
+              <li>4+ Years Experience with React, NodeJS, & MongoDB</li>
               <li>
                 Strong Backend Experience - See Movie Partners & Newbsanity
                 projects
@@ -62,6 +88,16 @@ export function Hero() {
               </li>
               <li>Learning Java, Next.js, and Wordpress</li>
             </ul>
+            <p>
+              I love building amazing projects that solve problems. Go see some
+              of my work!
+            </p>
+            <div>
+              <HeroButton onClick={e => handleProjectNavigate()}>
+                <FaArrowRight />
+              </HeroButton>
+              <p>jump to projects!</p>
+            </div>
           </div>
         </HeroInfoWrapper>
         <Overlay opacity="0"></Overlay>

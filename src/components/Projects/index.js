@@ -114,7 +114,7 @@ export function Projects() {
       <ProjectsTextWrapper>
         <div>
           <GradientH2 font="'Fredoka One', cursive" color="#aaa, #00de53">
-            MY PROJECTS
+            MY SELECTED PROJECTS AND WORK
           </GradientH2>
         </div>
         <ProjectsCardWrapper>

@@ -13,7 +13,7 @@ export function BlogArticles() {
       <BlogTextWrapper>
         <div>
           <GradientH2 font="'Fredoka One', cursive" color="#aaa, #00de53">
-            BLOG AND FEATURED ARTICLES
+            MY BLOG AND FEATURED ARTICLES
           </GradientH2>
         </div>
         <BlogInfoWrapper>

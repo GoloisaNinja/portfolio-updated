@@ -46,10 +46,12 @@ export const WorkProjectContentSection = styled.section`
   }
   > div:last-child {
     max-height: 0;
+    opacity: 0;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
     &.expand {
       max-height: 100%;
+      opacity: 1;
     }
   }
 `;

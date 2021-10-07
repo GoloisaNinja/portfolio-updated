@@ -48,7 +48,7 @@ export const WorkProjectContentSection = styled.section`
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: all 0.3s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     &.expand {
       max-height: 100%;
       opacity: 1;

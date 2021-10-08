@@ -63,7 +63,8 @@ export const ContactTextSection = styled.section`
     > h2 {
       > svg {
         margin-left: 5px;
-        vertical-align: middle;
+        vertical-align: bottom;
+        margin-bottom: 5px;
       }
     }
   }

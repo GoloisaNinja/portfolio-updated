@@ -58,7 +58,7 @@ export function Hero() {
             weight="900"
             color="#aaa, #00de53"
           >
-            WHY WORK WITH ME? <FaArrowCircleDown />
+            SO, WHY WORK WITH ME? <FaArrowCircleDown />
           </GradientH2>
         </div>
         <HeroInfoWrapper>

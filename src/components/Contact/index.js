@@ -85,7 +85,8 @@ export function Contact() {
       <ContactTextSection>
         <div>
           <GradientH2 font="'Fredoka One', cursive" color="#aaa, #00de53">
-            CONTACT ME <FaEnvelope />
+            WE COULD BUILD AMAZING THINGS TOGETHER! CONTACT ME TODAY!{" "}
+            <FaEnvelope />
           </GradientH2>
         </div>
         <ContactMainSection>

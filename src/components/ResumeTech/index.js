@@ -74,7 +74,8 @@ export function ResumeTech() {
       <ResumeTextWrapper>
         <div>
           <GradientH2 font="'Fredoka One', cursive" color="#aaa, #00de53">
-            MY RESUME AND THE STACKS I USE
+            HOW CAN I ADD VALUE TO YOUR TEAM? READ MY RESUME, VIEW THE STACKS I
+            USE.
           </GradientH2>
         </div>
         <ResumeInfoWrapper>

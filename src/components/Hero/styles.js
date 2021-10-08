@@ -125,7 +125,7 @@ export const HeroInfoWrapper = styled.div`
       margin-top: 10px;
       list-style: square;
       margin-left: 25px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       > li {
         list-style: square;
       }

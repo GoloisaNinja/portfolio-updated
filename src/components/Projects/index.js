@@ -114,8 +114,7 @@ export function Projects() {
       <ProjectsTextWrapper>
         <div>
           <GradientH2 font="'Fredoka One', cursive" color="#aaa, #00de53">
-            NEED TO BUILD COMPLEX & UNIQUE APPS? MY PROJECTS SHOWCASE DEPTH AND
-            VARIATION.
+            YOU BUILD COMPLEX APPS? I CAN HELP. REVIEW MY PROJECTS.
           </GradientH2>
         </div>
         <ProjectsCardWrapper>

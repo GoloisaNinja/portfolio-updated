@@ -53,7 +53,7 @@ export function Projects() {
     },
     {
       title: `Useddit`,
-      description: `Complex VueJS Reddit Clone`,
+      description: `Complex Reddit Clone made with VueJS and Firebase`,
       tags: [`VueJS`, `VuexFire`, `Vue Router`, `Firestore`],
       github: `https://github.com/GoloisaNinja/useddit`,
       live: `https://useddit.netlify.app/`,

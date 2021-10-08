@@ -45,12 +45,15 @@ export const WorkProjectContentSection = styled.section`
     }
   }
   > div:last-child {
-    max-height: 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 0;
     opacity: 0;
     overflow: hidden;
     transition: opacity 0.5s ease-in-out;
     &.expand {
-      max-height: 100%;
+      height: 250px;
       opacity: 1;
     }
   }

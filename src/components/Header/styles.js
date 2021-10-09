@@ -7,7 +7,7 @@ const fadeDownBounce = keyframes`
 	}
 	50% {
 		opacity: 0.5;
-		transform: translateY(0.5rem);
+		transform: translateY(-.1rem);
 	}
 	100% {
 		opacity: 1;
@@ -24,6 +24,7 @@ export const HeaderWrapper = styled.header`
   position: fixed;
   z-index: 4;
   img {
+    animation: ${fadeDownBounce} 0.5s ease-in 0.3s backwards;
     &.hide {
       visibility: hidden;
     }
@@ -34,7 +35,6 @@ export const HamburgerWrapper = styled.div`
   right: 20px;
   top: 50px;
   cursor: pointer;
-  animation: ${fadeDownBounce} 1s ease-in 0.5s backwards;
   transition: all 0.5s ease-out;
   outline: none;
   &.close {

@@ -93,7 +93,10 @@ export function Hero() {
               of my work!
             </p>
             <div>
-              <HeroButton onClick={e => handleProjectNavigate()}>
+              <HeroButton
+                aria-label="jumps to the project section of the page to view portfolio projects"
+                onClick={e => handleProjectNavigate()}
+              >
                 <FaArrowRight />
               </HeroButton>
               <p>jump to projects!</p>

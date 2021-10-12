@@ -24,6 +24,7 @@ export function Menu({ fact, factNumber, handleNav }) {
       </FactWrapper>
       <NavWrapper id="navs">
         <NavButton
+          aria-label="menu button for the home section of the portfolio site"
           id="navItem"
           tabIndex="0"
           onKeyDown={e => e.code === "Enter" && handleMenu(e)}
@@ -32,6 +33,7 @@ export function Menu({ fact, factNumber, handleNav }) {
           home
         </NavButton>
         <NavButton
+          aria-label="menu button for the resume section of the portfolio site"
           id="navItem"
           onKeyDown={e => e.code === "Enter" && handleMenu(e)}
           onClick={e => handleMenu(e)}
@@ -39,6 +41,7 @@ export function Menu({ fact, factNumber, handleNav }) {
           resume
         </NavButton>
         <NavButton
+          aria-label="menu button for the blog section of the portfolio site"
           id="navItem"
           onKeyDown={e => e.code === "Enter" && handleMenu(e)}
           onClick={e => handleMenu(e)}
@@ -46,6 +49,7 @@ export function Menu({ fact, factNumber, handleNav }) {
           blog
         </NavButton>
         <NavButton
+          aria-label="menu button for the projects and work section of the portfolio site"
           id="navItem"
           onKeyDown={e => e.code === "Enter" && handleMenu(e)}
           onClick={e => handleMenu(e)}
@@ -53,6 +57,7 @@ export function Menu({ fact, factNumber, handleNav }) {
           projects
         </NavButton>
         <NavButton
+          aria-label="menu button for the contact section of the portfolio site"
           id="navItem"
           onKeyDown={e => e.code === "Enter" && handleMenu(e)}
           onClick={e => handleMenu(e)}

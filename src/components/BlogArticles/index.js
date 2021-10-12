@@ -18,11 +18,24 @@ export function BlogArticles() {
         </div>
         <BlogInfoWrapper>
           <div>
-            <a href="https://jcodes.blog">VISIT MY BLOG</a>
-            <a href="https://github.com/GoloisaNinja/gatsbyDevBlog">
+            <a
+              aria-label="navigates to the Jon Collins Developer Blog at jcodes.blog"
+              href="https://jcodes.blog"
+            >
+              VISIT MY BLOG
+            </a>
+            <a
+              aria-label="navigates to the github repository for the Gatsby Implementation of the Jon Collins Developer Blog"
+              href="https://github.com/GoloisaNinja/gatsbyDevBlog"
+            >
               SEE THE CODE
             </a>
-            <a href="https://jcodes.blog/about">MORE ABOUT ME</a>
+            <a
+              aria-label="navigates to the more in-depth about section of the Jon Collins Developer Blog"
+              href="https://jcodes.blog/about"
+            >
+              MORE ABOUT ME
+            </a>
           </div>
           <div id="blogScrollTarget">
             {articles.map(article => (

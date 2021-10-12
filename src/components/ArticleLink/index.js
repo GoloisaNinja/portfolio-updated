@@ -18,7 +18,11 @@ export function ArticleLink({ title, link, preview }) {
   const badges = tags[title];
   const articleLink = `/blog-articles/${link}`;
   return (
-    <ArticleLinkWrapper id="fade-articles" onClick={e => navigate(articleLink)}>
+    <ArticleLinkWrapper
+      aria-label={`navigates to the article titled ${title}`}
+      id="fade-articles"
+      onClick={e => navigate(articleLink)}
+    >
       <ArticleContainer>
         <GradientH5 font="'Fredoka One', cursive" color="#ccc, #ccc">
           {title.toUpperCase()}

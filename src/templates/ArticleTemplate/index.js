@@ -49,6 +49,11 @@ export const query = graphql`
 `;
 
 export default function ArticleTemplate({ data }) {
+  const articleAltImageTexts = {
+    2: "An image of 3 colorful macaroons stacked on top of each other",
+    5: "An image of a small boat in a very large, blue, body of water",
+    6: "An image of an old television set that is visibly flickering on channel 3",
+  };
   return (
     <Layout>
       <Seo
@@ -61,7 +66,12 @@ export default function ArticleTemplate({ data }) {
       />
       <ArticleWrapper>
         <div>
-          <Button onClick={e => navigate(-1)}>BACK TO PORTFOLIO</Button>
+          <Button
+            aria-label="navigates back the main homepage of the Jonathan Collins Developer Portfolio Site"
+            onClick={e => navigate(-1)}
+          >
+            BACK TO PORTFOLIO
+          </Button>
         </div>
         <ArticleContentSection>
           <GradientH2 font="'Fredoka One', cursive" color="#aaa, #00de53">
@@ -76,7 +86,10 @@ export default function ArticleTemplate({ data }) {
               }
               alt="Author Image of Jon Collins looking thoughtful and witty and handsome"
             />
-            <a href={`https://twitter.com/goloisaninja`}>
+            <a
+              aria-label="navigates to the profile of Jonathan Collins at Twitter.com"
+              href={`https://twitter.com/goloisaninja`}
+            >
               <FaTwitter />
             </a>
           </ArticleByLineWrapper>
@@ -86,7 +99,7 @@ export default function ArticleTemplate({ data }) {
                 data.strapiArticle.image.localFile.childImageSharp
                   .gatsbyImageData
               }
-              alt="image alt coming soon for main article images"
+              alt={articleAltImageTexts[data.strapiArticle.strapiId]}
             />
           </ArticleMainImageWrapper>
           <ArticleStrapiContentWrapper>

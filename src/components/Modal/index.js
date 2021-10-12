@@ -35,7 +35,10 @@ export function Modal({ show, handleDismiss, handleClose, content }) {
               </>
             ) : (
               <>
-                <ModalDismissButton1 onClick={e => handleDismiss()}>
+                <ModalDismissButton1
+                  aria-label="button to dismiss the modal message"
+                  onClick={e => handleDismiss()}
+                >
                   dismiss
                 </ModalDismissButton1>
               </>

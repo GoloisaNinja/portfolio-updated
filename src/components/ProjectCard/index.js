@@ -93,12 +93,17 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
           </TagsWrapper>
           <Description>{description}</Description>
           <LinkWrapper>
-            <LinkButton id={btnIdOne} onClick={e => followLink(e, github)}>
+            <LinkButton
+              aria-label={`navigates to the github repository for the ${title} project`}
+              id={btnIdOne}
+              onClick={e => followLink(e, github)}
+            >
               <span className="btnText">
                 <FaGithub /> CODE
               </span>
             </LinkButton>
             <LinkButton
+              aria-label={`navigates to the live site for the ${title} project`}
               inverse
               id={btnIdTwo}
               onClick={e => followLink(e, live)}

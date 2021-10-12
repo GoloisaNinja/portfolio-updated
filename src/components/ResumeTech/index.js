@@ -80,11 +80,23 @@ export function ResumeTech() {
         </div>
         <ResumeInfoWrapper>
           <div>
-            <a href="https://jcodes.me">MY RESUME GAME</a>
-            <a href={resumePDF} download="collins_devresume.pdf">
+            <a
+              aria-label="navigates to the Jon Collins Developer Resume Noir Game - a text adventure game!"
+              href="https://jcodes.me"
+            >
+              MY RESUME GAME
+            </a>
+            <a
+              aria-label="on desktop this will download the Jonathan Collins Tech Resume PDF - on a mobile device this will open the Jonathan Collins Tech Resume PDF"
+              href={resumePDF}
+              download="collins_devresume.pdf"
+            >
               PDF RESUME
             </a>
-            <a href="https://www.credly.com/badges/517ccf0d-c666-4f77-a20e-5581b8d8bec5/public_url">
+            <a
+              aria-label="navigates to the Credly site where  you can view the PSM certificate for Jonathan Collins as a Professional Scrum Master"
+              href="https://www.credly.com/badges/517ccf0d-c666-4f77-a20e-5581b8d8bec5/public_url"
+            >
               PSM CERTIFICATE
             </a>
           </div>

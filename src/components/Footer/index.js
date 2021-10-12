@@ -10,7 +10,13 @@ export function Footer() {
         Made with <FaMugHot /> by Jon Collins {currentYear}
       </p>
       <p>
-        Modal Icon by <a href="https://www.freepik.com">FreePik</a>
+        Modal Icon by{" "}
+        <a
+          aria-label="navigates to the website FreePik where icons can be found"
+          href="https://www.freepik.com"
+        >
+          FreePik
+        </a>
       </p>
     </FooterWrapper>
   );

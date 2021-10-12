@@ -81,7 +81,10 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
           <GradientH4 font="'Fredoka One', cursive" color="#aaa, #00de53">
             {title.toUpperCase()}
           </GradientH4>
-          <ExpandButton onClick={e => handleSectionExpand()}>
+          <ExpandButton
+            aria-label={`expands and contracts the detail section for the ${title} project`}
+            onClick={e => handleSectionExpand()}
+          >
             <FaChevronRight id={`btn-expand${chevronBtnId}`} />
           </ExpandButton>
         </div>

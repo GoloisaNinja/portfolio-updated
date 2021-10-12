@@ -116,8 +116,10 @@ export const HeroInfoWrapper = styled.div`
     }
     > div:last-child {
       display: flex;
+      justify-content: flex-start;
       align-items: center;
       > p {
+        margin-top: 1px;
         color: #fff;
       }
     }

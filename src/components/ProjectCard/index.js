@@ -16,15 +16,16 @@ import {
 } from "./styles";
 
 export function ProjectCard({ image, title, description, tags, github, live }) {
-  const [btnIdOne, setBtnIdOne] = useState(nanoid(6));
-  const [btnIdTwo, setBtnIdTwo] = useState(nanoid(6));
   const [btnClicked, setBtnClicked] = useState(null);
   const [shouldProjectSectionExpand, setShouldProjectSectionExpand] = useState(
     false
   );
-  const chevronBtnId = nanoid(3);
   const [chevronElement, setChevronElement] = useState();
   const [divElement, setDivElement] = useState();
+
+  const btnIdOne = nanoid(6);
+  const btnIdTwo = nanoid(6);
+  const chevronBtnId = nanoid(3);
 
   const handleVisibilityChange = useCallback(() => {
     if (document.hidden) {

@@ -15,7 +15,7 @@ import {
 export function Hero() {
   const data = useStaticQuery(graphql`
     {
-      file(relativePath: { eq: "me.png" }) {
+      file(relativePath: { eq: "me2.png" }) {
         childImageSharp {
           gatsbyImageData(
             placeholder: BLURRED

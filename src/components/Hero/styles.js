@@ -85,8 +85,7 @@ export const HeroTextSection = styled.section`
     }
   }
   img {
-    border-radius: 5px;
-    border: 1px solid #fff;
+    border-radius: 20px;
   }
   @media (max-width: 320px) {
     font-size: 1.05em;

@@ -4,6 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { GradientH2 } from "../../components";
 import { Overlay } from "../MainOverlay";
 import resumePDF from "../../utils/collins_dev_resume.pdf";
+import cvPDF from "../../utils/collins_dev_cv.pdf";
 import {
   ResumeWrapper,
   ResumeTextWrapper,
@@ -88,10 +89,17 @@ export function ResumeTech() {
             </a>
             <a
               aria-label="on desktop this will download the Jonathan Collins Tech Resume PDF - on a mobile device this will open the Jonathan Collins Tech Resume PDF"
+              href={cvPDF}
+              download="collins_devcv.pdf"
+            >
+              RESUME PDF
+            </a>
+            <a
+              aria-label="on desktop this will download the Jonathan Collins Tech Resume Inforgraphic PDF - on a mobile device this will open the Jonathan Collins Tech Resume PDF"
               href={resumePDF}
               download="collins_devresume.pdf"
             >
-              PDF RESUME
+              CV INFOGRAPHIC
             </a>
             <a
               aria-label="navigates to the Credly site where  you can view the PSM certificate for Jonathan Collins as a Professional Scrum Master"

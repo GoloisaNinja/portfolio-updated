@@ -6,8 +6,7 @@ export const FooterWrapper = styled.footer`
   justify-content: center;
   align-items: center;
   padding: 20px;
-  //background-color: #1c1c1c;
-  background-color: #6e00a1;
+  background-color: #0e6699;
   color: #fff;
   font-family: "Questrial", sans-serif;
   height: 70px;

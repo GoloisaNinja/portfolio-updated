@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { FaArrowCircleDown, FaArrowRight } from "react-icons/fa";
+import { FaArrowCircleDown, FaArrowRight, FaRebel } from "react-icons/fa";
+import { GiDeathStar } from "react-icons/gi";
 import smoothscroll from "smoothscroll-polyfill";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { GradientH2 } from "../GradientText";
@@ -10,9 +11,12 @@ import {
   HeroTextSection,
   HeroInfoWrapper,
   HeroButton,
+  ImageWrapper,
+  ImageContainer,
 } from "./styles";
 
 export function Hero() {
+  const [deathStar, setDeathStar] = useState(false);
   const data = useStaticQuery(graphql`
     {
       file(relativePath: { eq: "me2.png" }) {
@@ -27,6 +31,9 @@ export function Hero() {
       }
     }
   `);
+  const handleDeathStar = () => {
+    setDeathStar(!deathStar);
+  };
   const handleProjectNavigate = () => {
     const projectSection = document.getElementById("projects");
     smoothscroll.polyfill();
@@ -62,10 +69,209 @@ export function Hero() {
           </GradientH2>
         </div>
         <HeroInfoWrapper>
-          <GatsbyImage
-            image={data.file.childImageSharp.gatsbyImageData}
-            alt="a handsome guy"
-          />
+          <ImageContainer>
+            {!deathStar ? (
+              <GatsbyImage
+                image={data.file.childImageSharp.gatsbyImageData}
+                alt="a handsome guy"
+              />
+            ) : (
+              <ImageWrapper>
+                <p>
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                  LoremipsumdolorsitametconsecteturadipisicingelitMollitiaLoremipsumdolorsitametco
+                  impeditconsequunturharumvelitrepellatarchitectoquimaioresLoremipsumdolorsitametco
+                  quosquiaIllofugaprovidentporroquisquammaioresmollitiaexLoremipsumdolorsitametco
+                  sedexplicaboassumendaexercitationemvoluptatefugitquasLoremipsumdolorsitametco
+                  earumnesciuntquaeerrorveldolorlaboriosamModilaudantiumLoremipsumdolorsitametco
+                  mollitiasequivelitquiaccusantiumnonobcaecaticonsecteturLoremipsumdolorsitametco
+                  autemliberosolutaremcorruptiquidemvoluptatumHicanimiLoremipsumdolorsitametco
+                  quibusdamconsequaturautemlaboreaspernaturadfacilisdolorumLoremipsumdolorsitametco
+                  idabinventoreassumendaodiobeataeomnisminusremplaceatetLoremipsumdolorsitametco
+                </p>
+              </ImageWrapper>
+            )}
+
+            <div>
+              <HeroButton
+                death={true}
+                aria-label="does something deathstar-ish try it!"
+                onClick={handleDeathStar}
+              >
+                {deathStar ? <FaRebel /> : <GiDeathStar />}
+              </HeroButton>
+            </div>
+          </ImageContainer>
           <div>
             <p>
               Welcome! I'm Jon, and I'm a full stack (MERN) developer. Here's a
@@ -77,6 +283,10 @@ export function Hero() {
               <li>
                 Strong Backend Experience - See Movie Partners & Newbsanity
                 projects
+              </li>
+              <li>
+                Experience with tools like Postman - for testing custom API's
+                and for implementing multiple 3rd party API's
               </li>
               <li>Self-Taught Developer</li>
               <li>Highly Motivated, Perpetual Learner</li>

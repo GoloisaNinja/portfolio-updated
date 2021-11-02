@@ -5,6 +5,15 @@ const textClip = css`
   background: url(${background});
 `;
 
+const pulse = keyframes`
+  80% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
 const wave = keyframes`
   0% {
     transform: rotate(0deg);
@@ -185,24 +194,42 @@ export const ImageWrapper = styled.div`
     height: 100%;
   }
 `;
+export const ImageShiftButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  color: #ccc;
+  cursor: pointer;
+  animation-name: ${pulse};
+  animation-duration: 3.5s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite;
+  transition: all 0.5s ease-in-out;
+  padding: 10px;
+  > svg {
+    font-size: 50px;
+  }
+`;
 export const HeroButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   background: none;
-  border: ${props => (props.death ? `none` : `1px solid #ccc`)};
-  padding: ${props => (props.death ? `5px` : `19px 20px`)};
+  border: 1px solid #ccc;
+  padding: 19px 20px;
   border-radius: 50%;
   color: #ccc;
   margin-right: 15px;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
   &:hover {
-    background-color: ${props => (props.death ? `none` : `#0e6699`)};
+    background-color: #0e6699;
     color: #fff;
-    border: ${props => (props.death ? `none` : `3px solid #ccc`)};
-    padding: ${props => (props.death ? `5px` : `17px 18px`)};
+    border: 3px solid #ccc;
+    padding: 17px 18px;
     animation: ${bounce} 1.2s ease;
     > svg {
       transition: transform 0.3s ease-in-out;
@@ -210,7 +237,7 @@ export const HeroButton = styled.button`
     }
   }
   > svg {
-    font-size: ${props => (props.death ? `60px` : `20px`)};
+    font-size: 20px;
   }
 `;
 export const ImageContainer = styled.div`

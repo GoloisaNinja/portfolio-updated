@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { FaArrowCircleDown, FaArrowRight, FaRebel } from "react-icons/fa";
+import { FaArrowCircleDown, FaArrowRight, FaEmpire } from "react-icons/fa";
 import { GiDeathStar } from "react-icons/gi";
 import smoothscroll from "smoothscroll-polyfill";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -13,6 +13,7 @@ import {
   HeroButton,
   ImageWrapper,
   ImageContainer,
+  ImageShiftButton,
 } from "./styles";
 
 export function Hero() {
@@ -263,13 +264,12 @@ export function Hero() {
             )}
 
             <div>
-              <HeroButton
-                death={true}
+              <ImageShiftButton
                 aria-label="does something deathstar-ish try it!"
                 onClick={handleDeathStar}
               >
-                {deathStar ? <FaRebel /> : <GiDeathStar />}
-              </HeroButton>
+                {deathStar ? <FaEmpire /> : <GiDeathStar />}
+              </ImageShiftButton>
             </div>
           </ImageContainer>
           <div>

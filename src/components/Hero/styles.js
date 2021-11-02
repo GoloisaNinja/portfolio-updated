@@ -168,7 +168,7 @@ export const ImageWrapper = styled.div`
   }
   @media (min-width: 400px) {
     grid-template-columns: minmax(350px, 350px);
-    grid-template-rows: minmax(300px, 350px);
+    grid-template-rows: minmax(350px, 350px);
   }
   @media (min-width: 601px) {
     grid-template-columns: minmax(250px, 250px);
@@ -176,7 +176,7 @@ export const ImageWrapper = styled.div`
   }
   @media (min-width: 725px) {
     grid-template-columns: minmax(350px, 350px);
-    grid-template-rows: minmax(300px, 350px);
+    grid-template-rows: minmax(350px, 350px);
   }
   > p:first-child {
     display: inline-block;

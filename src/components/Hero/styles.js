@@ -150,8 +150,12 @@ export const ImageWrapper = styled.div`
   grid-template-rows: minmax(280px, 280px);
   overflow: hidden;
   @media (min-width: 350px) {
-    grid-template-columns: minmax(335px, 335px);
-    grid-template-rows: minmax(335px, 335px);
+    grid-template-columns: minmax(325px, 325px);
+    grid-template-rows: minmax(325px, 325px);
+  }
+  @media (min-width: 374px) {
+    grid-template-columns: minmax(350px, 350px);
+    grid-template-rows: minmax(350px, 350px);
   }
   @media (min-width: 400px) {
     grid-template-columns: minmax(350px, 350px);

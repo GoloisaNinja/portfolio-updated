@@ -175,6 +175,10 @@ export const ImageWrapper = styled.div`
     grid-template-rows: minmax(250px, 250px);
   }
   @media (min-width: 725px) {
+    grid-template-columns: minmax(330px, 330px);
+    grid-template-rows: minmax(330px, 330px);
+  }
+  @media (min-width: 825px) {
     grid-template-columns: minmax(350px, 350px);
     grid-template-rows: minmax(350px, 350px);
   }

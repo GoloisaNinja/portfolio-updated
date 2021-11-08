@@ -38,10 +38,10 @@ export const ArticleIntroSection = styled.div`
 export const Title = styled.h1`
   font-weight: 900;
   font-size: 50px;
-  @media (min-width: 350px) {
+  @media (min-width: 395px) {
     font-size: 75px;
   }
-  @media (min-width: 500px) {
+  @media (min-width: 515px) {
     font-size: 100px;
   }
 `;

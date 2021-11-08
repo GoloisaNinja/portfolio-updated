@@ -64,7 +64,7 @@ export default function ArticleTemplate({ data }) {
       <ArticleWrapper>
         <ArticleIntroSection>
           <Title>
-            <RedSpan>{`>`}</RedSpan>
+            <RedSpan>{`> `}</RedSpan>
             {data.strapiArticle.title}
           </Title>
           <ArticleByLineWrapper>

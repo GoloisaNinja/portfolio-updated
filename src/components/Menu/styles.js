@@ -25,7 +25,7 @@ export const MenuWrapper = styled.nav`
 
 export const NavWrapper = styled.div`
   ${menuWrapperStyle};
-  background: #292929;
+  background: black;
   transform: translate3d(0, -100%, 0);
   transition: all 0.3s ease-out;
   &.show {
@@ -36,7 +36,7 @@ export const NavButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-  font-family: "Questrial", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 30px;
   padding: 16px 0;
   color: #fff;

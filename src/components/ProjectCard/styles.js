@@ -37,8 +37,9 @@ const basicButtonStyle = css`
     }
   }
   &:hover {
-    background-color: #eee;
-    color: black;
+    background-color: #d41763;
+    color: #fff;
+    border: 1px solid #d41763;
   }
   &.loading .btnText {
     visibility: hidden;
@@ -97,10 +98,11 @@ export const WorkProjectContentSection = styled.section`
     flex-direction: column;
     flex-grow: 1;
     height: 0;
-    //opacity: 0;
     overflow: hidden;
-    background-color: #303030;
+    background-color: #eee;
     transition: height 0.5s ease-in-out;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     &.expand {
       height: 165px;
       //opacity: 1;
@@ -109,10 +111,11 @@ export const WorkProjectContentSection = styled.section`
 `;
 
 export const Description = styled.p`
-  color: #808080;
+  color: #696969;
   font-size: 14px;
   text-align: center;
   margin-bottom: 20px;
+  padding: 0 10px;
   flex: 1;
 `;
 export const LinkWrapper = styled.div`
@@ -128,6 +131,7 @@ export const LinkButton = styled.button`
   margin-left: ${props => props.inverse && "15px"};
   background-color: ${props => props.inverse && "#eee"};
   color: ${props => props.inverse && "black"};
+  border: ${props => props.inverse && "1px solid black"};
   &:hover {
     background-color: ${props => props.inverse && `#d41763`};
     color: ${props => props.inverse && `#fff`};

@@ -18,101 +18,98 @@ const bounce = keyframes`
   }
 `;
 
+const wave = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(16deg);
+  }
+  7.5% {
+    transform: rotate(-8deg);
+  }
+  10% {
+    transform: rotate(16deg);
+  }
+  12.5% {
+    transform: rotate(-4deg);
+  }
+  15% {
+    transform: rotate(16deg);
+  }
+  20%, 100% {
+    transform: rotate(0deg);
+  }
+`;
+
 const inputStyle = css`
   font-size: 16px;
   padding: 10px 0 10px 8px;
   margin-bottom: 16px;
-  font-family: "Questrial", sans-serif;
+  font-family: "Rubik", sans-serif;
   border: none;
   border-radius: 5px;
-  background: #3d3d3d;
+  background: black;
   color: #fff;
   &:focus {
     + label {
       font-size: 75%;
-      transform: translate3d(0, -150%, 0);
+      transform: translate3d(0, -175%, 0);
       opacity: 1;
-      color: #aaa;
+      color: #696969;
     }
   }
   &:valid {
     + label {
       font-size: 75%;
-      transform: translate3d(0, -150%, 0);
+      transform: translate3d(0, -175%, 0);
       opacity: 1;
-      color: #aaa;
+      color: #696969;
     }
   }
 `;
 
 export const ContactWrapper = styled.header`
-  width: 100%;
-  margin-top: 50px;
-`;
-export const ContactTextSection = styled.section`
-  position: relative;
-  z-index: 1;
-  padding: 10px;
-  margin: 0 auto;
-  font-size: 1.25em;
-  text-align: center;
-  > div:first-child {
-    text-align: left;
-    border-bottom: 1px solid #00de53;
-    padding-left: 10px;
-    > h2 {
-      > svg {
-        margin-left: 5px;
-        vertical-align: middle;
-      }
-    }
-  }
-
-  @media (max-width: 320px) {
-    font-size: 1.05em;
-  }
-`;
-export const ContactMainSection = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  color: #fff;
-  > div:first-child {
-    font-family: "Questrial", sans-serif;
-    > a:not(:last-child) {
-      margin-right: 20px;
-    }
-    > a:nth-child(2) {
-      color: #0061f2;
-    }
-    > a:nth-child(3) {
-      color: #8a00f4;
-    }
-    > a:nth-child(4) {
-      color: #0a888f;
-    }
-    svg {
-      font-size: 60px;
-    }
+  font-family: "Rubik", sans-serif;
+  width: 100%;
+  padding: 15px;
+`;
+export const ContactIntro = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 90%;
+  > h5 {
+    margin-top: 0;
+    color: #696969;
   }
-  @media (min-width: 600px) {
-    flex-direction: row;
-    align-items: flex-start;
+  > span {
+    margin-right: 10px;
+    font-size: 30px;
+    animation: ${wave} 5s infinite;
+    transform-origin: 75% 75%;
   }
+`;
+export const RedSpan = styled.span`
+  color: #d41763;
 `;
 export const ContactFormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  font-family: "Questrial", sans-serif;
+  font-family: "Rubik", sans-serif;
   letter-spacing: 1px;
   padding: 30px 10px 0px 10px;
   margin-bottom: 20px;
   width: 100%;
   @media (min-width: 600px) {
-    max-width: 50%;
+    max-width: 600px;
   }
 `;
 export const ContactForm = styled.form`
@@ -140,19 +137,22 @@ export const TextArea = styled.textarea`
 `;
 export const ContactSubmitButton = styled.button`
   border: none;
-  background: none;
-  border: 1px solid #ccc;
+  background: #d41763;
+  border: 1px solid #d41763;
   padding: 20px;
   border-radius: 50%;
-  color: #ccc;
+  color: #fff;
   margin-right: 15px;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
   &:hover {
-    background-color: #0e6699;
-    color: #fff;
-    border: 1px solid #0e6699;
+    background-color: black;
+    border: 1px solid black;
     animation: ${bounce} 1s ease;
+    > svg {
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(12px);
+    }
   }
   > svg {
     font-size: 20px;
@@ -174,4 +174,36 @@ export const FormLabelFloating = styled.label`
   font-size: 16px;
   color: #fff;
   font-weight: bold;
+`;
+export const ContactIconWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 15px;
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+`;
+export const ContactIconCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  > a:first-child {
+    text-decoration: none;
+    > svg {
+      font-size: 45px;
+      color: #d41763;
+      margin-bottom: 5px;
+    }
+  }
+
+  > p {
+    font-family: "Rubik", sans-serif;
+    font-size: 12px;
+    color: #696969;
+  }
 `;

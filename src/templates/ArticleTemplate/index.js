@@ -1,14 +1,15 @@
 import React from "react";
 import { graphql, navigate } from "gatsby";
-//import { navigate } from "@reach/router";
 import { GatsbyImage } from "gatsby-plugin-image";
 import ReactMarkdown from "react-markdown";
 import { FaTwitter } from "react-icons/fa";
-import { Layout, Button, GradientH2, Overlay, Seo } from "../../components";
+import { Layout, Seo } from "../../components";
 import {
   ArticleWrapper,
-  ArticleContentSection,
+  Title,
+  ArticleIntroSection,
   ArticleByLineWrapper,
+  ButtonGroup,
   ArticleMainImageWrapper,
   ArticleStrapiContentWrapper,
 } from "./styles";
@@ -38,7 +39,7 @@ export const query = graphql`
           childImageSharp {
             gatsbyImageData(
               placeholder: BLURRED
-              width: 650
+              width: 2000
               formats: [AUTO, WEBP]
             )
           }
@@ -60,13 +61,8 @@ export default function ArticleTemplate({ data }) {
         }
       />
       <ArticleWrapper>
-        <div>
-          <Button onClick={e => navigate(-1)}>BACK TO PORTFOLIO</Button>
-        </div>
-        <ArticleContentSection>
-          <GradientH2 font="'Fredoka One', cursive" color="#aaa, #00de53">
-            {data.strapiArticle.title.toUpperCase()}
-          </GradientH2>
+        <ArticleIntroSection>
+          <Title>{data.strapiArticle.title}</Title>
           <ArticleByLineWrapper>
             <p>By {data.strapiArticle.author.username}</p>
             <GatsbyImage
@@ -80,20 +76,21 @@ export default function ArticleTemplate({ data }) {
               <FaTwitter />
             </a>
           </ArticleByLineWrapper>
-          <ArticleMainImageWrapper>
-            <GatsbyImage
-              image={
-                data.strapiArticle.image.localFile.childImageSharp
-                  .gatsbyImageData
-              }
-              alt="image alt coming soon for main article images"
-            />
-          </ArticleMainImageWrapper>
-          <ArticleStrapiContentWrapper>
-            <ReactMarkdown children={data.strapiArticle.content} />
-          </ArticleStrapiContentWrapper>
-          <Overlay opacity="0" bgColor="#030303"></Overlay>
-        </ArticleContentSection>
+          <ButtonGroup>
+            <button onClick={() => navigate("/")}>Back to portfolio</button>
+          </ButtonGroup>
+        </ArticleIntroSection>
+        <ArticleMainImageWrapper>
+          <GatsbyImage
+            image={
+              data.strapiArticle.image.localFile.childImageSharp.gatsbyImageData
+            }
+            alt="image alt coming soon for main article images"
+          />
+        </ArticleMainImageWrapper>
+        <ArticleStrapiContentWrapper>
+          <ReactMarkdown children={data.strapiArticle.content} />
+        </ArticleStrapiContentWrapper>
       </ArticleWrapper>
     </Layout>
   );

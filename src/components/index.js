@@ -8,7 +8,7 @@ export * from "./ResumeTech";
 export * from "./MainOverlay";
 export * from "./Menu";
 export * from "./BlogArticles";
-export * from "./ArticleLink";
+export * from "./ArticleCard";
 export * from "./ProjectCard";
 export * from "./Projects";
 export * from "./Contact";

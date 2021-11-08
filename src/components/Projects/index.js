@@ -1,14 +1,13 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { nanoid } from "nanoid";
-import { GradientH2 } from "../GradientText";
-import { Overlay } from "../MainOverlay";
 import { ProjectCard } from "../ProjectCard";
 import {
   ProjectsWrapper,
-  ProjectsTextWrapper,
   ProjectsCardWrapper,
+  ProjectIntro,
+  RedSpan,
 } from "./styles";
+import { nanoid } from "nanoid";
 
 export function Projects() {
   const data = useStaticQuery(graphql`
@@ -34,8 +33,9 @@ export function Projects() {
       }
     }
   `);
-  const testProject = [
+  const projectObjectArray = [
     {
+      id: "p1",
       title: `Culchr`,
       description: `Hilarious Corporate Culture and Values Generator`,
       tags: [`React`, `React Router`, `QueryParams`, `API's`],
@@ -44,6 +44,7 @@ export function Projects() {
       name: "culchrReactApp",
     },
     {
+      id: "p2",
       title: `Hat Attack`,
       description: `Gatsby Shopify Build with Checkout`,
       tags: [`Shopify`, `GraphQL`, `Styled Components`, `Gatsby`],
@@ -52,6 +53,7 @@ export function Projects() {
       name: "hatShopify",
     },
     {
+      id: "p3",
       title: `Useddit`,
       description: `Complex VueJS Reddit Clone`,
       tags: [`VueJS`, `VuexFire`, `Vue Router`, `Firestore`],
@@ -68,6 +70,7 @@ export function Projects() {
       name: "neonUnicornShop",
     },
     {
+      id: "p4",
       title: `Movie Partners`,
       description: `Massive React Project with Custom Backend`,
       tags: [`React`, `ContextAPI`, `MongoDB`, `NodeJS`],
@@ -76,6 +79,7 @@ export function Projects() {
       name: "mp",
     },
     {
+      id: "p5",
       title: `Expencils`,
       description: `Complex Finance Tracking Application`,
       tags: [`React`, `Redux`, `React Router`, `Firebase`],
@@ -84,6 +88,7 @@ export function Projects() {
       name: "expencils",
     },
     {
+      id: "p6",
       title: `Shortly`,
       description: `Bit.ly Url Shortener Clone`,
       tags: [`VueJS`, `NodeJS`, `Express`, `MongoDB`],
@@ -92,6 +97,7 @@ export function Projects() {
       name: "shortly1",
     },
     {
+      id: "p7",
       title: `Newbsanity`,
       description: `Full Feature Fitness and Social Platform Application`,
       tags: [`React`, `Router`, `Redux`, `Custom CMS`],
@@ -101,6 +107,7 @@ export function Projects() {
       name: "newbsanity",
     },
     {
+      id: "p8",
       title: `SocialDevs`,
       description: `Social Platform Application for Developers`,
       tags: [`React`, `React Router`, `Redux`, `MongoDB`],
@@ -112,33 +119,40 @@ export function Projects() {
 
   return (
     <ProjectsWrapper id="projects">
-      <ProjectsTextWrapper>
-        <div>
-          <GradientH2 font="'Fredoka One', cursive" color="#aaa, #00de53">
-            MY PROJECTS
-          </GradientH2>
-        </div>
-        <ProjectsCardWrapper>
-          {data.allFile.edges.map(({ node }) => {
-            let index = testProject.findIndex(
-              project => project.name === node.name
-            );
-            return (
-              <ProjectCard
-                key={nanoid(8)}
-                image={node.childImageSharp.gatsbyImageData}
-                title={testProject[index].title}
-                description={testProject[index].description}
-                tags={testProject[index].tags}
-                bgColor={testProject[index].bgColor}
-                github={testProject[index].github}
-                live={testProject[index].live}
-              />
-            );
-          })}
-        </ProjectsCardWrapper>
-        <Overlay opacity="0"></Overlay>
-      </ProjectsTextWrapper>
+      <ProjectIntro>
+        <h3>
+          <RedSpan>{`> `}</RedSpan>glorious project applications
+        </h3>
+        <h5>{`You are looking for a developer that can build applications and 
+        create meaningful user experiences? I'm showcasing a few of my more popular 
+        applications just below. Ever needed an application to generate an entirely 
+        phony corporate culture to indoctrinate your drones? Of course you have! 
+        Maybe you need a fully
+        featured media application to track your favorite shows and movies, share watchlists, 
+        or just find related content? My diverse project set illustrates my flexibility with 
+        frontend and backend technologies, while also confirming you probably don't want me
+        making your HR slide decks.
+        `}</h5>
+      </ProjectIntro>
+      <ProjectsCardWrapper>
+        {data.allFile.edges.map(({ node }) => {
+          let index = projectObjectArray.findIndex(
+            project => project.name === node.name
+          );
+          return (
+            <ProjectCard
+              key={nanoid(6)}
+              image={node.childImageSharp.gatsbyImageData}
+              title={projectObjectArray[index].title}
+              description={projectObjectArray[index].description}
+              tags={projectObjectArray[index].tags}
+              bgColor={projectObjectArray[index].bgColor}
+              github={projectObjectArray[index].github}
+              live={projectObjectArray[index].live}
+            />
+          );
+        })}
+      </ProjectsCardWrapper>
     </ProjectsWrapper>
   );
 }

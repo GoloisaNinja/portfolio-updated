@@ -1,12 +1,12 @@
 import React from "react";
 import { useLocation, navigate } from "@reach/router";
-import { MenuWrapper, FactWrapper, NavWrapper, NavButton } from "./styles";
+import { MenuWrapper, NavWrapper, NavButton } from "./styles";
 
-export function Menu({ fact, factNumber, handleNav }) {
+export function Menu({ handleNav }) {
   const { pathname } = useLocation();
   const checkLocation = target => {
     if (pathname !== "/") {
-      navigate(`/`);
+      navigate(`/#${target}`);
       handleNav(target, true);
     } else {
       handleNav(target, false);
@@ -18,10 +18,6 @@ export function Menu({ fact, factNumber, handleNav }) {
   };
   return (
     <MenuWrapper id="menu">
-      <FactWrapper id="facts">
-        <h2>Jon Fun Fact # {factNumber}</h2>
-        <p>{fact}</p>
-      </FactWrapper>
       <NavWrapper id="navs">
         <NavButton
           id="navItem"
@@ -29,14 +25,7 @@ export function Menu({ fact, factNumber, handleNav }) {
           onKeyDown={e => e.code === "Enter" && handleMenu(e)}
           onClick={e => handleMenu(e)}
         >
-          home
-        </NavButton>
-        <NavButton
-          id="navItem"
-          onKeyDown={e => e.code === "Enter" && handleMenu(e)}
-          onClick={e => handleMenu(e)}
-        >
-          resume
+          about
         </NavButton>
         <NavButton
           id="navItem"

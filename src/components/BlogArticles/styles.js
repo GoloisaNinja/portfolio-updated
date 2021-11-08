@@ -1,119 +1,97 @@
 import styled, { css } from "styled-components";
 
-function articleAnimation() {
-  let styles = "";
-  for (let i = 1; i < 4; i++) {
-    let interval = 0.8;
-    interval *= i;
-    styles += `&.fade:nth-child(${i}) {
-      transition-delay: ${interval}s;
-    }`;
-  }
-  return css`
-    ${styles}
-  `;
-}
+// function articleAnimation() {
+//   let styles = "";
+//   for (let i = 1; i < 4; i++) {
+//     let interval = 0.8;
+//     interval *= i;
+//     styles += `&.fade:nth-child(${i}) {
+//       transition-delay: ${interval}s;
+//     }`;
+//   }
+//   return css`
+//     ${styles}
+//   `;
+// }
 
-const BlogSectionButtonStyles = css`
-  width: 100%;
-  display: block;
+const basicButtonStyle = css`
   text-decoration: none;
-  font-family: "Questrial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  outline: none;
+  border: none;
+  border: 1px solid black;
+  border-radius: 25px;
+  font-family: "Rubik", sans-serif;
   font-size: 16px;
-  color: #fff;
-  background-color: #ccc;
-  padding: 20px 50px;
-  border: 1px solid #ccc;
-  border-radius: 30px;
+  font-weight: 700;
+  color: #eee;
+  cursor: pointer;
+  padding: 8px 20px;
   transition: all 0.4s ease-in-out;
-  text-align: center;
-  color: #2e2e2e;
   &:hover {
-    background: none;
-    color: #00de53;
-    border: 1px solid #00de53;
+    background-color: #eee;
+    color: black;
   }
 `;
 
 export const BlogWrapper = styled.section`
-  width: 100%;
-  margin-top: 50px;
-`;
-export const BlogTextWrapper = styled.div`
-  position: relative;
-  z-index: 1;
-  padding: 10px;
-  margin: 0 auto;
-  font-size: 1.25em;
-  > div:first-child {
-    border-bottom: 1px solid #00de53;
-    text-align: left;
-    padding-left: 10px;
-  }
-  @media (max-width: 320px) {
-    font-size: 1.05em;
-  }
-`;
-export const BlogInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  font-family: "Questrial", sans-serif;
-  letter-spacing: 2px;
-  line-height: 1.3;
-  padding: 10px;
-  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #eee;
+  padding: 15px;
+`;
+export const BlogIntro = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 90%;
+  > h5 {
+    color: #696969;
+  }
+`;
+export const RedSpan = styled.span`
+  color: #d41763;
+`;
+export const ButtonGroup = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
-  > div:first-child {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    > a {
-      ${BlogSectionButtonStyles};
-    }
-    > a:first-child {
-      font-weight: bold;
-    }
-    > a:not(:first-child) {
+  width: 100%;
+  > a {
+    ${basicButtonStyle};
+  }
+  > a:first-child {
+    margin-right: 15px;
+  }
+  > a:last-child {
+    background: #d41763;
+    border: 1px solid #d41763;
+    &:hover {
       background: none;
-      color: #ccc;
-      &:hover {
-        background-color: #6e00a1;
-        color: #fff;
-        border: 1px solid #6e00a1;
-      }
-    }
-    > a:not(:last-child) {
-      margin-bottom: 20px;
-    }
-    @media (min-width: 600px) {
-      max-width: 50%;
-      margin-right: 20px;
+      color: #d41763;
     }
   }
-  @media (min-width: 600px) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+`;
+export const ArticleCardGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 15px;
+  width: 90%;
+  margin-bottom: 35px;
+  @media (min-width: 515px) {
+    grid-template-columns: 1fr 1fr;
   }
-  > div:last-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 35px;
-    width: 100%;
-    > button {
-      opacity: 0;
-      transition: opacity 0.5s ease-out;
-      ${articleAnimation};
-      &.fade {
-        opacity: 1;
-      }
-    }
-    @media (min-width: 600px) {
-      margin-top: 0;
-      width: 85%;
-    }
+  @media (min-width: 915px) {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 `;

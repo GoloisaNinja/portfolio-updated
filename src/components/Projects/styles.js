@@ -1,43 +1,43 @@
 import styled from "styled-components";
 
 export const ProjectsWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  margin-top: 50px;
+  background-color: black;
+  padding: 15px;
 `;
-export const ProjectsTextWrapper = styled.div`
-  position: relative;
-  z-index: 1;
-  padding: 10px;
-  //max-width: 95%;
-  margin: 0 auto;
-  font-family: "Monoton", cursive;
-  font-size: 1.25em;
-  text-align: center;
-  > div:first-child {
-    text-align: left;
-    border-bottom: 1px solid #00de53;
-    padding-left: 10px;
+export const ProjectIntro = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 90%;
+  > h3 {
+    color: #eee;
   }
-  > h1 {
-    border-bottom: 1px solid #fff;
-    padding-bottom: 25px;
-  }
-  @media (max-width: 320px) {
-    font-size: 1.05em;
+  > h5 {
+    color: #808080;
   }
 `;
+export const RedSpan = styled.span`
+  color: #d41763;
+`;
+
 export const ProjectsCardWrapper = styled.div`
   display: grid;
+  grid-template-columns: 1fr;
   justify-content: flex-start;
   align-items: stretch;
-  grid-gap: 25px;
-  //padding: 10px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  @media (min-width: 700px) {
+  grid-gap: 30px;
+  margin-bottom: 35px;
+  width: 90%;
+  @media (min-width: 630px) {
     grid-template-columns: 1fr 1fr;
   }
-  /* @media (min-width: 900px) {
+  @media (min-width: 955px) {
     grid-template-columns: 1fr 1fr 1fr;
-  } */
+  }
 `;

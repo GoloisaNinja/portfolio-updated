@@ -1,40 +1,17 @@
-import styled, { keyframes } from "styled-components";
-
-const fadeDownBounce = keyframes`
-0% {
-		opacity: 0;
-		transform: translateY(-0.5rem);
-	}
-	50% {
-		opacity: 0.5;
-		transform: translateY(0.5rem);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-`;
+import styled from "styled-components";
 
 export const HeaderWrapper = styled.header`
   display: flex;
   width: 100%;
-  padding: 20px;
-  justify-content: space-between;
+  padding: 15px;
+  justify-content: flex-end;
   align-items: center;
   position: fixed;
   z-index: 4;
-  img {
-    &.hide {
-      visibility: hidden;
-    }
-  }
+  background-color: black;
 `;
 export const HamburgerWrapper = styled.div`
-  position: absolute;
-  right: 20px;
-  top: 50px;
   cursor: pointer;
-  animation: ${fadeDownBounce} 1s ease-in 0.5s backwards;
   transition: all 0.5s ease-out;
   outline: none;
   &.close {
@@ -51,6 +28,9 @@ export const HamburgerWrapper = styled.div`
       }
     }
   }
+  @media (min-width: 480px) {
+    display: none;
+  }
 `;
 export const MenuLine = styled.div`
   width: 30px;
@@ -58,4 +38,31 @@ export const MenuLine = styled.div`
   margin: 0 0 5px 0;
   background: #ccc;
   transition: all 0.5s ease-out;
+`;
+export const NavLinkWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 16px;
+  color: #eee;
+  > button {
+    background: none;
+    outline: none;
+    border: none;
+    font-family: "Rubik", sans-serif;
+    font-weight: 900;
+    color: #ddd;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      color: #fff;
+    }
+  }
+  > button:not(:last-child) {
+    margin-right: 15px;
+  }
+  @media (max-width: 481px) {
+    display: none;
+  }
 `;

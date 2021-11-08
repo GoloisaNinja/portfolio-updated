@@ -11,13 +11,11 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 16px;
   }
   html {
-    background: #333333;
+   
   }
   body{
-    font-family: "Questrial", sans-serif;
+    font-family: "Rubik", sans-serif;
     line-height: 1.2;
-    background: linear-gradient(to left bottom,#2e2e2e, #3d3d3d);
-    color: #dbdbdb;
   }
   strong{
     font-weight: bold;

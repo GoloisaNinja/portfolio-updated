@@ -1,35 +1,60 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const ArticleWrapper = styled.header`
+const basicButtonStyle = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d41763;
+  outline: none;
+  border: 1px solid #d41763;
+  border-radius: 25px;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #eee;
+  cursor: pointer;
+  padding: 12px 20px;
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    background: none;
+    color: #d41763;
+  }
+`;
+
+export const ArticleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  margin-top: 120px;
-  > div:first-child {
-    margin: 0 auto;
-    margin-left: 10px;
+  font-family: "Rubik", sans-serif;
+`;
+export const ArticleIntroSection = styled.div`
+  background-color: black;
+  color: #eee;
+  padding: 60px 15px;
+  width: 100%;
+`;
+export const Title = styled.h1`
+  font-weight: 900;
+  font-size: 50px;
+  @media (min-width: 350px) {
+    font-size: 75px;
+  }
+  @media (min-width: 500px) {
+    font-size: 100px;
   }
 `;
-export const ArticleContentSection = styled.section`
-  position: relative;
-  z-index: 1;
-  padding: 25px;
-  margin: 0 auto;
-  font-size: 1.25em;
-  text-align: center;
-  @media (max-width: 320px) {
-    font-size: 1.05em;
-  }
+export const RedSpan = styled.span`
+  color: #d41763;
 `;
+
 export const ArticleByLineWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  font-family: "Questrial", sans-serif;
   font-size: 14px;
   padding-right: 15px;
-  border-bottom: 1px solid #00de53;
-  padding-bottom: 25px;
-  margin-bottom: 25px;
-  text-transform: uppercase;
   > div:nth-child(2) {
     margin-left: 8px;
     max-width: 40px;
@@ -44,9 +69,18 @@ export const ArticleByLineWrapper = styled.div`
     text-decoration: none;
     > svg {
       margin-left: 8px;
-      color: #1da1f2;
+      color: #d41763;
       font-size: 25px;
     }
+  }
+`;
+export const ButtonGroup = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  > button {
+    ${basicButtonStyle};
   }
 `;
 export const ArticleMainImageWrapper = styled.div`
@@ -56,14 +90,11 @@ export const ArticleMainImageWrapper = styled.div`
   }
 `;
 export const ArticleStrapiContentWrapper = styled.div`
-  font-family: "Questrial", sans-serif;
-  font-size: 18px;
   margin: 5px;
   border-radius: 10px;
-  color: #999;
-  > div:first-child {
-    padding: 15px;
-  }
+  color: #696969;
+  width: 90%;
+  padding: 15px;
   > ul {
     width: 85%;
     margin: 0 auto;
@@ -78,7 +109,7 @@ export const ArticleStrapiContentWrapper = styled.div`
   > p {
     text-align: left;
     strong {
-      color: #fff;
+      color: #d41763;
     }
     img {
       width: 100%;
@@ -91,18 +122,17 @@ export const ArticleStrapiContentWrapper = styled.div`
     padding: 10px 5px;
     font-style: italic;
     font-size: 16px;
-    color: #ccc;
+    color: #2e2e2e;
     margin: 15px;
     display: flex;
     justify-content: center;
-    border-left: 3px solid #00de53;
+    border-left: 3px solid #d41763;
   }
   > h3 {
     text-align: left;
-    color: white;
-    border-bottom: 2px solid #00de51;
+    color: #000000;
+    border-bottom: 2px solid #d41763;
     padding-bottom: 15px;
-    text-transform: uppercase;
     word-break: break-word;
   }
 `;

@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { FaArrowRight } from "react-icons/fa";
-import { GradientH2 } from "../GradientText";
 import { Modal } from "../Modal";
-import { Overlay } from "../MainOverlay";
-import { FaTwitter, FaLinkedinIn, FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaGithubAlt } from "react-icons/fa";
+import { ImReddit } from "react-icons/im";
+import { SiPolywork, SiTwitter, SiLinkedin } from "react-icons/si";
 import {
   ContactWrapper,
-  ContactTextSection,
-  ContactMainSection,
+  ContactIntro,
+  RedSpan,
+  ContactIconWrapper,
+  ContactIconCard,
   ContactFormWrapper,
   ContactForm,
   FormGroup,
@@ -82,99 +84,128 @@ export function Contact() {
   };
   return (
     <ContactWrapper id="contact">
-      <ContactTextSection>
-        <div>
-          <GradientH2 font="'Fredoka One', cursive" color="#aaa, #00de53">
-            CONTACT ME <FaEnvelope />
-          </GradientH2>
-        </div>
-        <ContactMainSection>
+      <ContactIntro>
+        <h3>
+          <RedSpan>{`> `}</RedSpan>everyone loves a contact form
+        </h3>
+        <span role="img" aria-label="wave emoji">
+          👋🏻
+        </span>
+        <h5>
+          {`I'm just going to say it. I like you. We should keep in touch. There
+        are lots of different ways to connect with me, the contact form below, 
+        Twitter, LinkedIn, murder mystery weekends, and long walks on the beach. 
+        But yeah, the contact form and social media links are probably the easiest! Thank
+        you for visiting and come back soon! 
+        `}
+        </h5>
+        <h5>{`I don't know how to put this but I'm kind of a big deal.`}</h5>
+      </ContactIntro>
+      <ContactIconWrapper>
+        <ContactIconCard>
+          <a
+            aria-label="Find Jon on Twitter"
+            href="https://twitter.com/goloisaninja"
+            alt="A link to Jon's Twitter Page"
+          >
+            <SiTwitter />
+          </a>
+          <p>TWITTER</p>
+        </ContactIconCard>
+        <ContactIconCard>
+          <a
+            aria-label="Visit Jon's LinkedIn Profile"
+            href="https://www.linkedin.com/in/jonmcollins/"
+            alt="A Link to Jon's LinkedIn Profile"
+          >
+            <SiLinkedin />
+          </a>
+          <p>LINKEDIN</p>
+        </ContactIconCard>
+        <ContactIconCard>
+          <a
+            aria-label="Find Jon on Polywork"
+            href="https://www.polywork.com/jcollins"
+            alt="A Link to Jon's PolyWork"
+          >
+            <SiPolywork />
+          </a>
+          <p>POLYWORK</p>
+        </ContactIconCard>
+        <ContactIconCard>
+          <a
+            aria-label="Browse Jon's Profile on Github and see Project Repositories"
+            href="https://github.com/goloisaninja"
+            alt="A link to Jon's Github Profile"
+          >
+            <FaGithubAlt />
+          </a>
+          <p>GITHUB</p>
+        </ContactIconCard>
+        <ContactIconCard>
+          <a
+            aria-label="Find Jon on Reddit and drop some memes"
+            href="https://reddit.com/user/goloisaninja"
+            alt="A link to Jon's Reddit Profile"
+          >
+            <ImReddit />
+          </a>
+          <p>REDDIT</p>
+        </ContactIconCard>
+      </ContactIconWrapper>
+      <ContactFormWrapper>
+        <ContactForm
+          name="new-portfolio-contact"
+          id="contact-form"
+          method="POST"
+          data-netlify="true"
+          onSubmit={e => handleSubmit(e)}
+        >
+          <input type="hidden" name="new-portfolio-contact" value="contact" />
+          <FormGroup>
+            <NameInput
+              type="text"
+              id="name"
+              name="name"
+              value={name}
+              onChange={e => onChange(e)}
+              required
+            />
+            <FormLabelFloating htmlFor="name">your name</FormLabelFloating>
+          </FormGroup>
+          <FormGroup>
+            <EmailInput
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={e => onChange(e)}
+              required
+            />
+            <FormLabelFloating htmlFor="email">your email</FormLabelFloating>
+          </FormGroup>
+          <FormGroup>
+            <TextArea
+              cols="30"
+              rows="10"
+              id="message"
+              name="message"
+              value={message}
+              onChange={e => onChange(e)}
+              required
+            ></TextArea>
+            <FormLabelFloating htmlFor="message">
+              message body
+            </FormLabelFloating>
+          </FormGroup>
           <div>
-            <h3>Find me on social</h3>
-            <a
-              aria-label="Find Jon on Twitter"
-              href="https://twitter.com/goloisaninja"
-              alt="A link to Jon's Twitter Page"
-            >
-              <FaTwitter />
-            </a>
-            <a
-              aria-label="Browse Jon's Profile on Github and see Project Repositories"
-              href="https://github.com/goloisaninja"
-              alt="A link to Jon's Github Profile"
-            >
-              <FaGithub />
-            </a>
-            <a
-              aria-label="Visit Jon's LinkedIn Profile"
-              href="https://www.linkedin.com/in/jonmcollins/"
-              alt="A Link to Jon's LinkedIn Profile"
-            >
-              <FaLinkedinIn />
-            </a>
+            <ContactSubmitButton type="submit">
+              <FaArrowRight />
+            </ContactSubmitButton>
+            <p>send your message!</p>
           </div>
-          <ContactFormWrapper>
-            <ContactForm
-              name="new-portfolio-contact"
-              id="contact-form"
-              method="POST"
-              data-netlify="true"
-              onSubmit={e => handleSubmit(e)}
-            >
-              <input
-                type="hidden"
-                name="new-portfolio-contact"
-                value="contact"
-              />
-              <FormGroup>
-                <NameInput
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={name}
-                  onChange={e => onChange(e)}
-                  required
-                />
-                <FormLabelFloating htmlFor="name">your name</FormLabelFloating>
-              </FormGroup>
-              <FormGroup>
-                <EmailInput
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={email}
-                  onChange={e => onChange(e)}
-                  required
-                />
-                <FormLabelFloating htmlFor="email">
-                  your email
-                </FormLabelFloating>
-              </FormGroup>
-              <FormGroup>
-                <TextArea
-                  cols="30"
-                  rows="10"
-                  id="message"
-                  name="message"
-                  value={message}
-                  onChange={e => onChange(e)}
-                  required
-                ></TextArea>
-                <FormLabelFloating htmlFor="message">
-                  message body
-                </FormLabelFloating>
-              </FormGroup>
-              <div>
-                <ContactSubmitButton type="submit">
-                  <FaArrowRight />
-                </ContactSubmitButton>
-                <p>send your message!</p>
-              </div>
-            </ContactForm>
-          </ContactFormWrapper>
-        </ContactMainSection>
-        <Overlay opacity=".2" bgColor="#030303"></Overlay>
-      </ContactTextSection>
+        </ContactForm>
+      </ContactFormWrapper>
       <Modal show={show} handleDismiss={handleDismiss} content={content} />
     </ContactWrapper>
   );

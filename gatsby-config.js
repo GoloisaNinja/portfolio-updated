@@ -15,7 +15,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: ["questrial: 400", "indie flower: 400", "Fredoka One: 400"],
+        fonts: [
+          "inter: 400, 500, 600, 800, 900",
+          "rubik: 400, 500, 600, 700, 800, 900",
+          "indie flower: 400",
+        ],
         display: "swap",
       },
     },

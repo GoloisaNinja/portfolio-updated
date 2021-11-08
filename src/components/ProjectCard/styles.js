@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 
 const btnLoadingSpinner = keyframes`
   from {
@@ -9,83 +9,26 @@ const btnLoadingSpinner = keyframes`
   }
 `;
 
-export const WorkProjectWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  //justify-content: flex-start;
-  //align-items: center;
-  font-family: "Questrial", sans-serif;
-  > div:first-child {
-    > picture {
-      > img {
-        transition: all 0.4s ease;
-        &:hover {
-          transform: scale(1.07);
-        }
-      }
-    }
-  }
-  > section {
-    flex-grow: 1;
-  }
-`;
-export const WorkProjectContentSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  padding: 5px 10px;
-  > div:first-child {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    > h4 {
-      margin-top: 5px;
-      margin-bottom: 5px;
-      text-align: left;
-    }
-  }
-`;
-
-export const Description = styled.p`
-  color: #aaa;
-  font-size: 16px;
-  text-align: left;
-  font-weight: 400;
-  margin-bottom: 20px;
-  flex: 1;
-`;
-export const LinkWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 20px;
-  > button {
-    > svg {
-      font-size: 1.2em;
-      margin-right: 5px;
-      vertical-align: bottom;
-    }
-  }
-  > button:first-child {
-    margin-bottom: 20px;
-  }
-`;
-export const LinkButton = styled.button`
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  background: ${props => (props.inverse ? "none" : "ccc")};
+const basicButtonStyle = css`
+  background: none;
+  outline: none;
   border: none;
-  color: ${props => (props.inverse ? "#ccc" : "#2e2e2e")};
-  border: 1px solid #ccc;
-  font-family: "Questrial", sans-serif;
-  font-weight: ${props => (props.inverse ? "normal" : "bold")};
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  outline: none;
+  border: 1px solid #eee;
+  border-radius: 25px;
+  font-family: "Rubik", sans-serif;
   font-size: 16px;
-  border-radius: 30px;
-  padding: 18px 18px;
-  transition: all 0.4s ease-in-out;
+  font-weight: 700;
+  color: #eee;
   cursor: pointer;
+  padding: 8px 20px;
+  transition: all 0.4s ease-in-out;
+  width: 100%;
   > span {
     > svg {
       vertical-align: bottom;
@@ -93,12 +36,9 @@ export const LinkButton = styled.button`
       font-size: 18px;
     }
   }
-
   &:hover {
-    border: ${props =>
-      props.inverse ? "1px solid #6e00a1" : "1px solid #00de53"};
-    background: ${props => (props.inverse ? "#6e00a1" : "none")};
-    color: ${props => (props.inverse ? "#fff" : "#00de53")};
+    background-color: #eee;
+    color: black;
   }
   &.loading .btnText {
     visibility: hidden;
@@ -120,24 +60,96 @@ export const LinkButton = styled.button`
     animation: ${btnLoadingSpinner} 1s ease infinite;
   }
 `;
+
+export const WorkProjectWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-family: "Rubik", sans-serif;
+  > div:first-child {
+    > picture {
+      > img {
+        transition: all 0.4s ease;
+        &:hover {
+          transform: scale(1.07);
+        }
+      }
+    }
+  }
+`;
+export const WorkProjectContentSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  //padding: 5px 10px;
+  > div:first-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    > h5 {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      text-align: left;
+      color: #eee;
+    }
+  }
+  > div:last-child {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease-in-out;
+    &.expand {
+      height: 165px;
+      opacity: 1;
+    }
+  }
+`;
+
+export const Description = styled.p`
+  color: #808080;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+  flex: 1;
+`;
+export const LinkWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  padding: 0 10px;
+  width: 100%;
+`;
+export const LinkButton = styled.button`
+  ${basicButtonStyle};
+  margin-left: ${props => props.inverse && "15px"};
+  background-color: ${props => props.inverse && "#eee"};
+  color: ${props => props.inverse && "black"};
+  &:hover {
+    background-color: ${props => props.inverse && `#d41763`};
+    color: ${props => props.inverse && `#fff`};
+    border: ${props => props.inverse && `1px solid #d41763`};
+  }
+`;
 export const TagsWrapper = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin: 15px 0;
   > div:not(:last-child) {
     margin-right: 8px;
   }
 `;
 export const TagBadge = styled.div`
-  font-family: "Questrial", sans-serif;
   font-weight: bold;
   font-size: 10px;
   padding: 5px;
-  border: 1px solid #0b5580;
-  border-radius: 15px;
+  border: 1px solid #d41763;
+  border-radius: 20px;
   color: #fff;
-  background-color: #0e6699;
+  background-color: #d41763;
 `;
 export const ExpandButton = styled.button`
   display: flex;
@@ -146,11 +158,13 @@ export const ExpandButton = styled.button`
   background: none;
   border: none;
   height: 30px;
-  color: #aaa;
   padding: 0 8px;
   cursor: pointer;
-  font-family: "Questrial", sans-serif;
   > svg {
-    font-size: 16px;
+    font-size: 14px;
+    color: #d41763;
+    &.rotate {
+      transform: rotate(90deg);
+    }
   }
 `;

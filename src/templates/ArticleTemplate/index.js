@@ -7,6 +7,7 @@ import { Layout, Seo } from "../../components";
 import {
   ArticleWrapper,
   Title,
+  RedSpan,
   ArticleIntroSection,
   ArticleByLineWrapper,
   ButtonGroup,
@@ -62,7 +63,10 @@ export default function ArticleTemplate({ data }) {
       />
       <ArticleWrapper>
         <ArticleIntroSection>
-          <Title>{data.strapiArticle.title}</Title>
+          <Title>
+            <RedSpan>{`>`}</RedSpan>
+            {data.strapiArticle.title}
+          </Title>
           <ArticleByLineWrapper>
             <p>By {data.strapiArticle.author.username}</p>
             <GatsbyImage

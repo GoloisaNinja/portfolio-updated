@@ -2,10 +2,10 @@ import React from "react";
 import resumePDF from "../../utils/collins_dev_resume.pdf";
 import cvPDF from "../../utils/collins_dev_cv.pdf";
 import { FaMugHot } from "react-icons/fa";
-import { MdOutlineCopyright } from "react-icons/md";
+import { CgCopyright } from "react-icons/cg";
 import { FaGithubAlt } from "react-icons/fa";
 import { ImReddit } from "react-icons/im";
-import { SiPolywork, SiTwitter, SiLinkedin } from "react-icons/si";
+import { SiPoly, SiTwitter, SiLinkedin } from "react-icons/si";
 import {
   FooterWrapper,
   GridContainer,
@@ -89,7 +89,7 @@ export function Footer() {
               href="https://www.polywork.com/jcollins"
               alt="Link to Jon's Polywork account"
             >
-              <SiPolywork />
+              <SiPoly />
             </a>
             <a
               aria-label="Find Jon on Twitter"
@@ -128,7 +128,7 @@ export function Footer() {
           Made with lots of <FaMugHot />
         </p>
         <p>
-          Copyright <MdOutlineCopyright /> {currentYear}
+          Copyright <CgCopyright /> {currentYear}
         </p>
       </CopyrightContainer>
     </FooterWrapper>

@@ -1,5 +1,5 @@
 import React from "react";
-import { MdApi } from "react-icons/md";
+import { GrConnect } from "react-icons/gr";
 import {
   IoTerminal,
   IoLogoCss3,
@@ -12,7 +12,7 @@ import {
   SiGraphql,
   SiHtml5,
   SiMongodb,
-  SiNextdotjs,
+  SiNextDotJs,
   SiMicrosoftsqlserver,
   SiNetlify,
   SiNpm,
@@ -21,7 +21,7 @@ import {
   SiSass,
   SiShopify,
   SiStrapi,
-  SiVuedotjs,
+  SiVueDotJs,
 } from "react-icons/si";
 import { FaGithubAlt, FaNodeJs } from "react-icons/fa";
 import { ResumeWrapper, Intro, RedSpan, TechWrapper, TechCard } from "./styles";
@@ -30,7 +30,7 @@ export function ResumeTech() {
   const iconCardArray = [
     {
       id: "1icon",
-      el: <MdApi />,
+      el: <GrConnect />,
       text: "API",
     },
     {
@@ -85,7 +85,7 @@ export function ResumeTech() {
     },
     {
       id: "12icon",
-      el: <SiNextdotjs />,
+      el: <SiNextDotJs />,
       text: "NEXT.JS",
     },
     {
@@ -135,7 +135,7 @@ export function ResumeTech() {
     },
     {
       id: "22icon",
-      el: <SiVuedotjs />,
+      el: <SiVueDotJs />,
       text: "VUEJS",
     },
   ];

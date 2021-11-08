@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { Modal } from "../Modal";
 import { FaGithubAlt } from "react-icons/fa";
 import { ImReddit } from "react-icons/im";
-import { SiPolywork, SiTwitter, SiLinkedin } from "react-icons/si";
+import { SiPoly, SiTwitter, SiLinkedin } from "react-icons/si";
 import {
   ContactWrapper,
   ContactIntro,
@@ -128,7 +128,7 @@ export function Contact() {
             href="https://www.polywork.com/jcollins"
             alt="A Link to Jon's PolyWork"
           >
-            <SiPolywork />
+            <SiPoly />
           </a>
           <p>POLYWORK</p>
         </ContactIconCard>

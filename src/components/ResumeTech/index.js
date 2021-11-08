@@ -1,11 +1,11 @@
 import React from "react";
-import { GrConnect } from "react-icons/gr";
 import {
   IoTerminal,
   IoLogoCss3,
   IoLogoFirebase,
   IoLogoJavascript,
 } from "react-icons/io5";
+import { ImNpm } from "react-icons/im";
 import {
   SiGatsby,
   SiGit,
@@ -15,7 +15,7 @@ import {
   SiNextDotJs,
   SiMicrosoftsqlserver,
   SiNetlify,
-  SiNpm,
+  SiPostman,
   SiReact,
   SiRedux,
   SiSass,
@@ -30,7 +30,7 @@ export function ResumeTech() {
   const iconCardArray = [
     {
       id: "1icon",
-      el: <GrConnect />,
+      el: <SiPostman />,
       text: "API",
     },
     {
@@ -105,7 +105,7 @@ export function ResumeTech() {
     },
     {
       id: "16icon",
-      el: <SiNpm />,
+      el: <ImNpm />,
       text: "NPM",
     },
     {

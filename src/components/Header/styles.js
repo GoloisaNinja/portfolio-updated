@@ -7,13 +7,18 @@ export const HeaderWrapper = styled.header`
   justify-content: flex-end;
   align-items: center;
   position: fixed;
-  z-index: 4;
   background-color: black;
+  height: 50px;
+  z-index: 2;
 `;
 export const HamburgerWrapper = styled.div`
+  position: fixed;
+  top: 15px;
+  right: 15px;
   cursor: pointer;
   transition: all 0.5s ease-out;
   outline: none;
+  z-index: 4;
   &.close {
     transform: rotate(180deg);
     > #btnLine {

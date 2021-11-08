@@ -88,7 +88,7 @@ export const ArticleCardGrid = styled.div`
   gap: 15px;
   width: 90%;
   margin-bottom: 35px;
-  @media (min-width: 515px) {
+  @media (min-width: 615px) {
     grid-template-columns: 1fr 1fr;
   }
   @media (min-width: 915px) {

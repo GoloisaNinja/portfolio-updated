@@ -13,7 +13,9 @@ export function Hero() {
   };
   return (
     <HeroWrapper>
-      <Title>Jon Collins</Title>
+      <Title>
+        <RedSpan>{`> `}</RedSpan>Jon Collins
+      </Title>
       <Subtitle>
         Full Stack <RedSpan>Developer</RedSpan>
       </Subtitle>

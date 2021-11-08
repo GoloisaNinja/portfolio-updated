@@ -12,7 +12,6 @@ const menuWrapperStyle = css`
 `;
 
 export const MenuWrapper = styled.nav`
-  opacity: 0.99;
   top: 0;
   width: 100%;
   height: 100vh;

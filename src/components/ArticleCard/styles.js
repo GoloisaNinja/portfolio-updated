@@ -13,12 +13,9 @@ export const ArticleCardWrapper = styled.button`
   border: 1px solid #ccc;
   cursor: pointer;
   width: 100%;
-  transition: all 0.4s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   > div:first-child {
     flex: 1;
-  }
-  &:hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 `;
 
@@ -38,7 +35,8 @@ export const Title = styled.h4`
 `;
 export const Preview = styled.p`
   padding: 0 10px;
-  color: #696969;
+  font-size: 16px;
+  color: #757575;
   flex: 1;
 `;
 export const Badge = styled.div`

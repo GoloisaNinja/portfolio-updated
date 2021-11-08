@@ -85,7 +85,6 @@ export const WorkProjectContentSection = styled.section`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
     > h5 {
       margin-top: 5px;
       margin-bottom: 5px;
@@ -98,12 +97,13 @@ export const WorkProjectContentSection = styled.section`
     flex-direction: column;
     flex-grow: 1;
     height: 0;
-    opacity: 0;
+    //opacity: 0;
     overflow: hidden;
-    transition: opacity 0.5s ease-in-out;
+    background-color: #303030;
+    transition: height 0.5s ease-in-out;
     &.expand {
       height: 165px;
-      opacity: 1;
+      //opacity: 1;
     }
   }
 `;
@@ -120,6 +120,7 @@ export const LinkWrapper = styled.div`
   justify-content: space-evenly;
   align-items: flex-end;
   padding: 0 10px;
+  margin-bottom: 15px;
   width: 100%;
 `;
 export const LinkButton = styled.button`

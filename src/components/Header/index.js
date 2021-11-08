@@ -73,18 +73,18 @@ export function Header() {
             </button>
             <button onClick={e => handleHeaderLink("contact")}>Contact</button>
           </NavLinkWrapper>
-          <HamburgerWrapper
-            id="menuBtn"
-            tabIndex="0"
-            onKeyDown={e => e.code === "Enter" && handleClick()}
-            onClick={() => handleClick()}
-          >
-            <MenuLine id="btnLine"></MenuLine>
-            <MenuLine id="btnLine"></MenuLine>
-            <MenuLine id="btnLine"></MenuLine>
-          </HamburgerWrapper>
         </div>
       </HeaderWrapper>
+      <HamburgerWrapper
+        id="menuBtn"
+        tabIndex="0"
+        onKeyDown={e => e.code === "Enter" && handleClick()}
+        onClick={() => handleClick()}
+      >
+        <MenuLine id="btnLine"></MenuLine>
+        <MenuLine id="btnLine"></MenuLine>
+        <MenuLine id="btnLine"></MenuLine>
+      </HamburgerWrapper>
       <Menu handleNav={handleNav}></Menu>
     </>
   );

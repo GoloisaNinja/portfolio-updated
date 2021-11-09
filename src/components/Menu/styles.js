@@ -11,6 +11,7 @@ const menuWrapperStyle = css`
   //height: 100vh;
   height: 0;
   overflow: hidden;
+  transition: all 0.4s ease-in-out;
 `;
 
 export const MenuWrapper = styled.nav`
@@ -29,7 +30,6 @@ export const NavWrapper = styled.div`
   ${menuWrapperStyle};
   background: black;
   //transform: translate3d(0, -100%, 0);
-  transition: all 0.4s ease-in-out;
   &.show {
     //transform: translate3d(0, 0, 0);
     height: 228px;

@@ -115,6 +115,24 @@ export function Projects() {
       live: `https://collins-socialdevs.herokuapp.com/`,
       name: "socialDevs",
     },
+    {
+      id: "p9",
+      title: `PlayPaws`,
+      description: `Media Review Application with Dogs!`,
+      tags: [`Next.js`, `Strapi`, `WIP`, `API`],
+      github: `https://github.com/GoloisaNinja/PlayPawsReview`,
+      live: `https://playpaws.netlify.app/`,
+      name: "playpaws",
+    },
+    {
+      id: "p10",
+      title: `Resume Noir`,
+      description: `Choose Your Own Adventure Resume Game`,
+      tags: [`React`, `Context`, `SPA`, `Audio`],
+      github: `https://github.com/GoloisaNinja/resume-game`,
+      live: `https://jcodes.me`,
+      name: "rgame",
+    },
   ];
 
   return (

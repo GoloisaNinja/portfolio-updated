@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useReducer } from "react";
 import { navigate } from "@reach/router";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { FaGithubAlt, FaGlobe } from "react-icons/fa";
@@ -16,6 +16,33 @@ import {
 } from "./styles";
 
 export function ProjectCard({ image, title, description, tags, github, live }) {
+  const initialBtnElementState = {
+    element: null,
+    loading: true,
+  };
+  const btnReducer = (state, action) => {
+    const { type, payload } = action;
+    switch (type) {
+      case SET_BTN_ELEMENT:
+        return {
+          ...state,
+          loading: false,
+          element: payload,
+        };
+      default:
+        return state;
+    }
+  };
+  const [state, dispatch] = useReducer(btnReducer, initialBtnElementState);
+  const SET_BTN_ELEMENT = "SET_BTN_ELEMENT";
+
+  const setBtnElement = async el => {
+    dispatch({
+      type: SET_BTN_ELEMENT,
+      payload: el,
+    });
+  };
+
   const [btnClicked, setBtnClicked] = useState(null);
   const [shouldProjectSectionExpand, setShouldProjectSectionExpand] = useState(
     false
@@ -30,11 +57,12 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
   const handleVisibilityChange = useCallback(() => {
     if (document.hidden) {
       if (btnClicked !== null) {
-        const clickedBtn = document.getElementById(btnClicked);
-        clickedBtn.classList.remove("loading");
+        // const clickedBtn = document.getElementById(btnClicked);
+        // clickedBtn.classList.remove("loading");
+        state.el.classList.remove("loading");
       }
     }
-  }, [btnClicked]);
+  }, [btnClicked, state.el]);
 
   useEffect(() => {
     if (typeof document !== undefined) {
@@ -61,7 +89,7 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
     }
   };
 
-  const followLink = (e, link) => {
+  const followLink = async (e, link) => {
     let clickTarget;
     if (e.target.parentElement.nodeName === "BUTTON") {
       clickTarget = e.target.parentElement.id;
@@ -71,6 +99,7 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
     setBtnClicked(clickTarget);
     const clickedBtn = document.getElementById(clickTarget);
     clickedBtn.classList.add("loading");
+    await setBtnElement(clickedBtn);
     navigate(link);
   };
   return (

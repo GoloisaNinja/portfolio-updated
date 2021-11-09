@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback, useReducer } from "react";
-import { navigate } from "@reach/router";
+import React, { useState, useEffect } from "react";
+//import { navigate } from "@reach/router";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { FaGithubAlt, FaGlobe } from "react-icons/fa";
 import { GoTriangleRight } from "react-icons/go";
@@ -16,34 +16,34 @@ import {
 } from "./styles";
 
 export function ProjectCard({ image, title, description, tags, github, live }) {
-  const initialBtnElementState = {
-    element: null,
-    loading: true,
-  };
-  const btnReducer = (state, action) => {
-    const { type, payload } = action;
-    switch (type) {
-      case SET_BTN_ELEMENT:
-        return {
-          ...state,
-          loading: false,
-          element: payload,
-        };
-      default:
-        return state;
-    }
-  };
-  const [state, dispatch] = useReducer(btnReducer, initialBtnElementState);
-  const SET_BTN_ELEMENT = "SET_BTN_ELEMENT";
+  // const initialBtnElementState = {
+  //   element: null,
+  //   loading: true,
+  // };
+  // const btnReducer = (state, action) => {
+  //   const { type, payload } = action;
+  //   switch (type) {
+  //     case SET_BTN_ELEMENT:
+  //       return {
+  //         ...state,
+  //         loading: false,
+  //         element: payload,
+  //       };
+  //     default:
+  //       return state;
+  //   }
+  // };
+  // const [state, dispatch] = useReducer(btnReducer, initialBtnElementState);
+  // const SET_BTN_ELEMENT = "SET_BTN_ELEMENT";
 
-  const setBtnElement = async el => {
-    dispatch({
-      type: SET_BTN_ELEMENT,
-      payload: el,
-    });
-  };
+  // const setBtnElement = async el => {
+  //   dispatch({
+  //     type: SET_BTN_ELEMENT,
+  //     payload: el,
+  //   });
+  // };
 
-  const [btnClicked, setBtnClicked] = useState(null);
+  //const [btnClicked, setBtnClicked] = useState(null);
   const [shouldProjectSectionExpand, setShouldProjectSectionExpand] = useState(
     false
   );
@@ -54,29 +54,29 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
   const btnIdTwo = nanoid(6);
   const chevronBtnId = nanoid(3);
 
-  const handleVisibilityChange = useCallback(() => {
-    if (document.hidden) {
-      if (btnClicked !== null) {
-        // const clickedBtn = document.getElementById(btnClicked);
-        // clickedBtn.classList.remove("loading");
-        state.el.classList.remove("loading");
-      }
-    }
-  }, [btnClicked, state.el]);
+  // const handleVisibilityChange = useCallback(() => {
+  //   if (document.hidden) {
+  //     if (btnClicked !== null) {
+  //       // const clickedBtn = document.getElementById(btnClicked);
+  //       // clickedBtn.classList.remove("loading");
+  //       state.el.classList.remove("loading");
+  //     }
+  //   }
+  // }, [btnClicked, state.el]);
 
   useEffect(() => {
     if (typeof document !== undefined) {
-      document.addEventListener(
-        "visibilitychange",
-        handleVisibilityChange,
-        false
-      );
+      // document.addEventListener(
+      //   "visibilitychange",
+      //   handleVisibilityChange,
+      //   false
+      // );
       const btn = document.getElementById(`btn-expand${chevronBtnId}`);
       setChevronElement(btn);
       const divToAnimate = document.getElementById(`div-expand${chevronBtnId}`);
       setDivElement(divToAnimate);
     }
-  }, [handleVisibilityChange, chevronBtnId]);
+  }, [chevronBtnId]);
 
   const handleSectionExpand = () => {
     setShouldProjectSectionExpand(!shouldProjectSectionExpand);
@@ -90,17 +90,17 @@ export function ProjectCard({ image, title, description, tags, github, live }) {
   };
 
   const followLink = async (e, link) => {
-    let clickTarget;
-    if (e.target.parentElement.nodeName === "BUTTON") {
-      clickTarget = e.target.parentElement.id;
-    } else {
-      clickTarget = e.target.id;
-    }
-    setBtnClicked(clickTarget);
-    const clickedBtn = document.getElementById(clickTarget);
-    clickedBtn.classList.add("loading");
-    await setBtnElement(clickedBtn);
-    navigate(link);
+    // let clickTarget;
+    // if (e.target.parentElement.nodeName === "BUTTON") {
+    //   clickTarget = e.target.parentElement.id;
+    // } else {
+    //   clickTarget = e.target.id;
+    // }
+    // setBtnClicked(clickTarget);
+    //const clickedBtn = document.getElementById(clickTarget);
+    //clickedBtn.classList.add("loading");
+    //await setBtnElement(clickedBtn);
+    window.open(link);
   };
   return (
     <WorkProjectWrapper>

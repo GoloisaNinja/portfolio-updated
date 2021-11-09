@@ -1,4 +1,5 @@
 import React from "react";
+import { DiScrum } from "react-icons/di";
 import {
   IoTerminal,
   IoLogoCss3,
@@ -145,7 +146,8 @@ export function ResumeTech() {
         <h3>
           <RedSpan>{`> `}</RedSpan>obligatory about section
         </h3>
-        <h5>{`So let's talk about what I can do for you. I have a very 
+        <h5>
+          {`So let's talk about what I can do for you. I have a very 
         specific set of skills. Skills that I've acquired over the last 
         four years in working with JavaScript, React, Express, NodeJS, 
         MongoDB, and many others. Skills that make me the opposite of a 
@@ -155,8 +157,16 @@ export function ResumeTech() {
         an unquenchable desire to learn and grow, and a geniune pride in my work.
         I'll communicate well and often, while being an absolute joy to work with.
         But if you don't hire me. I will look for you on LinkedIn. I will find you. 
-        And I will post sad emojis to your feed.
-        `}</h5>
+        And I will post sad emojis to your feed. Did I mention I'm a 
+        `}
+          <a
+            aria-label="navigates to the Credly site where  you can view the PSM certificate for Jonathan Collins as a Professional Scrum Master"
+            href="https://www.credly.com/badges/517ccf0d-c666-4f77-a20e-5581b8d8bec5/public_url"
+          >
+            <DiScrum /> Certified Scrum Master
+          </a>
+          ?
+        </h5>
         <h5>
           Observe the vast and considerable technologies I employ to bend the
           interwebs to my will.

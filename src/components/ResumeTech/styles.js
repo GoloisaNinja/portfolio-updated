@@ -16,6 +16,14 @@ export const Intro = styled.div`
   padding: 15px;
   > h5 {
     color: #696969;
+    > a {
+      text-decoration: none;
+      color: #d41763;
+      > svg {
+        vertical-align: bottom;
+        font-size: 18px;
+      }
+    }
   }
 `;
 export const RedSpan = styled.span`

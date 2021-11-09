@@ -56,7 +56,7 @@ const basicButtonStyle = css`
     bottom: 0;
     margin: auto;
     border: 4px solid transparent;
-    border-top-color: #00de53;
+    border-top-color: #eee;
     border-radius: 50%;
     animation: ${btnLoadingSpinner} 1s ease infinite;
   }

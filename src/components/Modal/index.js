@@ -2,7 +2,7 @@ import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import {
   ModalStyle,
-  GreenSpan,
+  ModalTitle,
   ButtonDiv,
   ModalButton1,
   ModalButton2,
@@ -18,10 +18,7 @@ export function Modal({ show, handleDismiss, handleClose, content }) {
           <div>
             <GatsbyImage image={content.icon} alt="robot love" />
           </div>
-
-          <h2 style={{ marginBottom: "2rem" }}>
-            <GreenSpan>{content.title}</GreenSpan>
-          </h2>
+          <ModalTitle>{content.title}</ModalTitle>
           <p style={{ marginBottom: "2rem" }}>{content.body}</p>
           <ButtonDiv>
             {content.type === "decision" ? (

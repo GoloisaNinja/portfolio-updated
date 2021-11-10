@@ -7,7 +7,6 @@ export function Menu({ handleNav }) {
   const checkLocation = target => {
     if (pathname !== "/") {
       navigate(`/#${target}`);
-      handleNav(target, true);
     } else {
       handleNav(target, false);
     }

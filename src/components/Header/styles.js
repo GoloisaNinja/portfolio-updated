@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HeaderWrapper = styled.header`
   display: flex;
   width: 100%;
-  padding: 15px;
+  //padding: 15px;
   justify-content: flex-end;
   align-items: center;
   position: fixed;
@@ -37,6 +37,12 @@ export const HamburgerWrapper = styled.div`
     display: none;
   }
 `;
+export const MenuContainer = styled.div`
+  width: 100%;
+  position: fixed;
+  top: 50px;
+  height: 50px;
+`;
 export const MenuLine = styled.div`
   width: 30px;
   height: 3px;
@@ -50,6 +56,7 @@ export const NavLinkWrapper = styled.div`
   align-items: center;
   font-size: 16px;
   color: #eee;
+  padding-right: 15px;
   > button {
     background: none;
     outline: none;

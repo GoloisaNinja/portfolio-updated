@@ -5,6 +5,7 @@ import { Menu } from "../Menu";
 import { useIsMounted } from "../../hooks/useIsMounted";
 import {
   HeaderWrapper,
+  MenuContainer,
   HamburgerWrapper,
   MenuLine,
   NavLinkWrapper,
@@ -18,15 +19,12 @@ export function Header() {
   const handleClick = () => {
     setShowMenu(!showMenu);
     const menuBtn = document.getElementById("menuBtn");
-    const menu = document.getElementById("menu");
     const navs = document.getElementById("navs");
     if (showMenu) {
       menuBtn.classList.add("close");
-      menu.classList.add("show");
       navs.classList.add("show");
     } else {
       menuBtn.classList.remove("close");
-      menu.classList.remove("show");
       navs.classList.remove("show");
     }
   };
@@ -44,12 +42,10 @@ export function Header() {
       smoothscroll.polyfill();
       const navTo = document.getElementById(target);
       const menuBtn = document.getElementById("menuBtn");
-      const menu = document.getElementById("menu");
       const navs = document.getElementById("navs");
       if (!notHamburger) {
         setShowMenu(true);
         menuBtn.classList.remove("close");
-        menu.classList.remove("show");
         navs.classList.remove("show");
       }
       const yOffset = -25;
@@ -75,6 +71,9 @@ export function Header() {
           </NavLinkWrapper>
         </div>
       </HeaderWrapper>
+      <MenuContainer>
+        <Menu handleNav={handleNav}></Menu>
+      </MenuContainer>
       <HamburgerWrapper
         id="menuBtn"
         tabIndex="0"
@@ -85,7 +84,6 @@ export function Header() {
         <MenuLine id="btnLine"></MenuLine>
         <MenuLine id="btnLine"></MenuLine>
       </HamburgerWrapper>
-      <Menu handleNav={handleNav}></Menu>
     </>
   );
 }

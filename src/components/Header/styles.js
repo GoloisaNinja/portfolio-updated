@@ -42,6 +42,7 @@ export const MenuContainer = styled.div`
   position: fixed;
   top: 50px;
   height: 50px;
+  z-index: 3;
 `;
 export const MenuLine = styled.div`
   width: 30px;

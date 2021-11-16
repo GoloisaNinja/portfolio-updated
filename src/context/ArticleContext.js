@@ -7,6 +7,7 @@ const query = graphql`
       filter: {
         title: {
           in: [
+            "Moonlander Keyboard Review - part 1"
             "Avoiding the dreaded React Flicker"
             "Changing careers is scary"
             "How many stacks is too many stacks"

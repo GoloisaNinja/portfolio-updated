@@ -8,7 +8,6 @@ const menuWrapperStyle = css`
   width: 100%;
   height: 0;
   overflow: hidden;
-  z-index: 3;
   transition: all 0.4s ease-in-out;
 `;
 export const NavWrapper = styled.div`

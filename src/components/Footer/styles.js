@@ -43,7 +43,7 @@ export const LinkContainer = styled.div`
     color: #696969;
     > p {
       font-size: 14px;
-      padding: 5px;
+      padding: 8px;
       cursor: pointer;
     }
   }

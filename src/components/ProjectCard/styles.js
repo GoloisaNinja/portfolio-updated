@@ -111,7 +111,7 @@ export const WorkProjectContentSection = styled.section`
 `;
 
 export const Description = styled.p`
-  color: #696969;
+  color: #595959;
   font-size: 14px;
   text-align: center;
   margin-bottom: 20px;

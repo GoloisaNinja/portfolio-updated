@@ -54,6 +54,7 @@ export const ButtonGroup = styled.div`
     ${basicButtonStyle};
     border: 1px solid #d41763;
     background: #d41763;
+    color: #fff;
     margin-right: 15px;
     &:hover {
       background: none;

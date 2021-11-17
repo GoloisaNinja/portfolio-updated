@@ -62,12 +62,30 @@ export function Header() {
       <HeaderWrapper>
         <div>
           <NavLinkWrapper>
-            <button onClick={e => handleHeaderLink("about")}>About</button>
-            <button onClick={e => handleHeaderLink("blog")}>Blog</button>
-            <button onClick={e => handleHeaderLink("projects")}>
+            <button
+              aria-label="about navigation button"
+              onClick={e => handleHeaderLink("about")}
+            >
+              About
+            </button>
+            <button
+              aria-label="blog navigation button"
+              onClick={e => handleHeaderLink("blog")}
+            >
+              Blog
+            </button>
+            <button
+              aria-label="projects navigation button"
+              onClick={e => handleHeaderLink("projects")}
+            >
               Projects
             </button>
-            <button onClick={e => handleHeaderLink("contact")}>Contact</button>
+            <button
+              aria-label="contact navigation button"
+              onClick={e => handleHeaderLink("contact")}
+            >
+              Contact
+            </button>
           </NavLinkWrapper>
         </div>
       </HeaderWrapper>

@@ -74,6 +74,7 @@ export const ButtonGroup = styled.div`
   > a:last-child {
     background: #d41763;
     border: 1px solid #d41763;
+    color: #fff;
     &:hover {
       background: none;
       color: #d41763;

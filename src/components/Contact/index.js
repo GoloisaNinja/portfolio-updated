@@ -199,7 +199,10 @@ export function Contact() {
             </FormLabelFloating>
           </FormGroup>
           <div>
-            <ContactSubmitButton type="submit">
+            <ContactSubmitButton
+              aria-label="contact form submit button to send your message to Jon"
+              type="submit"
+            >
               <FaArrowRight />
             </ContactSubmitButton>
             <p>send your message!</p>

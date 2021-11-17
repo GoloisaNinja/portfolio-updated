@@ -43,6 +43,7 @@ export const LinkContainer = styled.div`
     color: #696969;
     > p {
       font-size: 14px;
+      padding: 5px;
       cursor: pointer;
     }
   }
@@ -54,12 +55,14 @@ export const SocialContainer = styled.div`
 export const SocialGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 35px);
+  gap: 8px;
   > a {
     text-decoration: none;
     color: #d41763;
     > svg {
-      font-size: 20px;
+      font-size: 32px;
       color: #d41763;
+      padding: 5px;
     }
     > svg:not(:last-child) {
       margin-bottom: 10px;

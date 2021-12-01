@@ -35,6 +35,7 @@
     "styled-reset": "^4.3.4"
   },
   "devDependencies": {
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.26",
     "prettier": "2.2.1",
     "process": "^0.11.10"
   },

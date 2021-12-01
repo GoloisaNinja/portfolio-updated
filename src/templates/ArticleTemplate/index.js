@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { graphql, navigate } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import ReactMarkdown from "react-markdown";
 import { FaTwitter } from "react-icons/fa";
 import { Layout, Seo } from "../../components";
+import ArticleContext from "../../context/ArticleContext";
 import {
   ArticleWrapper,
   Title,
@@ -19,60 +20,36 @@ export const query = graphql`
   query ArticleQuery($articleId: String) {
     strapiArticle(id: { eq: $articleId }) {
       strapiId
-      title
-      content
-      readTime
-      preview
-      id
-      author {
-        username
-        avatar {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-      }
-      created_at
-      image {
-        localFile {
-          childImageSharp {
-            gatsbyImageData(
-              placeholder: BLURRED
-              width: 2000
-              formats: [AUTO, WEBP]
-            )
-          }
-        }
-      }
     }
   }
 `;
 
 export default function ArticleTemplate({ data }) {
+  const { articles } = useContext(ArticleContext);
+  const article = articles.find(
+    el => el.strapiId === data.strapiArticle.strapiId
+  );
   return (
     <Layout>
       <Seo
-        title={data.strapiArticle.title}
+        title={article.title}
         description={"Jon Collins Developer Selected Blog Articles"}
         lang={"en"}
         articleImage={
-          data.strapiArticle.image.localFile.childImageSharp.gatsbyImageData.src
+          article.image.localFile.childImageSharp.gatsbyImageData.src
         }
       />
       <ArticleWrapper>
         <ArticleIntroSection>
           <Title>
             <RedSpan>{`> `}</RedSpan>
-            {data.strapiArticle.title}
+            {article.title}
           </Title>
           <ArticleByLineWrapper>
-            <p>By {data.strapiArticle.author.username}</p>
+            <p>By {article.author.username}</p>
             <GatsbyImage
               image={
-                data.strapiArticle.author.avatar.localFile.childImageSharp
-                  .gatsbyImageData
+                article.author.avatar.localFile.childImageSharp.gatsbyImageData
               }
               alt="Author Image of Jon Collins looking thoughtful and witty and handsome"
             />
@@ -86,14 +63,12 @@ export default function ArticleTemplate({ data }) {
         </ArticleIntroSection>
         <ArticleMainImageWrapper>
           <GatsbyImage
-            image={
-              data.strapiArticle.image.localFile.childImageSharp.gatsbyImageData
-            }
+            image={article.image.localFile.childImageSharp.gatsbyImageData}
             alt="image alt coming soon for main article images"
           />
         </ArticleMainImageWrapper>
         <ArticleStrapiContentWrapper>
-          <ReactMarkdown children={data.strapiArticle.content} />
+          <ReactMarkdown children={article.content} />
         </ArticleStrapiContentWrapper>
       </ArticleWrapper>
     </Layout>

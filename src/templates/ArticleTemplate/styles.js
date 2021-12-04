@@ -61,10 +61,14 @@ export const ArticleByLineWrapper = styled.div`
   justify-content: flex-end;
   font-size: 14px;
   padding-right: 15px;
+
   > div:nth-child(2) {
     margin-left: 8px;
     max-width: 40px;
     border-radius: 50%;
+    > img {
+      border-radius: 50%;
+    }
     > picture {
       > img {
         border-radius: 50%;

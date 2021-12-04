@@ -138,6 +138,6 @@ export const ExpandButton = styled.button`
   transition: all 0.4s ease;
   > svg {
     font-size: 18px;
-    color: #d41763;
+    color: ${props => (props.animate ? `#d41763` : `#808080`)};
   }
 `;

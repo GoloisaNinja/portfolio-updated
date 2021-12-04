@@ -2,6 +2,7 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { ProjectCard } from "../ProjectCard";
 import {
+  Offset,
   ProjectsWrapper,
   ProjectsCardWrapper,
   ProjectIntro,
@@ -137,6 +138,7 @@ export function Projects() {
 
   return (
     <ProjectsWrapper id="projects">
+      <Offset></Offset>
       <ProjectIntro>
         <h3>
           <RedSpan>{`> `}</RedSpan>glorious project applications

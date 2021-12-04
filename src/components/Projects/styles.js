@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+export const Offset = styled.div`
+  height: 25px;
+`;
 export const ProjectsWrapper = styled.section`
   display: flex;
   flex-direction: column;
@@ -8,6 +11,7 @@ export const ProjectsWrapper = styled.section`
   width: 100%;
   background-color: black;
   padding: 15px;
+  font-family: "Rubik", sans-serif;
 `;
 export const ProjectIntro = styled.div`
   display: flex;
@@ -16,6 +20,7 @@ export const ProjectIntro = styled.div`
   align-items: flex-start;
   width: 90%;
   > h3 {
+    font-weight: 700;
     color: #eee;
   }
   > h5 {
@@ -37,7 +42,7 @@ export const ProjectsCardWrapper = styled.div`
   @media (min-width: 630px) {
     grid-template-columns: 1fr 1fr;
   }
-  @media (min-width: 955px) {
+  @media (min-width: 1125px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
 `;

@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { FaArrowRight } from "react-icons/fa";
 import { Modal } from "../Modal";
-import { FaGithubAlt } from "react-icons/fa";
+import { FaGithubAlt, FaDrawPolygon } from "react-icons/fa";
 import { ImReddit } from "react-icons/im";
-import { SiPoly, SiTwitter, SiLinkedin } from "react-icons/si";
+import { SiTwitter, SiLinkedin } from "react-icons/si";
 import {
+  Offset,
   ContactWrapper,
   ContactIntro,
   RedSpan,
@@ -84,6 +85,7 @@ export function Contact() {
   };
   return (
     <ContactWrapper id="contact">
+      <Offset></Offset>
       <ContactIntro>
         <h3>
           <RedSpan>{`> `}</RedSpan>everyone loves a contact form
@@ -128,7 +130,7 @@ export function Contact() {
             href="https://www.polywork.com/jcollins"
             alt="A Link to Jon's PolyWork"
           >
-            <SiPoly />
+            <FaDrawPolygon />
           </a>
           <p>POLYWORK</p>
         </ContactIconCard>

@@ -12,18 +12,6 @@ module.exports = {
     `gatsby-optional-chaining`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
-    "gatsby-background-image",
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          "inter: 400, 500, 600, 800, 900",
-          "rubik: 400, 500, 600, 700, 800, 900",
-          "indie flower: 400",
-        ],
-        display: "swap",
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

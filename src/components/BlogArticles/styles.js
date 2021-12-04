@@ -1,19 +1,5 @@
 import styled, { css } from "styled-components";
 
-// function articleAnimation() {
-//   let styles = "";
-//   for (let i = 1; i < 4; i++) {
-//     let interval = 0.8;
-//     interval *= i;
-//     styles += `&.fade:nth-child(${i}) {
-//       transition-delay: ${interval}s;
-//     }`;
-//   }
-//   return css`
-//     ${styles}
-//   `;
-// }
-
 const basicButtonStyle = css`
   text-decoration: none;
   display: flex;
@@ -37,6 +23,10 @@ const basicButtonStyle = css`
   }
 `;
 
+export const Offset = styled.div`
+  height: 25px;
+`;
+
 export const BlogWrapper = styled.section`
   display: flex;
   flex-direction: column;
@@ -45,6 +35,7 @@ export const BlogWrapper = styled.section`
   width: 100%;
   background-color: #eee;
   padding: 15px;
+  font-family: "Rubik", sans-serif;
 `;
 export const BlogIntro = styled.div`
   display: flex;
@@ -52,6 +43,9 @@ export const BlogIntro = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   width: 90%;
+  > h3 {
+    font-weight: 700;
+  }
   > h5 {
     color: #696969;
   }

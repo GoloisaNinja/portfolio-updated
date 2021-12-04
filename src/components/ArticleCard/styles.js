@@ -32,6 +32,7 @@ export const ArticleBadgeWrapper = styled.div`
 `;
 export const Title = styled.h4`
   padding: 0 10px;
+  font-weight: 600;
 `;
 export const Preview = styled.p`
   padding: 0 10px;

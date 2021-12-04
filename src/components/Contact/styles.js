@@ -68,7 +68,9 @@ const inputStyle = css`
     }
   }
 `;
-
+export const Offset = styled.div`
+  height: 25px;
+`;
 export const ContactWrapper = styled.header`
   display: flex;
   flex-direction: column;
@@ -77,6 +79,7 @@ export const ContactWrapper = styled.header`
   font-family: "Rubik", sans-serif;
   width: 100%;
   padding: 15px;
+  font-family: "Rubik", sans-serif;
 `;
 export const ContactIntro = styled.div`
   display: flex;
@@ -84,6 +87,9 @@ export const ContactIntro = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   width: 90%;
+  > h3 {
+    font-weight: 700;
+  }
   > h5 {
     margin-top: 0;
     color: #696969;

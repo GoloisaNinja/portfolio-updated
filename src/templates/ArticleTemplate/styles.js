@@ -37,11 +37,17 @@ export const ArticleIntroSection = styled.div`
 `;
 export const Title = styled.h1`
   font-weight: 900;
-  font-size: 50px;
-  @media (min-width: 395px) {
-    font-size: 75px;
+  font-size: 40px;
+  @media (min-width: 350px) {
+    font-size: 50px;
   }
-  @media (min-width: 515px) {
+  @media (min-width: 450px) {
+    font-size: 65px;
+  }
+  @media (min-width: 575px) {
+    font-size: 85px;
+  }
+  @media (min-width: 750px) {
     font-size: 100px;
   }
 `;

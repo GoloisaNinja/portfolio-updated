@@ -32,6 +32,13 @@ export function Seo({ description, lang, meta = [], title, articleImage }) {
       }}
       title={title}
       titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+      link={[
+        {
+          href:
+            "https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Rubik:wght@400;500;600;700;800;900&display=swap",
+          rel: "stylesheet",
+        },
+      ]}
       meta={[
         {
           name: `description`,

@@ -74,6 +74,7 @@ export const CopyrightContainer = styled.div`
   max-width: 1000px;
   margin: 0 auto;
   > h3 {
+    font-weight: 700;
     margin-bottom: 0;
   }
   > p {

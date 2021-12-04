@@ -33,8 +33,15 @@ export const HeroWrapper = styled.header`
   padding: 60px 15px;
 `;
 export const Title = styled.h1`
+  font-family: "Rubik", sans-serif;
   font-weight: 900;
-  font-size: 100px;
+  font-size: 75px;
+  @media (min-width: 375px) {
+    font-size: 85px;
+  }
+  @media (min-width: 475px) {
+    font-size: 100px;
+  }
 `;
 export const Subtitle = styled.h3`
   font-weight: 600;

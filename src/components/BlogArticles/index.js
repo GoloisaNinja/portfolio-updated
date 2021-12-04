@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import ArticleContext from "../../context/ArticleContext";
 import { ArticleCard } from "../ArticleCard";
 import {
+  Offset,
   BlogWrapper,
   BlogIntro,
   RedSpan,
@@ -13,6 +14,7 @@ export function BlogArticles() {
   const { articles } = useContext(ArticleContext);
   return (
     <BlogWrapper id="blog">
+      <Offset></Offset>
       <BlogIntro>
         <h3>
           <RedSpan>{`> `}</RedSpan>superfluous content creation

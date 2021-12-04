@@ -13,7 +13,7 @@ import {
   SiGraphql,
   SiHtml5,
   SiMongodb,
-  SiNextDotJs,
+  SiNextdotjs,
   SiMicrosoftsqlserver,
   SiNetlify,
   SiPostman,
@@ -22,10 +22,17 @@ import {
   SiSass,
   SiShopify,
   SiStrapi,
-  SiVueDotJs,
+  SiVuedotjs,
 } from "react-icons/si";
 import { FaGithubAlt, FaNodeJs } from "react-icons/fa";
-import { ResumeWrapper, Intro, RedSpan, TechWrapper, TechCard } from "./styles";
+import {
+  Offset,
+  ResumeWrapper,
+  Intro,
+  RedSpan,
+  TechWrapper,
+  TechCard,
+} from "./styles";
 
 export function ResumeTech() {
   const iconCardArray = [
@@ -86,7 +93,7 @@ export function ResumeTech() {
     },
     {
       id: "12icon",
-      el: <SiNextDotJs />,
+      el: <SiNextdotjs />,
       text: "NEXT.JS",
     },
     {
@@ -136,12 +143,13 @@ export function ResumeTech() {
     },
     {
       id: "22icon",
-      el: <SiVueDotJs />,
+      el: <SiVuedotjs />,
       text: "VUEJS",
     },
   ];
   return (
     <ResumeWrapper id="about">
+      <Offset></Offset>
       <Intro>
         <h3>
           <RedSpan>{`> `}</RedSpan>obligatory about section

@@ -1,13 +1,4 @@
-import styled, { keyframes, css } from "styled-components";
-
-const btnLoadingSpinner = keyframes`
-  from {
-    transform: rotate(0turn);
-  }
-  to {
-    transform: rotate(1turn);
-  }
-`;
+import styled, { css } from "styled-components";
 
 const basicButtonStyle = css`
   background: none;
@@ -41,25 +32,6 @@ const basicButtonStyle = css`
     color: #fff;
     border: 1px solid #d41763;
   }
-  &.loading .btnText {
-    visibility: hidden;
-    opacity: 0;
-  }
-  &.loading::after {
-    content: "";
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    border: 4px solid transparent;
-    border-top-color: #eee;
-    border-radius: 50%;
-    animation: ${btnLoadingSpinner} 1s ease infinite;
-  }
 `;
 
 export const WorkProjectWrapper = styled.div`
@@ -91,29 +63,26 @@ export const WorkProjectContentSection = styled.section`
       margin-bottom: 5px;
       text-align: left;
       color: #eee;
-    }
-  }
-  > div:last-child {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    height: 0;
-    overflow: hidden;
-    background-color: #eee;
-    transition: height 0.5s ease-in-out;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    &.expand {
-      height: 165px;
-      //opacity: 1;
+      font-weight: 600;
     }
   }
 `;
-
+export const DetailLinkDrawer = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: ${props => (props.animate ? `185px` : `0`)};
+  overflow: hidden;
+  background-color: #eee;
+  transition: height 0.5s ease-in-out;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+`;
 export const Description = styled.p`
   color: #595959;
   font-size: 14px;
   text-align: center;
+  margin-top: 15px;
   margin-bottom: 20px;
   padding: 0 10px;
   flex: 1;
@@ -165,11 +134,10 @@ export const ExpandButton = styled.button`
   height: 30px;
   padding: 0 8px;
   cursor: pointer;
+  transform: ${props => props.animate && `rotate(180deg)`};
+  transition: all 0.4s ease;
   > svg {
-    font-size: 14px;
+    font-size: 18px;
     color: #d41763;
-    &.rotate {
-      transform: rotate(90deg);
-    }
   }
 `;

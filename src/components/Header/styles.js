@@ -41,14 +41,14 @@ export const MenuContainer = styled.div`
   width: 100%;
   position: fixed;
   top: 50px;
-  height: 50px;
+  height: 0;
   z-index: 3;
 `;
 export const MenuLine = styled.div`
   width: 30px;
   height: 3px;
   margin: 0 0 5px 0;
-  background: #ccc;
+  background: #fff;
   transition: all 0.5s ease-out;
 `;
 export const NavLinkWrapper = styled.div`
@@ -63,7 +63,7 @@ export const NavLinkWrapper = styled.div`
     outline: none;
     border: none;
     font-family: "Rubik", sans-serif;
-    font-weight: 900;
+    font-weight: 700;
     color: #ddd;
     font-size: 16px;
     cursor: pointer;

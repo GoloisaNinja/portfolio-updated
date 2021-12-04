@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
+export const Offset = styled.div`
+  height: 25px;
+`;
 export const ResumeWrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+  font-family: "Rubik", sans-serif;
 `;
 export const Intro = styled.div`
   display: flex;
@@ -14,8 +18,12 @@ export const Intro = styled.div`
   align-items: flex-start;
   width: 90%;
   padding: 15px;
+  > h3 {
+    font-weight: 700;
+  }
   > h5 {
     color: #696969;
+    font-weight: 400;
     > a {
       text-decoration: none;
       color: #d41763;

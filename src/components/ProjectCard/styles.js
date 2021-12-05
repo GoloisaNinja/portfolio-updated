@@ -61,6 +61,7 @@ export const WorkProjectContentSection = styled.section`
     > h5 {
       margin-top: 5px;
       margin-bottom: 5px;
+      margin-left: 8px;
       text-align: left;
       color: #eee;
       font-weight: 600;

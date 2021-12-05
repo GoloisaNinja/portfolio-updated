@@ -134,8 +134,6 @@ export const ArticleStrapiContentWrapper = styled.div`
     font-size: 16px;
     color: #2e2e2e;
     margin: 15px;
-    display: flex;
-    justify-content: center;
     border-left: 3px solid #d41763;
   }
   > h3 {

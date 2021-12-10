@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 const basicButtonStyle = css`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   background: none;
   outline: none;
   border: none;
@@ -54,11 +54,11 @@ export const ButtonGroup = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   width: 100%;
   > a {
-    text-decoration: none;
     ${basicButtonStyle};
+    text-decoration: none;
     border: 1px solid #d41763;
     background: #d41763;
     color: #fff;
@@ -68,19 +68,16 @@ export const ButtonGroup = styled.div`
       color: #d41763;
     }
     @media (max-width: 399px) {
-      display: inline-block;
-      text-align: center;
       width: 100%;
-    }
-    @media (max-width: 399px) {
+      height: 45.2px;
       margin-right: 0;
     }
   }
   > button {
     ${basicButtonStyle};
     @media (max-width: 399px) {
-      display: inline-block;
       width: 100%;
+      height: 45.2px;
       margin-top: 15px;
     }
   }

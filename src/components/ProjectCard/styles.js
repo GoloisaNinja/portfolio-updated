@@ -39,6 +39,12 @@ export const WorkProjectWrapper = styled.div`
   flex-direction: column;
   font-family: "Rubik", sans-serif;
   > div:first-child {
+    > img {
+      transition: all 0.4s ease;
+      &:hover {
+        transform: scale(1.07);
+      }
+    }
     > picture {
       > img {
         transition: all 0.4s ease;

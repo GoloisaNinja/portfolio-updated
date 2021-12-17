@@ -5,6 +5,7 @@ const basicButtonStyle = css`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 45.2px;
   background: black;
   outline: none;
   border: none;

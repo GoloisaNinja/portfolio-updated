@@ -24,7 +24,7 @@ import {
   SiStrapi,
   SiVuedotjs,
 } from "react-icons/si";
-import { FaGithubAlt, FaNodeJs } from "react-icons/fa";
+import { FaGithubAlt, FaNodeJs, FaEthereum } from "react-icons/fa";
 import {
   Offset,
   ResumeWrapper,
@@ -53,96 +53,101 @@ export function ResumeTech() {
     },
     {
       id: "4icon",
+      el: <FaEthereum />,
+      text: "ETHEREUM",
+    },
+    {
+      id: "5icon",
       el: <IoLogoFirebase />,
       text: "FIREBASE",
     },
     {
-      id: "5icon",
+      id: "6icon",
       el: <SiGatsby />,
       text: "GATSBY",
     },
     {
-      id: "6icon",
+      id: "7icon",
       el: <SiGit />,
       text: "GIT",
     },
     {
-      id: "7icon",
+      id: "8icon",
       el: <FaGithubAlt />,
       text: "GITHUB",
     },
     {
-      id: "8icon",
+      id: "9icon",
       el: <SiGraphql />,
       text: "GRAPHQL",
     },
     {
-      id: "9icon",
+      id: "10icon",
       el: <SiHtml5 />,
       text: "HTML",
     },
     {
-      id: "10icon",
+      id: "11icon",
       el: <IoLogoJavascript />,
       text: "JAVASCRIPT",
     },
     {
-      id: "11icon",
+      id: "12icon",
       el: <SiMongodb />,
       text: "MONGODB",
     },
     {
-      id: "12icon",
+      id: "13icon",
       el: <SiNextdotjs />,
       text: "NEXT.JS",
     },
     {
-      id: "13icon",
+      id: "14icon",
       el: <SiMicrosoftsqlserver />,
       text: "SQLSERVER",
     },
     {
-      id: "14icon",
+      id: "15icon",
       el: <SiNetlify />,
       text: "JAMSTACK",
     },
     {
-      id: "15icon",
+      id: "16icon",
       el: <FaNodeJs />,
       text: "NODEJS",
     },
     {
-      id: "16icon",
+      id: "17icon",
       el: <ImNpm />,
       text: "NPM",
     },
     {
-      id: "17icon",
+      id: "18icon",
       el: <SiReact />,
       text: "REACT",
     },
     {
-      id: "18icon",
+      id: "19icon",
       el: <SiRedux />,
       text: "REDUX",
     },
     {
-      id: "19icon",
+      id: "20icon",
       el: <SiSass />,
       text: "SASS",
     },
     {
-      id: "20icon",
+      id: "21icon",
       el: <SiShopify />,
       text: "SHOPIFY",
     },
     {
-      id: "21icon",
+      id: "22icon",
       el: <SiStrapi />,
       text: "STRAPIJS",
     },
     {
-      id: "22icon",
+      id: "23icon",
       el: <SiVuedotjs />,
       text: "VUEJS",
     },

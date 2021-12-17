@@ -15,7 +15,7 @@ export function Projects() {
     {
       allFile(
         filter: {
-          extension: { regex: "/(jpg)|(jpeg)|(png)/" }
+          extension: { regex: "/(jpg)|(jpeg)|(png)|(webp)/" }
           relativeDirectory: { eq: "work" }
         }
       ) {
@@ -133,6 +133,15 @@ export function Projects() {
       github: `https://github.com/GoloisaNinja/resume-game`,
       live: `https://jcodes.me`,
       name: "rgame",
+    },
+    {
+      id: "p11",
+      title: `gmMintr`,
+      description: `A dapp that mints NFT's to the blockchain`,
+      tags: [`Solidity`, `Ethereum`, `Web3`, `HardHat`],
+      github: `https://github.com/GoloisaNinja/gmMintr`,
+      live: `https://gmmintr.netlify.app`,
+      name: "gmmintr",
     },
   ];
 

@@ -53,8 +53,8 @@ const inputStyle = css`
   color: #fff;
   &:focus {
     + label {
-      font-size: 75%;
-      transform: translate3d(0, -175%, 0);
+      font-size: 80%;
+      transform: translate3d(0, -160%, 0);
       opacity: 1;
       color: #696969;
     }
@@ -62,7 +62,7 @@ const inputStyle = css`
   &:valid {
     + label {
       font-size: 75%;
-      transform: translate3d(0, -175%, 0);
+      transform: translate3d(0, -160%, 0);
       opacity: 1;
       color: #696969;
     }
@@ -175,7 +175,7 @@ export const FormLabelFloating = styled.label`
   top: 0%;
   margin-top: 8px;
   padding-left: 10px;
-  transition: all 250ms;
+  transition: all 450ms ease-in-out;
   opacity: 0.9;
   font-size: 16px;
   color: #fff;

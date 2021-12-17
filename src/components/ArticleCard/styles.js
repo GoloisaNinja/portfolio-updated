@@ -14,8 +14,12 @@ export const ArticleCardWrapper = styled.button`
   cursor: pointer;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 0.4s ease-in-out;
   > div:first-child {
     flex: 1;
+  }
+  &:hover {
+    transform: scale(1.03);
   }
 `;
 

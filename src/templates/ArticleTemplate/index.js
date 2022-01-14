@@ -29,6 +29,7 @@ export default function ArticleTemplate({ data }) {
   const article = articles.find(
     el => el.strapiId === data.strapiArticle.strapiId
   );
+  console.log(article);
   return (
     <Layout>
       <Seo
@@ -36,7 +37,8 @@ export default function ArticleTemplate({ data }) {
         description={"Jon Collins Developer Selected Blog Articles"}
         lang={"en"}
         articleImage={
-          article.image.localFile.childImageSharp.gatsbyImageData.src
+          article.image.localFile.childImageSharp.gatsbyImageData.images
+            .fallback.src
         }
       />
       <ArticleWrapper>

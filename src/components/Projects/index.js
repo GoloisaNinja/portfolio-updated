@@ -143,6 +143,15 @@ export function Projects() {
       live: `https://gmmintr.netlify.app`,
       name: "gmmintr",
     },
+    {
+      id: "p12",
+      title: `OpenMarkIo`,
+      description: `A stackedit wysiwyg online markdown clone`,
+      tags: [`React`, `Firebase`, `Auth`, `Redux`],
+      github: `https://github.com/GoloisaNinja/openmarkio`,
+      live: `https://openmarkio.netlify.app`,
+      name: "openmark",
+    },
   ];
 
   return (

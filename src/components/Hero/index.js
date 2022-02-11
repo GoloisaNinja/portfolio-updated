@@ -1,7 +1,14 @@
 import React from "react";
 import cvPDF from "../../utils/collins_dev_cv.pdf";
 import smoothscroll from "smoothscroll-polyfill";
-import { HeroWrapper, Title, Subtitle, RedSpan, ButtonGroup } from "./styles";
+import {
+  HeroWrapper,
+  Title,
+  Subtitle,
+  RedSpan,
+  ButtonGroup,
+  Overlay,
+} from "./styles";
 
 export function Hero() {
   const scrollToProjects = () => {
@@ -30,6 +37,7 @@ export function Hero() {
         </a>
         <button onClick={scrollToProjects}>Jump to Projects</button>
       </ButtonGroup>
+      <Overlay />
     </HeroWrapper>
   );
 }

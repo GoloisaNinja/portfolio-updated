@@ -61,6 +61,14 @@ export function Header() {
     <>
       <HeaderWrapper>
         <div>
+          <button
+            aria-label="root navigation button"
+            onClick={e => navigate("/")}
+          >
+            JC
+          </button>
+        </div>
+        <div>
           <NavLinkWrapper>
             <button
               aria-label="about navigation button"

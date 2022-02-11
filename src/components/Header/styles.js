@@ -1,15 +1,41 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const buttonStyle = css`
+  background: none;
+  outline: none;
+  border: none;
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  color: #ddd;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    color: #fff;
+    transform: scale(1.05);
+  }
+`;
 
 export const HeaderWrapper = styled.header`
   display: flex;
   width: 100%;
   //padding: 15px;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   background-color: black;
   height: 50px;
   z-index: 2;
+  > div:first-child {
+    display: flex;
+    align-items: center;
+    > button {
+      ${buttonStyle};
+      padding-left: 15px;
+      font-size: 25px;
+      color: #d41763;
+    }
+  }
 `;
 export const HamburgerWrapper = styled.div`
   position: fixed;
@@ -59,18 +85,7 @@ export const NavLinkWrapper = styled.div`
   color: #eee;
   padding-right: 15px;
   > button {
-    background: none;
-    outline: none;
-    border: none;
-    font-family: "Rubik", sans-serif;
-    font-weight: 700;
-    color: #ddd;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.4s ease-in-out;
-    &:hover {
-      color: #fff;
-    }
+    ${buttonStyle};
   }
   > button:not(:last-child) {
     margin-right: 15px;

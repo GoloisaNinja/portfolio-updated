@@ -33,9 +33,9 @@ export function ArticleCard({ title, link, preview, image }) {
       { id: "4c", tag: "review" },
     ],
     "Moonlander Keyboard Review - part 2": [
-      { id: "4a", tag: "hardware" },
-      { id: "4b", tag: "mechs" },
-      { id: "4c", tag: "opinion" },
+      { id: "5a", tag: "hardware" },
+      { id: "5b", tag: "mechs" },
+      { id: "5c", tag: "opinion" },
     ],
   };
   const badges = tags[title];

@@ -38,8 +38,8 @@ export function Projects() {
     {
       id: "p1",
       title: `Culchr`,
-      description: `Hilarious Corporate Culture and Values Generator`,
-      tags: [`React`, `React Router`, `QueryParams`, `API's`],
+      description: `Hilarious corporate culture and values generator`,
+      tags: [`React`, `React Router`, `Shareable`, `API's`],
       github: `https://github.com/GoloisaNinja/Culchr-app`,
       live: `https://www.culchr.pw`,
       name: "culchrReactApp",
@@ -47,7 +47,7 @@ export function Projects() {
     {
       id: "p2",
       title: `Hat Attack`,
-      description: `Gatsby Shopify Build with Checkout`,
+      description: `Gatsby Shopify build with checkout`,
       tags: [`Shopify`, `GraphQL`, `Styled Components`, `Gatsby`],
       github: `https://github.com/GoloisaNinja/hatAttack`,
       live: `https://wizardly-banach-d5eea6.netlify.app/`,
@@ -56,7 +56,7 @@ export function Projects() {
     {
       id: "p3",
       title: `Useddit`,
-      description: `Complex VueJS Reddit Clone`,
+      description: `Complex VueJS Reddit clone`,
       tags: [`VueJS`, `VuexFire`, `Vue Router`, `Firestore`],
       github: `https://github.com/GoloisaNinja/useddit`,
       live: `https://useddit.netlify.app/`,
@@ -64,7 +64,7 @@ export function Projects() {
     },
     {
       title: `Neon Unicorn`,
-      description: `Advanced E-commerce Platform and Shop`,
+      description: `Advanced E-commerce platform and shop`,
       tags: [`Gatsby`, `E-commerce`, `Jamstack`, `Shopify`],
       github: `https://github.com/GoloisaNinja/wifeyTestShop`,
       live: `https://neonunicorntest.netlify.app/`,
@@ -73,7 +73,7 @@ export function Projects() {
     {
       id: "p4",
       title: `Movie Partners`,
-      description: `Massive React Project with Custom Backend`,
+      description: `Massive React project with custom backend`,
       tags: [`React`, `ContextAPI`, `MongoDB`, `NodeJS`],
       github: `https://github.com/GoloisaNinja/movie-partners`,
       live: `https://www.wewatch.pw`,
@@ -82,7 +82,7 @@ export function Projects() {
     {
       id: "p5",
       title: `Expencils`,
-      description: `Complex Finance Tracking Application`,
+      description: `Complex finance tracking application`,
       tags: [`React`, `Redux`, `React Router`, `Firebase`],
       github: `https://github.com/GoloisaNinja/expencils`,
       live: `https://collins-expencils.herokuapp.com/`,
@@ -91,7 +91,7 @@ export function Projects() {
     {
       id: "p6",
       title: `Shortly`,
-      description: `Bit.ly Url Shortener Clone`,
+      description: `Bit.ly url shortener clone`,
       tags: [`VueJS`, `NodeJS`, `Express`, `MongoDB`],
       github: `https://github.com/GoloisaNinja/shortlyURL`,
       live: `https://www.fpd.pw`,
@@ -100,7 +100,7 @@ export function Projects() {
     {
       id: "p7",
       title: `Newbsanity`,
-      description: `Full Feature Fitness and Social Platform Application`,
+      description: `Full feature fitness and social platform application`,
       tags: [`React`, `Router`, `Redux`, `Custom CMS`],
       bgColor: `#a61403`,
       github: `https://github.com/GoloisaNinja/newbsanity-app`,
@@ -110,7 +110,7 @@ export function Projects() {
     {
       id: "p8",
       title: `SocialDevs`,
-      description: `Social Platform Application for Developers`,
+      description: `Social project application for developers`,
       tags: [`React`, `React Router`, `Redux`, `MongoDB`],
       github: `https://github.com/GoloisaNinja/SocialDevs`,
       live: `https://collins-socialdevs.herokuapp.com/`,
@@ -119,7 +119,7 @@ export function Projects() {
     {
       id: "p9",
       title: `PlayPaws`,
-      description: `Media Review Application with Dogs!`,
+      description: `Media review application with dogs!`,
       tags: [`Next.js`, `Strapi`, `WIP`, `API`],
       github: `https://github.com/GoloisaNinja/PlayPawsReview`,
       live: `https://playpaws.netlify.app/`,
@@ -128,8 +128,8 @@ export function Projects() {
     {
       id: "p10",
       title: `Resume Noir`,
-      description: `Choose Your Own Adventure Resume Game`,
-      tags: [`React`, `Context`, `SPA`, `Audio`],
+      description: `My resume as a choose your own adventure game`,
+      tags: [`React`, `Context`, `Nodes`, `Audio`],
       github: `https://github.com/GoloisaNinja/resume-game`,
       live: `https://jcodes.me`,
       name: "rgame",
@@ -151,6 +151,15 @@ export function Projects() {
       github: `https://github.com/GoloisaNinja/openmarkio`,
       live: `https://openmarkio.netlify.app`,
       name: "openmark",
+    },
+    {
+      id: "p13",
+      title: `hello bourb(on)`,
+      description: `A large scale, backend to frontend, full stack app`,
+      tags: [`React`, `MongoDB`, `Redux`, `Custom API`],
+      github: `https://github.com/GoloisaNinja/bourbon-frontend`,
+      live: `https://hellobourbon.us`,
+      name: "hellobourbon",
     },
   ];
 

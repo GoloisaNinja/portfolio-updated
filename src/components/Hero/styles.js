@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import img from "../../images/hero_bg1.png";
+import img from "../../images/hero_bg.webp";
 const basicButtonStyle = css`
   display: flex;
   justify-content: center;
@@ -29,8 +29,8 @@ export const HeroWrapper = styled.header`
   align-items: center;
   width: 100%;
   background-image: url(${img});
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: left;
   background-repeat: no-repeat;
   background-color: black;
   font-family: "Rubik", sans-serif;
@@ -41,8 +41,9 @@ export const HeroWrapper = styled.header`
 `;
 export const Title = styled.h1`
   font-family: "Rubik", sans-serif;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 75px;
+  text-shadow: 2px 2px 2px #d41763;
   @media (min-width: 375px) {
     font-size: 85px;
   }
@@ -53,9 +54,11 @@ export const Title = styled.h1`
 export const Subtitle = styled.h3`
   font-weight: 600;
   font-size: 45px;
+  text-shadow: 2px 2px 2px #d41763;
 `;
 export const RedSpan = styled.span`
   color: #d41763;
+  text-shadow: none;
 `;
 export const ButtonGroup = styled.div`
   display: flex;
@@ -95,7 +98,7 @@ export const ButtonGroup = styled.div`
 `;
 export const Overlay = styled.div`
   background: black;
-  opacity: 0.85;
+  opacity: 0.65;
   top: 0;
   left: 0;
   bottom: 0;

@@ -32,7 +32,12 @@ module.exports = {
         queryLimit: 1000,
       },
     },
-    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-transformer-sharp`,
+      options: {
+        checkSupportedVersions: true,
+      },
+    },
     "gatsby-transformer-remark",
     `gatsby-plugin-sharp`,
     {

@@ -12,6 +12,7 @@ module.exports = {
     `gatsby-optional-chaining`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
+    `gatsby-plugin-recaptcha`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -123,10 +123,11 @@ export const ContactForm = styled.form`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  > div:last-child {
+  > div:nth-child(5) {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-bottom: 26px;
     > p {
       font-size: 16px;
     }
@@ -143,9 +144,10 @@ export const TextArea = styled.textarea`
 `;
 export const ContactSubmitButton = styled.button`
   border: none;
+  display: flex;
   background: #d41763;
   border: 1px solid #d41763;
-  padding: 20px;
+  padding: 19px;
   border-radius: 50%;
   color: #fff;
   margin-right: 15px;
@@ -158,6 +160,7 @@ export const ContactSubmitButton = styled.button`
     > svg {
       transition: transform 0.3s ease-in-out;
       transform: translateX(12px);
+      color: #ff458f;
     }
   }
   > svg {

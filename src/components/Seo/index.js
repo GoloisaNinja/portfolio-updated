@@ -22,7 +22,7 @@ export function Seo({ articleImage, description, lang, meta = [], title }) {
     }
   `);
   const metaDescription = description || data.site.siteMetadata.description;
-  const base = `https://jcodes.page`;
+  const base = `https://joncollins.dev`;
   const ogImage = articleImage
     ? `${base}${articleImage}`
     : `${base}${data.file.childImageSharp.fluid.src}`;

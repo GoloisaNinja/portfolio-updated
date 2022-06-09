@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { FaArrowRight } from "react-icons/fa";
 import { Modal } from "../Modal";
 import { FaGithubAlt, FaDrawPolygon } from "react-icons/fa";
 import { ImReddit } from "react-icons/im";
 import { SiTwitter, SiLinkedin } from "react-icons/si";
+import Recaptcha from "react-recaptcha";
 import {
   Offset,
   ContactWrapper,
@@ -37,6 +38,8 @@ export function Contact() {
       }
     }
   `);
+  let recaptchaInstance = useRef();
+  const recaptchSiteKey = process.env.GATSBY_RECAPTCHA_SITE_KEY;
   const [show, setShow] = useState(false);
   const [content, setContent] = useState({
     title: `Message Sent!`,
@@ -61,9 +64,47 @@ export function Contact() {
   const handleDismiss = () => {
     setShow(false);
   };
-  const handleSubmit = e => {
+  const errorFormModal = (tStr, bStr) => {
+    setContent({ ...content, title: tStr, body: bStr });
+    setShow(true);
+  };
+  const checkInputs = e => {
     e.preventDefault();
-    setContent({ ...content, title: `Thank you ${name}!` });
+    const regex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+    const title = "Oops...something is wrong...";
+    const emptyBody = "Please fill out all fields of the form!";
+    const badEmail = "Hmm...email is sus...try again...";
+    if (!name) {
+      errorFormModal(title, emptyBody);
+      return;
+    }
+    if (!regex.test(email)) {
+      errorFormModal(title, badEmail);
+      return;
+    }
+    if (!message) {
+      errorFormModal(title, emptyBody);
+      return;
+    }
+    executeCaptcha();
+  };
+  const executeCaptcha = () => {
+    recaptchaInstance.execute();
+  };
+  const expiredCallback = () => {
+    console.log("recaptcha expired...resetting...");
+    recaptchaInstance.reset();
+  };
+  const verifyCallback = response => {
+    handleSubmit();
+  };
+
+  const handleSubmit = () => {
+    setContent({
+      ...content,
+      title: `Thank you ${name}!`,
+      body: `Really feeling the love! Thank you for reaching out! I'll be in touch soon.`,
+    });
     fetch("/", {
       method: "POST",
       headers: {
@@ -156,13 +197,7 @@ export function Contact() {
         </ContactIconCard>
       </ContactIconWrapper>
       <ContactFormWrapper>
-        <ContactForm
-          name="new-portfolio-contact"
-          id="contact-form"
-          method="POST"
-          data-netlify="true"
-          onSubmit={e => handleSubmit(e)}
-        >
+        <ContactForm name="new-portfolio-contact" id="contact-form">
           <input type="hidden" name="new-portfolio-contact" value="contact" />
           <FormGroup>
             <NameInput
@@ -171,7 +206,7 @@ export function Contact() {
               name="name"
               value={name}
               onChange={e => onChange(e)}
-              required
+              aria-required
             />
             <FormLabelFloating htmlFor="name">your name</FormLabelFloating>
           </FormGroup>
@@ -182,7 +217,7 @@ export function Contact() {
               name="email"
               value={email}
               onChange={e => onChange(e)}
-              required
+              aria-required
             />
             <FormLabelFloating htmlFor="email">your email</FormLabelFloating>
           </FormGroup>
@@ -194,7 +229,7 @@ export function Contact() {
               name="message"
               value={message}
               onChange={e => onChange(e)}
-              required
+              aria-required
             ></TextArea>
             <FormLabelFloating htmlFor="message">
               message body
@@ -202,13 +237,22 @@ export function Contact() {
           </FormGroup>
           <div>
             <ContactSubmitButton
+              onClick={e => checkInputs(e)}
               aria-label="contact form submit button to send your message to Jon"
-              type="submit"
             >
               <FaArrowRight />
             </ContactSubmitButton>
             <p>send your message!</p>
           </div>
+          <Recaptcha
+            ref={e => (recaptchaInstance = e)}
+            sitekey={recaptchSiteKey}
+            size="invisible"
+            theme="dark"
+            verifyCallback={verifyCallback}
+            expiredCallback={expiredCallback}
+            badge="inline"
+          />
         </ContactForm>
       </ContactFormWrapper>
       <Modal show={show} handleDismiss={handleDismiss} content={content} />

@@ -75,41 +75,26 @@ export function Contact() {
     const title = "Oops...something is wrong...";
     const emptyBody = "Please fill out all fields of the form!";
     const badEmail = "Hmm...email is sus...try again...";
-    if (!name) {
+    const spambody = "https://mub.blueliners07.de/mub";
+    const spamName = "henrymub";
+    if (!name || name.toLowerCase().includes(spamName)) {
       errorFormModal(title, emptyBody);
       return;
     }
-    console.log("passed name");
     if (!regex.test(email)) {
       errorFormModal(title, badEmail);
       return;
     }
-    console.log("passed email");
-    if (!message) {
+    if (!message || message.toLowerCase().includes(spambody)) {
       errorFormModal(title, emptyBody);
       return;
     }
-    console.log("passed message");
-    console.log("executing captcha");
-    //executeCaptcha();
     handleSubmit();
   };
-  // const executeCaptcha = () => {
-  //   recaptchaInstance.current.execute();
-  //   console.log("called captcha execute");
-  // };
-
-  // const verifyCallback = response => {
-  //   console.log(response);
-  //   console.log("verified captcha...");
-  //   handleSubmit();
-  // };
 
   const handleSubmit = async () => {
     try {
-      console.log("submit func called...");
       const token = await recaptchaInstance.current.executeAsync();
-      console.log(token);
       setContent({
         ...content,
         title: `Thank you ${name}!`,

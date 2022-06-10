@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { FaArrowRight } from "react-icons/fa";
 import { Modal } from "../Modal";
@@ -38,7 +38,7 @@ export function Contact() {
       }
     }
   `);
-  let recaptchaInstance = useRef();
+  let recaptchaInstance;
   const recaptchSiteKey = process.env.GATSBY_RECAPTCHA_SITE_KEY;
   const [show, setShow] = useState(false);
   const [content, setContent] = useState({
@@ -86,20 +86,21 @@ export function Contact() {
       errorFormModal(title, emptyBody);
       return;
     }
+    console.log("executing captcha");
     executeCaptcha();
   };
   const executeCaptcha = () => {
     recaptchaInstance.execute();
   };
-  const expiredCallback = () => {
-    console.log("recaptcha expired...resetting...");
-    recaptchaInstance.reset();
-  };
+
   const verifyCallback = response => {
+    console.log(response);
+    console.log("verified captcha...");
     handleSubmit();
   };
 
   const handleSubmit = () => {
+    console.log("submit func called...");
     setContent({
       ...content,
       title: `Thank you ${name}!`,
@@ -253,7 +254,6 @@ export function Contact() {
             size="invisible"
             theme="dark"
             verifyCallback={verifyCallback}
-            expiredCallback={expiredCallback}
             badge="inline"
           />
         </ContactForm>

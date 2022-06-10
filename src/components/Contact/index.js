@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { FaArrowRight } from "react-icons/fa";
 import { Modal } from "../Modal";
@@ -38,7 +38,7 @@ export function Contact() {
       }
     }
   `);
-  let recaptchaInstance;
+  let recaptchaInstance = useRef();
   const recaptchSiteKey = process.env.GATSBY_RECAPTCHA_SITE_KEY;
   const [show, setShow] = useState(false);
   const [content, setContent] = useState({
@@ -94,7 +94,7 @@ export function Contact() {
     executeCaptcha();
   };
   const executeCaptcha = () => {
-    recaptchaInstance.execute();
+    recaptchaInstance.current.execute();
     console.log("called captcha execute");
   };
 
@@ -254,7 +254,7 @@ export function Contact() {
             <p>send your message!</p>
           </div>
           <Recaptcha
-            ref={e => (recaptchaInstance = e)}
+            ref={recaptchaInstance}
             sitekey={recaptchSiteKey}
             size="invisible"
             theme="dark"

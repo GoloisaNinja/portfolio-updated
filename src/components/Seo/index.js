@@ -27,8 +27,6 @@ export function Seo({ articleImage, description, lang, meta = [], title }) {
     ? `${base}${articleImage}`
     : `${base}${data.file.childImageSharp.fluid.src}`;
 
-  console.log(data.file.childImageSharp.fluid.src);
-
   return (
     <Helmet
       htmlAttributes={{

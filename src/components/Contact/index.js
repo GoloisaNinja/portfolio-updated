@@ -5,7 +5,7 @@ import { Modal } from "../Modal";
 import { FaGithubAlt, FaDrawPolygon } from "react-icons/fa";
 import { ImReddit } from "react-icons/im";
 import { SiTwitter, SiLinkedin } from "react-icons/si";
-import Recaptcha from "react-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 import {
   Offset,
   ContactWrapper,
@@ -39,7 +39,7 @@ export function Contact() {
     }
   `);
   let recaptchaInstance = useRef();
-  const recaptchSiteKey = process.env.GATSBY_RECAPTCHA_SITE_KEY;
+  const siteKey = process.env.GATSBY_RECAPTCHA_SITE_KEY;
   const [show, setShow] = useState(false);
   const [content, setContent] = useState({
     title: `Message Sent!`,
@@ -91,44 +91,57 @@ export function Contact() {
     }
     console.log("passed message");
     console.log("executing captcha");
-    executeCaptcha();
-  };
-  const executeCaptcha = () => {
-    recaptchaInstance.current.execute();
-    console.log("called captcha execute");
-  };
-
-  const verifyCallback = response => {
-    console.log(response);
-    console.log("verified captcha...");
+    //executeCaptcha();
     handleSubmit();
   };
+  // const executeCaptcha = () => {
+  //   recaptchaInstance.current.execute();
+  //   console.log("called captcha execute");
+  // };
 
-  const handleSubmit = () => {
-    console.log("submit func called...");
-    setContent({
-      ...content,
-      title: `Thank you ${name}!`,
-      body: `Really feeling the love! Thank you for reaching out! I'll be in touch soon.`,
-    });
-    fetch("/", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/x-www-form-urlencoded",
-      },
-      body: encode({ "form-name": "new-portfolio-contact", ...formData }),
-    })
-      .then(() => {
-        setShow(true);
-        setFormData({ name: "", email: "", message: "" });
-        return console.log("Success!");
-      })
-      .catch(error => {
-        console.log("error tripped");
-        return alert(
-          `Whoops - something unexpected happened...please try again later`
-        );
+  // const verifyCallback = response => {
+  //   console.log(response);
+  //   console.log("verified captcha...");
+  //   handleSubmit();
+  // };
+
+  const handleSubmit = async () => {
+    try {
+      console.log("submit func called...");
+      const token = await recaptchaInstance.current.executeAsync();
+      console.log(token);
+      setContent({
+        ...content,
+        title: `Thank you ${name}!`,
+        body: `Really feeling the love! Thank you for reaching out! I'll be in touch soon.`,
       });
+      fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/x-www-form-urlencoded",
+        },
+        body: encode({ "form-name": "new-portfolio-contact", ...formData }),
+      })
+        .then(() => {
+          setShow(true);
+          setFormData({ name: "", email: "", message: "" });
+          return console.log("Success!");
+        })
+        .catch(error => {
+          console.log("error tripped");
+          return alert(
+            `Whoops - something unexpected happened...please try again later`
+          );
+        });
+    } catch (error) {
+      console.error(error);
+      setContent({
+        ...content,
+        title: "Server issues...",
+        body: "Sorry! Please try submitting your details later.",
+      });
+      setShow(true);
+    }
   };
   return (
     <ContactWrapper id="contact">
@@ -203,7 +216,12 @@ export function Contact() {
         </ContactIconCard>
       </ContactIconWrapper>
       <ContactFormWrapper>
-        <ContactForm name="new-portfolio-contact" id="contact-form">
+        <ContactForm
+          name="new-portfolio-contact"
+          id="contact-form"
+          data-netlify="true"
+          method="POST"
+        >
           <input type="hidden" name="new-portfolio-contact" value="contact" />
           <FormGroup>
             <NameInput
@@ -253,12 +271,11 @@ export function Contact() {
             </ContactSubmitButton>
             <p>send your message!</p>
           </div>
-          <Recaptcha
-            ref={e => (recaptchaInstance.current = e)}
-            sitekey={recaptchSiteKey}
+          <ReCAPTCHA
+            ref={recaptchaInstance}
             size="invisible"
+            sitekey={siteKey}
             theme="dark"
-            verifyCallback={verifyCallback}
             badge="inline"
           />
         </ContactForm>

@@ -207,6 +207,7 @@ export function Contact() {
               value={name}
               onChange={e => onChange(e)}
               aria-required
+              required
             />
             <FormLabelFloating htmlFor="name">your name</FormLabelFloating>
           </FormGroup>
@@ -218,6 +219,7 @@ export function Contact() {
               value={email}
               onChange={e => onChange(e)}
               aria-required
+              required
             />
             <FormLabelFloating htmlFor="email">your email</FormLabelFloating>
           </FormGroup>
@@ -230,6 +232,7 @@ export function Contact() {
               value={message}
               onChange={e => onChange(e)}
               aria-required
+              required
             ></TextArea>
             <FormLabelFloating htmlFor="message">
               message body

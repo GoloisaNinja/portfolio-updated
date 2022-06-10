@@ -254,7 +254,7 @@ export function Contact() {
             <p>send your message!</p>
           </div>
           <Recaptcha
-            ref={e => (recaptchaInstance = e)}
+            ref={e => (recaptchaInstance.current = e)}
             sitekey={recaptchSiteKey}
             size="invisible"
             theme="dark"

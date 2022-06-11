@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { FaArrowRight } from "react-icons/fa";
 import { Modal } from "../Modal";
@@ -6,6 +6,7 @@ import { FaGithubAlt, FaDrawPolygon } from "react-icons/fa";
 import { ImReddit } from "react-icons/im";
 import { SiTwitter, SiLinkedin } from "react-icons/si";
 import ReCAPTCHA from "react-google-recaptcha";
+import axios from "axios";
 import {
   Offset,
   ContactWrapper,
@@ -40,6 +41,7 @@ export function Contact() {
   `);
   let recaptchaInstance = useRef();
   const siteKey = process.env.GATSBY_RECAPTCHA_SITE_KEY;
+  const [ip, setIP] = useState("");
   const [show, setShow] = useState(false);
   const [content, setContent] = useState({
     title: `Message Sent!`,
@@ -52,6 +54,26 @@ export function Contact() {
     email: "",
     message: "",
   });
+  const getIpData = async () => {
+    const res = await axios.get("https://api.ipgeolocation.io/getip");
+    console.log(res.data.ip);
+    setIP(res.data.ip);
+  };
+  useEffect(() => {
+    getIpData();
+  }, []);
+  const blockedIPs = [
+    "46.161.11.83",
+    "188.126.94.212",
+    "191.96.168.122",
+    "190.2.132.155",
+    "195.78.54.34",
+    "46.161.11.252",
+    "138.199.63.46",
+    "31.171.152.104",
+    "192.40.57.54",
+    "191.96.168.55",
+  ];
   const { name, email, message } = formData;
   const encode = data => {
     return Object.keys(data)
@@ -70,7 +92,12 @@ export function Contact() {
   };
   const checkInputs = e => {
     e.preventDefault();
-    console.log("check inputs is called");
+    const isDisabled =
+      document.getElementById("mySubmitBtn").getAttribute("aria-disabled") ===
+      "true";
+    if (isDisabled) {
+      return;
+    }
     const regex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
     const title = "Oops...something is wrong...";
     const emptyBody = "Please fill out all fields of the form!";
@@ -249,8 +276,10 @@ export function Contact() {
           </FormGroup>
           <div>
             <ContactSubmitButton
+              id="mySubmitBtn"
               onClick={e => checkInputs(e)}
               aria-label="contact form submit button to send your message to Jon"
+              aria-disabled={blockedIPs.some(address => address === ip)}
             >
               <FaArrowRight />
             </ContactSubmitButton>

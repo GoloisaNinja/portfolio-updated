@@ -153,6 +153,11 @@ export const ContactSubmitButton = styled.button`
   margin-right: 15px;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
+  &[aria-disabled="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
   &:hover {
     background-color: black;
     border: 1px solid black;

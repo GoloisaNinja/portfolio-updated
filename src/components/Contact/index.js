@@ -102,9 +102,7 @@ export function Contact() {
     const title = "Oops...something is wrong...";
     const emptyBody = "Please fill out all fields of the form!";
     const badEmail = "Hmm...email is sus...try again...";
-    const spambody = "https://mub.blueliners07.de/mub";
-    const spamName = "henrymub";
-    if (!name || name.toLowerCase().includes(spamName)) {
+    if (!name) {
       errorFormModal(title, emptyBody);
       return;
     }
@@ -112,7 +110,7 @@ export function Contact() {
       errorFormModal(title, badEmail);
       return;
     }
-    if (!message || message.toLowerCase().includes(spambody)) {
+    if (!message) {
       errorFormModal(title, emptyBody);
       return;
     }
@@ -227,73 +225,76 @@ export function Contact() {
           <p>REDDIT</p>
         </ContactIconCard>
       </ContactIconWrapper>
-      <ContactFormWrapper>
-        <ContactForm
-          name="new-portfolio-contact"
-          id="contact-form"
-          data-netlify="true"
-          method="POST"
-        >
-          <input type="hidden" name="new-portfolio-contact" value="contact" />
-          <FormGroup>
-            <NameInput
-              type="text"
-              id="name"
-              name="name"
-              value={name}
-              onChange={e => onChange(e)}
-              aria-required
-              required
+      {!blockedIPs.some(address => address === ip) && (
+        <ContactFormWrapper>
+          <ContactForm
+            name="new-portfolio-contact"
+            id="contact-form"
+            data-netlify="true"
+            method="POST"
+          >
+            <input type="hidden" name="new-portfolio-contact" value="contact" />
+            <FormGroup>
+              <NameInput
+                type="text"
+                id="name"
+                name="name"
+                value={name}
+                onChange={e => onChange(e)}
+                aria-required
+                required
+              />
+              <FormLabelFloating htmlFor="name">your name</FormLabelFloating>
+            </FormGroup>
+            <FormGroup>
+              <EmailInput
+                type="email"
+                id="email"
+                name="email"
+                value={email}
+                onChange={e => onChange(e)}
+                aria-required
+                required
+              />
+              <FormLabelFloating htmlFor="email">your email</FormLabelFloating>
+            </FormGroup>
+            <FormGroup>
+              <TextArea
+                cols="30"
+                rows="10"
+                id="message"
+                name="message"
+                value={message}
+                onChange={e => onChange(e)}
+                aria-required
+                required
+              ></TextArea>
+              <FormLabelFloating htmlFor="message">
+                message body
+              </FormLabelFloating>
+            </FormGroup>
+            <div>
+              <ContactSubmitButton
+                id="mySubmitBtn"
+                onClick={e => checkInputs(e)}
+                aria-label="contact form submit button to send your message to Jon"
+                aria-disabled={blockedIPs.some(address => address === ip)}
+              >
+                <FaArrowRight />
+              </ContactSubmitButton>
+              <p>send your message!</p>
+            </div>
+            <ReCAPTCHA
+              ref={recaptchaInstance}
+              size="invisible"
+              sitekey={siteKey}
+              theme="dark"
+              badge="inline"
             />
-            <FormLabelFloating htmlFor="name">your name</FormLabelFloating>
-          </FormGroup>
-          <FormGroup>
-            <EmailInput
-              type="email"
-              id="email"
-              name="email"
-              value={email}
-              onChange={e => onChange(e)}
-              aria-required
-              required
-            />
-            <FormLabelFloating htmlFor="email">your email</FormLabelFloating>
-          </FormGroup>
-          <FormGroup>
-            <TextArea
-              cols="30"
-              rows="10"
-              id="message"
-              name="message"
-              value={message}
-              onChange={e => onChange(e)}
-              aria-required
-              required
-            ></TextArea>
-            <FormLabelFloating htmlFor="message">
-              message body
-            </FormLabelFloating>
-          </FormGroup>
-          <div>
-            <ContactSubmitButton
-              id="mySubmitBtn"
-              onClick={e => checkInputs(e)}
-              aria-label="contact form submit button to send your message to Jon"
-              aria-disabled={blockedIPs.some(address => address === ip)}
-            >
-              <FaArrowRight />
-            </ContactSubmitButton>
-            <p>send your message!</p>
-          </div>
-          <ReCAPTCHA
-            ref={recaptchaInstance}
-            size="invisible"
-            sitekey={siteKey}
-            theme="dark"
-            badge="inline"
-          />
-        </ContactForm>
-      </ContactFormWrapper>
+          </ContactForm>
+        </ContactFormWrapper>
+      )}
+
       <Modal show={show} handleDismiss={handleDismiss} content={content} />
     </ContactWrapper>
   );

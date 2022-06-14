@@ -24,3 +24,8 @@ export const wrapPageElement = ({ element }) => (
 //     ></script>,
 //   ]);
 // };
+
+// export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
+//   setHeadComponents([<link key="1" rel="stylesheet" href={"prism.css"} />]);
+//   setPostBodyComponents([<script key="2" src={"prism.js"}></script>]);
+// };

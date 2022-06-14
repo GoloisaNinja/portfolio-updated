@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { FaArrowRight } from "react-icons/fa";
 import { Modal } from "../Modal";
+import { Spinner } from "../Spinner";
 import { FaGithubAlt, FaDrawPolygon } from "react-icons/fa";
 import { ImReddit } from "react-icons/im";
 import { SiTwitter, SiLinkedin } from "react-icons/si";
@@ -43,6 +44,7 @@ export function Contact() {
   const siteKey = process.env.GATSBY_RECAPTCHA_SITE_KEY;
   const [ip, setIP] = useState("");
   const [show, setShow] = useState(false);
+  const [showSpinner, setShowSpinner] = useState(false);
   const [content, setContent] = useState({
     title: `Message Sent!`,
     body: `Really feeling the love! Thank you for reaching out! I'll be in touch soon.`,
@@ -56,7 +58,6 @@ export function Contact() {
   });
   const getIpData = async () => {
     const res = await axios.get("https://api.ipgeolocation.io/getip");
-    console.log(res.data.ip);
     setIP(res.data.ip);
   };
   useEffect(() => {
@@ -92,12 +93,12 @@ export function Contact() {
   };
   const checkInputs = e => {
     e.preventDefault();
-    const isDisabled =
-      document.getElementById("mySubmitBtn").getAttribute("aria-disabled") ===
-      "true";
+    const formBtn = document.getElementById("mySubmitBtn");
+    const isDisabled = formBtn.getAttribute("aria-disabled") === "true";
     if (isDisabled) {
       return;
     }
+    formBtn.setAttribute("aria-disabled", "true");
     const regex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
     const title = "Oops...something is wrong...";
     const emptyBody = "Please fill out all fields of the form!";
@@ -114,35 +115,48 @@ export function Contact() {
       errorFormModal(title, emptyBody);
       return;
     }
+    setShowSpinner(true);
     handleSubmit();
   };
 
   const handleSubmit = async () => {
+    const formBtn = document.getElementById("mySubmitBtn");
     try {
       const token = await recaptchaInstance.current.executeAsync();
-      setContent({
-        ...content,
-        title: `Thank you ${name}!`,
-        body: `Really feeling the love! Thank you for reaching out! I'll be in touch soon.`,
-      });
-      fetch("/", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/x-www-form-urlencoded",
-        },
-        body: encode({ "form-name": "new-portfolio-contact", ...formData }),
-      })
-        .then(() => {
-          setShow(true);
-          setFormData({ name: "", email: "", message: "" });
-          return console.log("Success!");
-        })
-        .catch(error => {
-          console.log("error tripped");
-          return alert(
-            `Whoops - something unexpected happened...please try again later`
-          );
+      const body = { token };
+      const response = await axios.post(
+        `https://portfolio-contact-recaptcha.herokuapp.com/recaptcha`,
+        body
+      );
+      setShowSpinner(false);
+      if (response.data.success) {
+        setContent({
+          ...content,
+          title: `Thank you ${name}!`,
+          body: `Really feeling the love! Thank you for reaching out! I'll be in touch soon.`,
         });
+        fetch("/", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/x-www-form-urlencoded",
+          },
+          body: encode({ "form-name": "new-portfolio-contact", ...formData }),
+        })
+          .then(() => {
+            setShow(true);
+            setFormData({ name: "", email: "", message: "" });
+            return console.log("Success!");
+          })
+          .catch(error => {
+            console.log(error);
+            setContent({
+              ...content,
+              title: "Uh oh...",
+              body: "Sorry! Please try submitting your details later.",
+            });
+            setShow(true);
+          });
+      }
     } catch (error) {
       console.error(error);
       setContent({
@@ -152,6 +166,7 @@ export function Contact() {
       });
       setShow(true);
     }
+    formBtn.setAttribute("aria-disabled", "false");
   };
   return (
     <ContactWrapper id="contact">
@@ -296,6 +311,7 @@ export function Contact() {
       )}
 
       <Modal show={show} handleDismiss={handleDismiss} content={content} />
+      <Spinner show={showSpinner} />
     </ContactWrapper>
   );
 }

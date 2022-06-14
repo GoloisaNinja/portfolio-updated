@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { graphql, navigate } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import ReactMarkdown from "react-markdown";
 import { FaTwitter } from "react-icons/fa";
 import { Layout, Seo } from "../../components";
 import ArticleContext from "../../context/ArticleContext";
+import Prism from "prismjs";
+import "prismjs/themes/prism-okaidia.css";
 import {
   ArticleWrapper,
   Title,
@@ -29,7 +31,9 @@ export default function ArticleTemplate({ data }) {
   const article = articles.find(
     el => el.strapiId === data.strapiArticle.strapiId
   );
-  console.log(article);
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
   return (
     <Layout>
       <Seo

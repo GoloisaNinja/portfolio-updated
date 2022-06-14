@@ -11,3 +11,4 @@ export * from "./Contact";
 export * from "./Modal";
 export * from "./Footer";
 export * from "./Seo";
+export * from "./Spinner";

@@ -22,7 +22,7 @@ exports.createPages = async ({ graphql, actions }) => {
               "Moonlander Keyboard Review - part 2"
               "Moonlander Keyboard Review - part 1"
               "Avoiding the dreaded React Flicker"
-              "Changing careers is scary"
+              "Reducing spam on your site forms"
               "How many stacks is too many stacks"
             ]
           }

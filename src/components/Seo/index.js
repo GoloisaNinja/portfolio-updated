@@ -60,7 +60,7 @@ export function Seo({ articleImage, description, lang, meta = [], title }) {
         },
         {
           property: `og:url`,
-          content: "https://jcodes.page",
+          content: "https://joncollins.dev",
         },
         {
           property: `og:type`,

@@ -143,4 +143,8 @@ export const ArticleStrapiContentWrapper = styled.div`
     padding-bottom: 15px;
     word-break: break-word;
   }
+  > pre[class*="language-"] {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
 `;

@@ -12,10 +12,10 @@ import {
 
 export function ArticleCard({ title, link, preview, image }) {
   const tags = {
-    "Changing careers is scary": [
-      { id: "1a", tag: "tech" },
-      { id: "1b", tag: "career" },
-      { id: "1c", tag: "opinion" },
+    "Reducing spam on your site forms": [
+      { id: "1a", tag: "code" },
+      { id: "1b", tag: "guide" },
+      { id: "1c", tag: "tech help" },
     ],
     "Avoiding the dreaded React Flicker": [
       { id: "2a", tag: "react" },

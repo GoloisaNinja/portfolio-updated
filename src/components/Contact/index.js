@@ -17,6 +17,7 @@ import {
   ContactIconCard,
   ContactFormWrapper,
   ContactForm,
+  AltFormGroup,
   FormGroup,
   NameInput,
   EmailInput,
@@ -54,6 +55,7 @@ export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
   const getIpData = async () => {
@@ -75,7 +77,7 @@ export function Contact() {
     "192.40.57.54",
     "191.96.168.55",
   ];
-  const { name, email, message } = formData;
+  const { name, email, subject, message } = formData;
   const encode = data => {
     return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -98,7 +100,6 @@ export function Contact() {
     if (isDisabled) {
       return;
     }
-    formBtn.setAttribute("aria-disabled", "true");
     const regex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
     const title = "Oops...something is wrong...";
     const emptyBody = "Please fill out all fields of the form!";
@@ -115,6 +116,7 @@ export function Contact() {
       errorFormModal(title, emptyBody);
       return;
     }
+    formBtn.setAttribute("aria-disabled", "true");
     setShowSpinner(true);
     handleSubmit();
   };
@@ -144,7 +146,7 @@ export function Contact() {
         })
           .then(() => {
             setShow(true);
-            setFormData({ name: "", email: "", message: "" });
+            setFormData({ name: "", email: "", subject: "", message: "" });
             return console.log("Success!");
           })
           .catch(error => {
@@ -246,6 +248,7 @@ export function Contact() {
             name="new-portfolio-contact"
             id="contact-form"
             data-netlify="true"
+            netlify-honeypot="subject"
             method="POST"
           >
             <input type="hidden" name="new-portfolio-contact" value="contact" />
@@ -273,6 +276,16 @@ export function Contact() {
               />
               <FormLabelFloating htmlFor="email">your email</FormLabelFloating>
             </FormGroup>
+            <AltFormGroup>
+              <label htmlFor="subject">Subject</label>
+              <input
+                name="subject"
+                id="subject"
+                tabIndex="-1"
+                value={subject}
+                onChange={e => onChange(e)}
+              />
+            </AltFormGroup>
             <FormGroup>
               <TextArea
                 cols="30"

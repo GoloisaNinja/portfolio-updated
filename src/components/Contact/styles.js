@@ -123,7 +123,7 @@ export const ContactForm = styled.form`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  > div:nth-child(5) {
+  > div:nth-child(6) {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -170,6 +170,18 @@ export const ContactSubmitButton = styled.button`
   }
   > svg {
     font-size: 20px;
+  }
+`;
+export const AltFormGroup = styled.div`
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  z-index: -1000;
+  > input:focus {
+    outline: none;
   }
 `;
 export const FormGroup = styled.div`

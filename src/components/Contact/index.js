@@ -276,8 +276,8 @@ export function Contact() {
               />
               <FormLabelFloating htmlFor="email">your email</FormLabelFloating>
             </FormGroup>
-            <AltFormGroup>
-              <label htmlFor="subject">Subject</label>
+            <AltFormGroup className="hidden">
+              <label htmlFor="subject">subject</label>
               <input
                 name="subject"
                 id="subject"

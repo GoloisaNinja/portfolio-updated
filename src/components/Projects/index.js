@@ -112,8 +112,8 @@ export function Projects() {
       title: `SocialDevs`,
       description: `Social project application for developers`,
       tags: [`React`, `React Router`, `Redux`, `MongoDB`],
-      github: `https://github.com/GoloisaNinja/SocialDevs`,
-      live: `https://collins-socialdevs.herokuapp.com/`,
+      github: `https://github.com/GoloisaNinja/socialDevs-frontend`,
+      live: `https://curious-gnome-19dde0.netlify.app/`,
       name: "socialDevs",
     },
     {

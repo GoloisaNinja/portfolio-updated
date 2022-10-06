@@ -85,7 +85,7 @@ export function Projects() {
       description: `Complex finance tracking application`,
       tags: [`React`, `Redux`, `React Router`, `Firebase`],
       github: `https://github.com/GoloisaNinja/expencils`,
-      live: `https://collins-expencils.herokuapp.com/`,
+      live: `https://expencils.netlify.app/`,
       name: "expencils",
     },
     {

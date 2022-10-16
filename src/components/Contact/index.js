@@ -89,8 +89,9 @@ export function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const setFormFieldWithRecpatchaResponseFromServer = async res => {
-    setFormData({ ...formData, ["g-recaptcha-response"]: res });
+    setFormData({ ...formData, "g-recaptcha-response": res });
   };
+
   const handleDismiss = () => {
     setShow(false);
   };
@@ -136,7 +137,7 @@ export function Contact() {
         body
       );
       setShowSpinner(false);
-      await setFormFieldWithRecpatchaResponseFromServer(response.data.success);
+      await setFormFieldWithRecpatchaResponseFromServer(body);
       if (response.data.success) {
         setContent({
           ...content,

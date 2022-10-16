@@ -127,7 +127,7 @@ export function Contact() {
       const token = await recaptchaInstance.current.executeAsync();
       const body = { token };
       const response = await axios.post(
-        `https://portfolio-contact-recaptcha.herokuapp.com/recaptcha`,
+        `https://portfolio-recaptch-service.onrender.com/recaptcha`,
         body
       );
       setShowSpinner(false);

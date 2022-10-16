@@ -56,7 +56,7 @@ export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    "bot-field": "",
+    subject: "",
     message: "",
   });
   const getIpData = async () => {
@@ -248,7 +248,7 @@ export function Contact() {
           <ContactForm
             name="new-portfolio-contact"
             id="contact-form"
-            netlify-honeypot="bot-field"
+            netlify-honeypot="subject"
             data-netlify="true"
             method="POST"
           >
@@ -279,14 +279,14 @@ export function Contact() {
             </FormGroup>
             <AltFormGroup className="hidden">
               <SubjectInput
-                name="bot-field"
-                id="bot-field"
+                name="subject"
+                id="subject"
                 type="hidden"
                 tabIndex="-1"
                 value={subject}
                 onChange={e => onChange(e)}
               />
-              <FormLabelFloating htmlFor="bot-field">subject</FormLabelFloating>
+              <FormLabelFloating htmlFor="subject">subject</FormLabelFloating>
             </AltFormGroup>
             <FormGroup>
               <TextArea

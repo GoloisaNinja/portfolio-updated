@@ -139,6 +139,9 @@ export const NameInput = styled.input`
 export const EmailInput = styled.input`
   ${inputStyle};
 `;
+export const SubjectInput = styled.input`
+  ${inputStyle}
+`;
 export const TextArea = styled.textarea`
   ${inputStyle};
 `;

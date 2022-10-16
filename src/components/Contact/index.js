@@ -21,6 +21,7 @@ import {
   FormGroup,
   NameInput,
   EmailInput,
+  SubjectInput,
   TextArea,
   ContactSubmitButton,
   FormLabelFloating,
@@ -277,8 +278,7 @@ export function Contact() {
               <FormLabelFloating htmlFor="email">your email</FormLabelFloating>
             </FormGroup>
             <AltFormGroup className="hidden">
-              <label>subject</label>
-              <input
+              <SubjectInput
                 name="bot-field"
                 id="bot-field"
                 type="hidden"
@@ -286,6 +286,7 @@ export function Contact() {
                 value={subject}
                 onChange={e => onChange(e)}
               />
+              <FormLabelFloating htmlFor="bot-field">subject</FormLabelFloating>
             </AltFormGroup>
             <FormGroup>
               <TextArea

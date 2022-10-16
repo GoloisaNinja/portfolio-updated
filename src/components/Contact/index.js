@@ -281,7 +281,6 @@ export function Contact() {
               <SubjectInput
                 name="subject"
                 id="subject"
-                type="hidden"
                 tabIndex="-1"
                 value={subject}
                 onChange={e => onChange(e)}

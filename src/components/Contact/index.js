@@ -173,6 +173,7 @@ export function Contact() {
           });
       }
     } catch (error) {
+      setShowSpinner(false);
       console.error(error);
       setContent({
         ...content,

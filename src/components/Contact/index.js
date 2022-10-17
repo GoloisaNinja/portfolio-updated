@@ -58,6 +58,7 @@ export function Contact() {
     email: "",
     subject: "",
     message: "",
+    "g-recaptcha": siteKey,
     "g-recaptcha-response": "",
   });
   const getIpData = async () => {
@@ -333,7 +334,6 @@ export function Contact() {
               theme="dark"
               badge="inline"
             />
-            <div class="g-recaptcha" data-sitekey={siteKey}></div>
           </ContactForm>
         </ContactFormWrapper>
       )}

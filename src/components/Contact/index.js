@@ -58,7 +58,7 @@ export function Contact() {
     email: "",
     subject: "",
     message: "",
-    "g-recaptcha": siteKey,
+    //"g-recaptcha": siteKey,
   });
   const getIpData = async () => {
     const res = await axios.get("https://api.ipgeolocation.io/getip");

@@ -138,7 +138,7 @@ export function Contact() {
         body
       );
       setShowSpinner(false);
-      await setFormFieldWithRecpatchaResponseFromServer(body);
+      await setFormFieldWithRecpatchaResponseFromServer(token);
       if (response.data.success) {
         setContent({
           ...content,
@@ -262,6 +262,7 @@ export function Contact() {
             name="new-portfolio-contact"
             id="contact-form"
             netlify-honeypot="subject"
+            data-sitekey={siteKey}
             data-netlify="true"
             data-netlify-recaptcha="true"
             method="POST"

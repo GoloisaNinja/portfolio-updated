@@ -138,7 +138,7 @@ export function Contact() {
         body
       );
       setShowSpinner(false);
-      await setFormFieldWithRecpatchaResponseFromServer(response.data.success);
+      await setFormFieldWithRecpatchaResponseFromServer(body);
       if (response.data.success) {
         setContent({
           ...content,

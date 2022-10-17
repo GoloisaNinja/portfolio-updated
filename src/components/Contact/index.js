@@ -59,7 +59,7 @@ export function Contact() {
     subject: "",
     message: "",
     "g-recaptcha": siteKey,
-    "g-recaptcha-response": "",
+    //"g-recaptcha-response": "",
   });
   const getIpData = async () => {
     const res = await axios.get("https://api.ipgeolocation.io/getip");
@@ -89,9 +89,9 @@ export function Contact() {
   const onChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  const setFormFieldWithRecpatchaResponseFromServer = async res => {
-    setFormData({ ...formData, "g-recaptcha-response": res });
-  };
+  // const setFormFieldWithRecpatchaResponseFromServer = async res => {
+  //   setFormData({ ...formData, "g-recaptcha-response": res });
+  // };
 
   const handleDismiss = () => {
     setShow(false);
@@ -138,7 +138,7 @@ export function Contact() {
         body
       );
       setShowSpinner(false);
-      await setFormFieldWithRecpatchaResponseFromServer(token);
+      //await setFormFieldWithRecpatchaResponseFromServer(token);
       if (response.data.success) {
         setContent({
           ...content,
@@ -159,7 +159,7 @@ export function Contact() {
               email: "",
               subject: "",
               message: "",
-              "g-recaptcha-response": "",
+              //"g-recaptcha-response": "",
             });
             return console.log("Success!");
           })
@@ -262,7 +262,6 @@ export function Contact() {
             name="new-portfolio-contact"
             id="contact-form"
             netlify-honeypot="subject"
-            data-sitekey={siteKey}
             data-netlify="true"
             data-netlify-recaptcha="true"
             method="POST"

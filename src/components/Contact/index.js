@@ -58,7 +58,7 @@ export function Contact() {
     email: "",
     subject: "",
     message: "",
-    //"g-recaptcha": siteKey,
+    "g-recaptcha-response": "",
   });
   const getIpData = async () => {
     const res = await axios.get("https://api.ipgeolocation.io/getip");
@@ -88,9 +88,9 @@ export function Contact() {
   const onChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  // const setFormFieldWithRecpatchaResponseFromServer = async res => {
-  //   setFormData({ ...formData, "g-recaptcha-response": res });
-  // };
+  const setFormFieldWithRecpatchaResponseFromServer = async res => {
+    setFormData({ ...formData, "g-recaptcha-response": res });
+  };
 
   const handleDismiss = () => {
     setShow(false);
@@ -137,7 +137,7 @@ export function Contact() {
         body
       );
       setShowSpinner(false);
-      //await setFormFieldWithRecpatchaResponseFromServer(body);
+      await setFormFieldWithRecpatchaResponseFromServer(body);
       if (response.data.success) {
         setContent({
           ...content,

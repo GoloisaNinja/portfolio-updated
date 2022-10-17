@@ -58,8 +58,7 @@ export function Contact() {
     email: "",
     subject: "",
     message: "",
-    "g-recaptcha": siteKey,
-    //"g-recaptcha-response": "",
+    "g-recaptcha-response": "",
   });
   const getIpData = async () => {
     const res = await axios.get("https://api.ipgeolocation.io/getip");
@@ -89,9 +88,9 @@ export function Contact() {
   const onChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  // const setFormFieldWithRecpatchaResponseFromServer = async res => {
-  //   setFormData({ ...formData, "g-recaptcha-response": res });
-  // };
+  const setFormFieldWithRecpatchaResponseFromServer = async res => {
+    setFormData({ ...formData, "g-recaptcha-response": res });
+  };
 
   const handleDismiss = () => {
     setShow(false);
@@ -137,8 +136,8 @@ export function Contact() {
         `https://portfolio-recaptch-service.onrender.com/recaptcha`,
         body
       );
+      await setFormFieldWithRecpatchaResponseFromServer(token);
       setShowSpinner(false);
-      //await setFormFieldWithRecpatchaResponseFromServer(token);
       if (response.data.success) {
         setContent({
           ...content,
@@ -152,16 +151,16 @@ export function Contact() {
           },
           body: encode({ "form-name": "new-portfolio-contact", ...formData }),
         })
-          .then(() => {
+          .then(res => {
             setShow(true);
             setFormData({
               name: "",
               email: "",
               subject: "",
               message: "",
-              //"g-recaptcha-response": "",
+              "g-recaptcha-response": "",
             });
-            return console.log("Success!");
+            return console.log(res);
           })
           .catch(error => {
             console.log(error);

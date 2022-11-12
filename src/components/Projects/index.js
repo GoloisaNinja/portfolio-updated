@@ -104,7 +104,7 @@ export function Projects() {
       tags: [`React`, `Router`, `Redux`, `Custom CMS`],
       bgColor: `#a61403`,
       github: `https://github.com/GoloisaNinja/newbsanity-app`,
-      live: `https://collins-newbsanity.herokuapp.com/`,
+      live: `https://newbsanity.netlify.app/`,
       name: "newbsanity",
     },
     {

@@ -41,7 +41,7 @@ export function Seo({ articleImage, description, lang, meta = [], title }) {
           rel: "stylesheet",
         },
         {
-          href: "https://mstdn.social/@joncollinsdev",
+          href: "https://hachyderm.io/@joncollinsdev",
           rel: "me",
         },
       ]}

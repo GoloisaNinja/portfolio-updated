@@ -24,7 +24,7 @@ export function Hero() {
         <RedSpan>{`> `}</RedSpan>Jon Collins
       </Title>
       <Subtitle>
-        Full Stack <RedSpan>Developer</RedSpan>
+        Software <RedSpan>Developer</RedSpan>
       </Subtitle>
       <ButtonGroup>
         <a

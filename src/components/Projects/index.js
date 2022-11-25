@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { ProjectCard } from "../ProjectCard";
+import { ProjectSectionIntro } from "../../utils/sectionIntros";
 import {
   Offset,
   ProjectsWrapper,
@@ -155,11 +156,20 @@ export function Projects() {
     {
       id: "p13",
       title: `hello bourb(on)`,
-      description: `A large scale, backend to frontend, full stack app`,
+      description: `A large scale, backend to frontend, fullstack app`,
       tags: [`React`, `MongoDB`, `Redux`, `Custom API`],
       github: `https://github.com/GoloisaNinja/bourbon-frontend`,
       live: `https://hellobourbon.us`,
       name: "hellobourbon",
+    },
+    {
+      id: "p14",
+      title: `go bourb(on)`,
+      description: `hello bourbon but with a blazing Go backend`,
+      tags: [`React`, `MongoDB`, `Redux`, `Go`],
+      github: `https://github.com/GoloisaNinja/go-bourbon-api`,
+      live: `https://hellogobourbon.netlify.app`,
+      name: "goBourbon",
     },
   ];
 
@@ -170,16 +180,7 @@ export function Projects() {
         <h3>
           <RedSpan>{`> `}</RedSpan>glorious project applications
         </h3>
-        <h5>{`You are looking for a developer that can build applications and 
-        create meaningful user experiences? I'm showcasing a few of my more popular 
-        applications just below. Ever needed an application to generate an entirely 
-        phony corporate culture to indoctrinate your drones? Of course you have! 
-        Maybe you need a fully
-        featured media application to track your favorite shows and movies, share watchlists, 
-        or just find related content? My diverse project set illustrates my flexibility with 
-        frontend and backend technologies, while also confirming you probably don't want me
-        making your HR slide decks.
-        `}</h5>
+        <ProjectSectionIntro />
       </ProjectIntro>
       <ProjectsCardWrapper>
         {data.allFile.edges.map(({ node }) => {

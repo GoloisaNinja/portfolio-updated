@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import ArticleContext from "../../context/ArticleContext";
 import { ArticleCard } from "../ArticleCard";
+import { BlogSectionIntro } from "../../utils/sectionIntros";
 import {
   Offset,
   BlogWrapper,
@@ -19,15 +20,7 @@ export function BlogArticles() {
         <h3>
           <RedSpan>{`> `}</RedSpan>superfluous content creation
         </h3>
-        <h5>{`Your company thrives on content creation and innovation, and so do I!
-        I'm endeavouring to increase my presence in the tech community, and what is the
-        best way to do that you ask? Creating a blog that almost no one will read obviously! 
-        I create everything from ridiculous opinion pieces to technical articles about
-        topics that gave me trouble, but likely wouldn't have if I'd only read that pesky
-        documentation. The coding journey is fraught with frights and perils, so why not 
-        share my personal pain, I mean progress.
-        `}</h5>
-
+        <BlogSectionIntro />
         <ButtonGroup>
           <a
             aria-label="Visit Jon's Full Developer Blog site and read all the things!"

@@ -5,7 +5,7 @@ import { FaMugHot } from "react-icons/fa";
 import { CgCopyright } from "react-icons/cg";
 import { FaGithubAlt, FaDrawPolygon } from "react-icons/fa";
 import { ImReddit } from "react-icons/im";
-import { SiTwitter, SiLinkedin } from "react-icons/si";
+import { SiMastodon, SiLinkedin } from "react-icons/si";
 import {
   FooterWrapper,
   GridContainer,
@@ -92,11 +92,11 @@ export function Footer() {
               <FaDrawPolygon />
             </a>
             <a
-              aria-label="Find Jon on Twitter"
-              href="https://twitter.com/goloisaninja"
-              alt="Link to Jon's Twitter account"
+              aria-label="Find Jon on Mastodon"
+              href="https://hachyderm.io/@joncollinsdev"
+              alt="Link to Jon's Mastodon account"
             >
-              <SiTwitter />
+              <SiMastodon />
             </a>
             <a
               aria-label="Lookup Jon on LinkedIn"

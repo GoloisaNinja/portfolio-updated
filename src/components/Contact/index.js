@@ -5,7 +5,8 @@ import { Modal } from "../Modal";
 import { Spinner } from "../Spinner";
 import { FaGithubAlt, FaDrawPolygon } from "react-icons/fa";
 import { ImReddit } from "react-icons/im";
-import { SiTwitter, SiLinkedin } from "react-icons/si";
+import { SiMastodon, SiLinkedin } from "react-icons/si";
+import { ContactSectionIntro } from "../../utils/sectionIntros";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 import {
@@ -195,26 +196,19 @@ export function Contact() {
         <span role="img" aria-label="wave emoji">
           👋🏻
         </span>
-        <h5>
-          {`I'm just going to say it. I like you. We should keep in touch. There
-        are lots of different ways to connect with me, the contact form below, 
-        Twitter, LinkedIn, murder mystery weekends, and long walks on the beach. 
-        But yeah, the contact form and social media links are probably the easiest! Thank
-        you for visiting and come back soon! 
-        `}
-        </h5>
+        <ContactSectionIntro />
         <h5>{`I don't know how to put this but I'm kind of a big deal.`}</h5>
       </ContactIntro>
       <ContactIconWrapper>
         <ContactIconCard>
           <a
-            aria-label="Find Jon on Twitter"
-            href="https://twitter.com/goloisaninja"
-            alt="A link to Jon's Twitter Page"
+            aria-label="Find Jon on Mastodon"
+            href="https://hachyderm.io/@joncollinsdev"
+            alt="A link to Jon's Mastodon Profile"
           >
-            <SiTwitter />
+            <SiMastodon />
           </a>
-          <p>TWITTER</p>
+          <p>MASTODON</p>
         </ContactIconCard>
         <ContactIconCard>
           <a

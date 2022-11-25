@@ -49,7 +49,7 @@ export const ContactSectionIntro = () => {
     <h5>
       I'm just going to say it. I like you. We should keep in touch. There are
       lots of different ways to connect with me, the contact form below,
-      Twitter, LinkedIn, murder mystery weekends, and long walks on the beach.
+      Mastodon, LinkedIn, murder mystery weekends, and long walks on the beach.
       But yeah, the contact form and social media links are probably the
       easiest! Thank you for visiting and come back soon!
     </h5>

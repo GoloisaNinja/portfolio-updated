@@ -61,6 +61,7 @@ export function Contact() {
     message: "",
     //"g-recaptcha-response": "",
   });
+  const baseAPIURL = process.env.GATSBY_CUSTOM_API_BASEURL;
   const getIpData = async () => {
     const res = await axios.get("https://api.ipgeolocation.io/getip");
     setIP(res.data.ip);
@@ -81,11 +82,14 @@ export function Contact() {
     "191.96.168.55",
   ];
   const { name, email, subject, message } = formData;
-  const encode = data => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-  };
+  // TODO
+  // - remove netlify code if form responses can be successfully handled and sent via aws ses on backend
+  // legacy netlify form code -- can be cleaned up in future push if all goes well
+  // const encode = data => {
+  //   return Object.keys(data)
+  //     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+  //     .join("&");
+  // };
   const onChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -134,10 +138,7 @@ export function Contact() {
       const token = await recaptchaInstance.current.executeAsync();
       const body = { token };
       //const badBody = `03AIIukzhaYGXiM9vqpr9npB8BY2Y-VoQyvAfac8BDOLoD9_rGwjdC2C4rJwZUZ2u1UafjiazBq8Ym9BGPA2xJKQNmjvXuaVYHE5UXJ4pxJw57ix1Ipadw8a5lixFJsEuZNse4-JcTA1hzm2PNnpn4rDFQRFt9-d0NBSiMHiugc52faZ9BxFl9szPEJKe9fav1i7Ckxef7BBljESaofpqsjz9JVwjosLVTZIfq4QaSoj_fkZpxeiQlro6Au_w_4q56_s9PYtqjZ8ZShpbbipv2gNjk-bTWGcFEKJFOigGWuzCX-fqJtrr1OST6HiKdCTMkiUF4fdoUfYkxQ1k4cQhmm7mBbIxkxs-MOU3dFicvTPVxQ5a-fq6uTkvkAmgNcWSv4sBn5WUbgwBHny7OPGYfmlse7vc1tS8AMzcnj55_Fozze7AYvvceiRUlywYYyNY0Fjt6QCEmfeBQAtPBHY0s4OhxFqDTsO4PrEgurxTsu7TcBxk4AS01BMAhnBuIeH_IAd4lWjP9Mm-AzAZqE5ah3DqJaKIiIf-kuw`;
-      const response = await axios.post(
-        `https://portfolio-recaptch-service.onrender.com/recaptcha`,
-        body
-      );
+      const response = await axios.post(`${baseAPIURL}/recaptcha`, body);
       //await setFormFieldWithRecpatchaResponseFromServer(token);
       setShowSpinner(false);
       if (response.data.success) {
@@ -146,33 +147,71 @@ export function Contact() {
           title: `Thank you ${name}!`,
           body: `Really feeling the love! Thank you for reaching out! I'll be in touch soon.`,
         });
-        fetch("/", {
-          method: "POST",
-          headers: {
-            "Content-type": "application/x-www-form-urlencoded",
-          },
-          body: encode({ "form-name": "new-portfolio-contact", ...formData }),
-        })
-          .then(res => {
+        // TODO - more legacy netlify code to be removed
+        // fetch("/", {
+        //   method: "POST",
+        //   headers: {
+        //     "Content-type": "application/x-www-form-urlencoded",
+        //   },
+        //   body: encode({ "form-name": "new-portfolio-contact", ...formData }),
+        // })
+        //   .then(res => {
+        //     setShow(true);
+        //     setFormData({
+        //       name: "",
+        //       email: "",
+        //       subject: "",
+        //       message: "",
+        //       //"g-recaptcha-response": "",
+        //     });
+        //     return console.log(res);
+        //   })
+        //   .catch(error => {
+        //     console.log(error);
+        //     setContent({
+        //       ...content,
+        //       title: "Uh oh...",
+        //       body: "Sorry! Please try submitting your details later.",
+        //     });
+        //     setShow(true);
+        //   });
+        try {
+          const config = {
+            headers: {
+              "Content-type": "application/json",
+            },
+          };
+          const body = { ...formData };
+          let mailResponse = await axios.post(
+            `${baseAPIURL}/contact`,
+            body,
+            config
+          );
+          if (mailResponse.status === 200) {
             setShow(true);
             setFormData({
               name: "",
               email: "",
               subject: "",
               message: "",
-              //"g-recaptcha-response": "",
             });
-            return console.log(res);
-          })
-          .catch(error => {
-            console.log(error);
+          } else {
             setContent({
               ...content,
               title: "Uh oh...",
-              body: "Sorry! Please try submitting your details later.",
+              body:
+                "Something went wrong - please try and sumbit your message later!",
             });
             setShow(true);
+          }
+        } catch (error) {
+          setContent({
+            ...content,
+            title: "Uh oh...",
+            body: "Sorry! Please try submitting your details later.",
           });
+          setShow(true);
+        }
       }
     } catch (error) {
       setShowSpinner(false);
@@ -256,8 +295,8 @@ export function Contact() {
           <ContactForm
             name="new-portfolio-contact"
             id="contact-form"
-            netlify-honeypot="subject"
-            data-netlify="true"
+            //netlify-honeypot="subject"
+            //data-netlify="true"
             // data-netlify-recaptcha="true"
             method="POST"
           >

@@ -137,12 +137,12 @@ export function Projects() {
     },
     {
       id: "p11",
-      title: `gmMintr`,
-      description: `A dapp that mints NFT's to the blockchain`,
-      tags: [`Solidity`, `Ethereum`, `Web3`, `HardHat`],
-      github: `https://github.com/GoloisaNinja/gmMintr`,
-      live: `https://gmmintr.netlify.app`,
-      name: "gmmintr",
+      title: `Otterly Games`,
+      description: `A fullstack games service built in Go`,
+      tags: [`Go`, `Go Templates`, `JS`, `AWS SES`],
+      github: `https://github.com/GoloisaNinja/go-otterly`,
+      live: `https://otterly.games`,
+      name: "otterly",
     },
     {
       id: "p12",

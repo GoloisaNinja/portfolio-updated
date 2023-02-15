@@ -22,6 +22,7 @@ import {
   SiSass,
   SiShopify,
   SiStrapi,
+  SiTypescript,
   SiVuedotjs,
   SiGoland,
   SiJava,
@@ -54,11 +55,6 @@ export function ResumeTech() {
       text: "CSS",
     },
     {
-      id: "4icon",
-      el: <SiGoland />,
-      text: "GOLANG",
-    },
-    {
       id: "5icon",
       el: <IoLogoFirebase />,
       text: "FIREBASE",
@@ -79,6 +75,11 @@ export function ResumeTech() {
       text: "GITHUB",
     },
     {
+      id: "4icon",
+      el: <SiGoland />,
+      text: "GOLANG",
+    },
+    {
       id: "9icon",
       el: <SiGraphql />,
       text: "GRAPHQL",
@@ -87,6 +88,11 @@ export function ResumeTech() {
       id: "10icon",
       el: <SiHtml5 />,
       text: "HTML",
+    },
+    {
+      id: "24icon",
+      el: <SiJava />,
+      text: "JAVA",
     },
     {
       id: "11icon",
@@ -149,14 +155,14 @@ export function ResumeTech() {
       text: "STRAPIJS",
     },
     {
+      id: "25icon",
+      el: <SiTypescript />,
+      text: "TYPESCRIPT",
+    },
+    {
       id: "23icon",
       el: <SiVuedotjs />,
       text: "VUEJS",
-    },
-    {
-      id: "24icon",
-      el: <SiJava />,
-      text: "JAVA",
     },
   ];
   return (

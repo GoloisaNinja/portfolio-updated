@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
-import img from "../../images/hero_bg.webp";
+import img from "../../images/hero_bg_punk.webp";
+
 const basicButtonStyle = css`
   display: flex;
   justify-content: center;

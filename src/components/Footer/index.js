@@ -67,6 +67,13 @@ export function Footer() {
         <LinkContainer>
           <Title>Misc</Title>
           <a
+            aria-label="see more work by catalyststuff on freepik.com"
+            alt="This will take you to Freepik.com where you can view cool images, icons, and art"
+            href="https://www.freepik.com/free-vector/cute-astronaut-punk-cartoon-vector-icon-illustration-technology-fashion-icon-concept-isolated-premium-vector-flat-cartoon-style_18790464.htm#page=3&query=pixel%20art%20astronaut&position=33&from_view=search&track=ais"
+          >
+            <p>Hero Image by catalyststuff</p>
+          </a>
+          <a
             aria-label="Browse Freepik for Icons"
             href="https://www.freepik.com"
             alt="This will take you to Freepik.com for icons"
@@ -78,7 +85,7 @@ export function Footer() {
             href="https://www.unsplash.com"
             alt="This will take you to unsplash for free images"
           >
-            <p>Images via Unsplash</p>
+            <p>Blog Images via Unsplash</p>
           </a>
         </LinkContainer>
         <SocialContainer>

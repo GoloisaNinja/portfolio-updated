@@ -48,6 +48,7 @@ export function BlogArticles() {
             preview={article.preview}
             link={article.title.replaceAll(" ", "_")}
             image={article.image}
+            badges={article.badges}
           />
         ))}
       </ArticleCardGrid>

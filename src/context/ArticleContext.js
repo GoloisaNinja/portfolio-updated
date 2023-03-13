@@ -24,6 +24,10 @@ const query = graphql`
           readTime
           preview
           id
+          badges {
+            slug
+            name
+          }
           author {
             username
             avatar {

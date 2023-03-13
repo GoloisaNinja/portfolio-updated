@@ -62,6 +62,9 @@ export const ButtonGroup = styled.div`
   width: 100%;
   > a {
     ${basicButtonStyle};
+    @media (max-width: 600px) {
+      width: 100%;
+    }
   }
   > a:first-child {
     margin-right: 15px;

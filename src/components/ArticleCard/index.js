@@ -32,10 +32,10 @@ export function ArticleCard({ title, link, preview, image }) {
       { id: "4b", tag: "mechs" },
       { id: "4c", tag: "review" },
     ],
-    "Moonlander Keyboard Review - part 2": [
+    "IBM Model F GlowUp": [
       { id: "5a", tag: "hardware" },
       { id: "5b", tag: "mechs" },
-      { id: "5c", tag: "opinion" },
+      { id: "5c", tag: "retro tech" },
     ],
   };
   const badges = tags[title];

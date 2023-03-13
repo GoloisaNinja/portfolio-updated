@@ -19,7 +19,7 @@ exports.createPages = async ({ graphql, actions }) => {
         filter: {
           title: {
             in: [
-              "Moonlander Keyboard Review - part 2"
+              "IBM Model F GlowUp"
               "Moonlander Keyboard Review - part 1"
               "Avoiding the dreaded React Flicker"
               "Reducing spam on your site forms"

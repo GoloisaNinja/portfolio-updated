@@ -171,6 +171,15 @@ export function Projects() {
       live: `https://bingelists.app`,
       name: "bingelists",
     },
+    {
+      id: "p15",
+      title: `Sudo Pizza`,
+      description: `A spring boot app with server templates`,
+      tags: [`Java`, `Postgres`, `Thymeleaf`, `Spring`],
+      github: `https://github.com/GoloisaNinja/sudo_pizza`,
+      live: `https://sudopizza-production.up.railway.app/`,
+      name: "sudo",
+    },
   ];
 
   return (

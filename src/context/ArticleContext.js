@@ -9,7 +9,7 @@ const query = graphql`
           in: [
             "IBM Model F GlowUp"
             "Moonlander Keyboard Review - part 1"
-            "Avoiding the dreaded React Flicker"
+            "Night City 2025"
             "Reducing spam on your site forms"
             "How many stacks is too many stacks"
           ]
